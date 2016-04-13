@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F5937D31CBEA24A00D46B4D /* SplitScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5937D21CBEA24A00D46B4D /* SplitScreen.swift */; };
+		3F8D99881CAAE36B001F9934 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D99871CAAE36B001F9934 /* AppDelegate.swift */; };
+		3F8D998A1CAAE36B001F9934 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F8D99891CAAE36B001F9934 /* GameScene.sks */; };
+		3F8D998C1CAAE36B001F9934 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D998B1CAAE36B001F9934 /* GameScene.swift */; };
+		3F8D998E1CAAE36B001F9934 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D998D1CAAE36B001F9934 /* GameViewController.swift */; };
+		3F8D99911CAAE36B001F9934 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F8D998F1CAAE36B001F9934 /* Main.storyboard */; };
+		3F8D99931CAAE36B001F9934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F8D99921CAAE36B001F9934 /* Assets.xcassets */; };
+		3F8D99961CAAE36B001F9934 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F8D99941CAAE36B001F9934 /* LaunchScreen.storyboard */; };
+		3F8D99A11CAAE36B001F9934 /* Blazing_RacersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D99A01CAAE36B001F9934 /* Blazing_RacersTests.swift */; };
+		3F8D99AC1CAAE36B001F9934 /* Blazing_RacersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D99AB1CAAE36B001F9934 /* Blazing_RacersUITests.swift */; };
+		3FCB5D8A1CB6C1ED0028AFBD /* Metal.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB5D891CB6C1ED0028AFBD /* Metal.metal */; };
+		3FD2F6EC1CBC06F9005D9F2D /* SinglePlayerRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2F6EB1CBC06F9005D9F2D /* SinglePlayerRace.swift */; };
+		3FD2F6EE1CBC072C005D9F2D /* SinglePlayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2F6ED1CBC072C005D9F2D /* SinglePlayerTime.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F8D999D1CAAE36B001F9934 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F8D997C1CAAE36B001F9934 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F8D99831CAAE36B001F9934;
+			remoteInfo = Blazing_Racers;
+		};
+		3F8D99A81CAAE36B001F9934 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F8D997C1CAAE36B001F9934 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F8D99831CAAE36B001F9934;
+			remoteInfo = Blazing_Racers;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3F5937D21CBEA24A00D46B4D /* SplitScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplitScreen.swift; path = ../SplitScreen.swift; sourceTree = "<group>"; };
+		3F8D99841CAAE36B001F9934 /* Blazing_Racers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blazing_Racers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F8D99871CAAE36B001F9934 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3F8D99891CAAE36B001F9934 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		3F8D998B1CAAE36B001F9934 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		3F8D998D1CAAE36B001F9934 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		3F8D99901CAAE36B001F9934 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F8D99921CAAE36B001F9934 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F8D99951CAAE36B001F9934 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F8D99971CAAE36B001F9934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F8D999C1CAAE36B001F9934 /* Blazing_RacersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Blazing_RacersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F8D99A01CAAE36B001F9934 /* Blazing_RacersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blazing_RacersTests.swift; sourceTree = "<group>"; };
+		3F8D99A21CAAE36B001F9934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F8D99A71CAAE36B001F9934 /* Blazing_RacersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Blazing_RacersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F8D99AB1CAAE36B001F9934 /* Blazing_RacersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blazing_RacersUITests.swift; sourceTree = "<group>"; };
+		3F8D99AD1CAAE36B001F9934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FCB5D891CB6C1ED0028AFBD /* Metal.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Metal.metal; sourceTree = "<group>"; };
+		3FD2F6EB1CBC06F9005D9F2D /* SinglePlayerRace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePlayerRace.swift; sourceTree = "<group>"; };
+		3FD2F6ED1CBC072C005D9F2D /* SinglePlayerTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePlayerTime.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F8D99811CAAE36B001F9934 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F8D99991CAAE36B001F9934 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F8D99A41CAAE36B001F9934 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F8D997B1CAAE36B001F9934 = {
+			isa = PBXGroup;
+			children = (
+				3F8D99861CAAE36B001F9934 /* Blazing_Racers */,
+				3F8D999F1CAAE36B001F9934 /* Blazing_RacersTests */,
+				3F8D99AA1CAAE36B001F9934 /* Blazing_RacersUITests */,
+				3F8D99851CAAE36B001F9934 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3F8D99851CAAE36B001F9934 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F8D99841CAAE36B001F9934 /* Blazing_Racers.app */,
+				3F8D999C1CAAE36B001F9934 /* Blazing_RacersTests.xctest */,
+				3F8D99A71CAAE36B001F9934 /* Blazing_RacersUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F8D99861CAAE36B001F9934 /* Blazing_Racers */ = {
+			isa = PBXGroup;
+			children = (
+				3FCB5D891CB6C1ED0028AFBD /* Metal.metal */,
+				3F8D99891CAAE36B001F9934 /* GameScene.sks */,
+				3F8D99871CAAE36B001F9934 /* AppDelegate.swift */,
+				3F8D998D1CAAE36B001F9934 /* GameViewController.swift */,
+				3FD2F6EB1CBC06F9005D9F2D /* SinglePlayerRace.swift */,
+				3FD2F6ED1CBC072C005D9F2D /* SinglePlayerTime.swift */,
+				3F5937D21CBEA24A00D46B4D /* SplitScreen.swift */,
+				3F8D998B1CAAE36B001F9934 /* GameScene.swift */,
+				3F8D998F1CAAE36B001F9934 /* Main.storyboard */,
+				3F8D99921CAAE36B001F9934 /* Assets.xcassets */,
+				3F8D99941CAAE36B001F9934 /* LaunchScreen.storyboard */,
+				3F8D99971CAAE36B001F9934 /* Info.plist */,
+			);
+			path = Blazing_Racers;
+			sourceTree = "<group>";
+		};
+		3F8D999F1CAAE36B001F9934 /* Blazing_RacersTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F8D99A01CAAE36B001F9934 /* Blazing_RacersTests.swift */,
+				3F8D99A21CAAE36B001F9934 /* Info.plist */,
+			);
+			path = Blazing_RacersTests;
+			sourceTree = "<group>";
+		};
+		3F8D99AA1CAAE36B001F9934 /* Blazing_RacersUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3F8D99AB1CAAE36B001F9934 /* Blazing_RacersUITests.swift */,
+				3F8D99AD1CAAE36B001F9934 /* Info.plist */,
+			);
+			path = Blazing_RacersUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F8D99831CAAE36B001F9934 /* Blazing_Racers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F8D99B01CAAE36B001F9934 /* Build configuration list for PBXNativeTarget "Blazing_Racers" */;
+			buildPhases = (
+				3F8D99801CAAE36B001F9934 /* Sources */,
+				3F8D99811CAAE36B001F9934 /* Frameworks */,
+				3F8D99821CAAE36B001F9934 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Blazing_Racers;
+			productName = Blazing_Racers;
+			productReference = 3F8D99841CAAE36B001F9934 /* Blazing_Racers.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F8D999B1CAAE36B001F9934 /* Blazing_RacersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F8D99B31CAAE36B001F9934 /* Build configuration list for PBXNativeTarget "Blazing_RacersTests" */;
+			buildPhases = (
+				3F8D99981CAAE36B001F9934 /* Sources */,
+				3F8D99991CAAE36B001F9934 /* Frameworks */,
+				3F8D999A1CAAE36B001F9934 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F8D999E1CAAE36B001F9934 /* PBXTargetDependency */,
+			);
+			name = Blazing_RacersTests;
+			productName = Blazing_RacersTests;
+			productReference = 3F8D999C1CAAE36B001F9934 /* Blazing_RacersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3F8D99A61CAAE36B001F9934 /* Blazing_RacersUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F8D99B61CAAE36B001F9934 /* Build configuration list for PBXNativeTarget "Blazing_RacersUITests" */;
+			buildPhases = (
+				3F8D99A31CAAE36B001F9934 /* Sources */,
+				3F8D99A41CAAE36B001F9934 /* Frameworks */,
+				3F8D99A51CAAE36B001F9934 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F8D99A91CAAE36B001F9934 /* PBXTargetDependency */,
+			);
+			name = Blazing_RacersUITests;
+			productName = Blazing_RacersUITests;
+			productReference = 3F8D99A71CAAE36B001F9934 /* Blazing_RacersUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F8D997C1CAAE36B001F9934 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "nmalin-jones";
+				TargetAttributes = {
+					3F8D99831CAAE36B001F9934 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = G2V54NX7MU;
+					};
+					3F8D999B1CAAE36B001F9934 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = G2V54NX7MU;
+						TestTargetID = 3F8D99831CAAE36B001F9934;
+					};
+					3F8D99A61CAAE36B001F9934 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = G2V54NX7MU;
+						TestTargetID = 3F8D99831CAAE36B001F9934;
+					};
+				};
+			};
+			buildConfigurationList = 3F8D997F1CAAE36B001F9934 /* Build configuration list for PBXProject "Blazing_Racers" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F8D997B1CAAE36B001F9934;
+			productRefGroup = 3F8D99851CAAE36B001F9934 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F8D99831CAAE36B001F9934 /* Blazing_Racers */,
+				3F8D999B1CAAE36B001F9934 /* Blazing_RacersTests */,
+				3F8D99A61CAAE36B001F9934 /* Blazing_RacersUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F8D99821CAAE36B001F9934 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F8D998A1CAAE36B001F9934 /* GameScene.sks in Resources */,
+				3F8D99961CAAE36B001F9934 /* LaunchScreen.storyboard in Resources */,
+				3F8D99931CAAE36B001F9934 /* Assets.xcassets in Resources */,
+				3F8D99911CAAE36B001F9934 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F8D999A1CAAE36B001F9934 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F8D99A51CAAE36B001F9934 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F8D99801CAAE36B001F9934 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F8D998C1CAAE36B001F9934 /* GameScene.swift in Sources */,
+				3F8D998E1CAAE36B001F9934 /* GameViewController.swift in Sources */,
+				3FD2F6EC1CBC06F9005D9F2D /* SinglePlayerRace.swift in Sources */,
+				3F5937D31CBEA24A00D46B4D /* SplitScreen.swift in Sources */,
+				3FD2F6EE1CBC072C005D9F2D /* SinglePlayerTime.swift in Sources */,
+				3FCB5D8A1CB6C1ED0028AFBD /* Metal.metal in Sources */,
+				3F8D99881CAAE36B001F9934 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F8D99981CAAE36B001F9934 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F8D99A11CAAE36B001F9934 /* Blazing_RacersTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F8D99A31CAAE36B001F9934 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F8D99AC1CAAE36B001F9934 /* Blazing_RacersUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F8D999E1CAAE36B001F9934 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F8D99831CAAE36B001F9934 /* Blazing_Racers */;
+			targetProxy = 3F8D999D1CAAE36B001F9934 /* PBXContainerItemProxy */;
+		};
+		3F8D99A91CAAE36B001F9934 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F8D99831CAAE36B001F9934 /* Blazing_Racers */;
+			targetProxy = 3F8D99A81CAAE36B001F9934 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3F8D998F1CAAE36B001F9934 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F8D99901CAAE36B001F9934 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F8D99941CAAE36B001F9934 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F8D99951CAAE36B001F9934 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F8D99AE1CAAE36B001F9934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F8D99AF1CAAE36B001F9934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F8D99B11CAAE36B001F9934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Blazing_Racers/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Malin-Jones.Blazing-Racers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3F8D99B21CAAE36B001F9934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Blazing_Racers/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Malin-Jones.Blazing-Racers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3F8D99B41CAAE36B001F9934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = Blazing_RacersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Malin-Jones.Blazing-RacersTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blazing_Racers.app/Blazing_Racers";
+			};
+			name = Debug;
+		};
+		3F8D99B51CAAE36B001F9934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Blazing_RacersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Malin-Jones.Blazing-RacersTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blazing_Racers.app/Blazing_Racers";
+			};
+			name = Release;
+		};
+		3F8D99B71CAAE36B001F9934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = Blazing_RacersUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Malin-Jones.Blazing-RacersUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Blazing_Racers;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		3F8D99B81CAAE36B001F9934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Blazing_RacersUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Malin-Jones.Blazing-RacersUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Blazing_Racers;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F8D997F1CAAE36B001F9934 /* Build configuration list for PBXProject "Blazing_Racers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F8D99AE1CAAE36B001F9934 /* Debug */,
+				3F8D99AF1CAAE36B001F9934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F8D99B01CAAE36B001F9934 /* Build configuration list for PBXNativeTarget "Blazing_Racers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F8D99B11CAAE36B001F9934 /* Debug */,
+				3F8D99B21CAAE36B001F9934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F8D99B31CAAE36B001F9934 /* Build configuration list for PBXNativeTarget "Blazing_RacersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F8D99B41CAAE36B001F9934 /* Debug */,
+				3F8D99B51CAAE36B001F9934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F8D99B61CAAE36B001F9934 /* Build configuration list for PBXNativeTarget "Blazing_RacersUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F8D99B71CAAE36B001F9934 /* Debug */,
+				3F8D99B81CAAE36B001F9934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F8D997C1CAAE36B001F9934 /* Project object */;
+}
