@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F31C7DC1CBFFAC10001EBE0 /* BluetoothMultiplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F31C7DB1CBFFAC10001EBE0 /* BluetoothMultiplayer.swift */; };
 		3F5937D31CBEA24A00D46B4D /* SplitScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5937D21CBEA24A00D46B4D /* SplitScreen.swift */; };
 		3F8D99881CAAE36B001F9934 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D99871CAAE36B001F9934 /* AppDelegate.swift */; };
 		3F8D998A1CAAE36B001F9934 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F8D99891CAAE36B001F9934 /* GameScene.sks */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F31C7DB1CBFFAC10001EBE0 /* BluetoothMultiplayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothMultiplayer.swift; sourceTree = "<group>"; };
 		3F5937D21CBEA24A00D46B4D /* SplitScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplitScreen.swift; path = ../SplitScreen.swift; sourceTree = "<group>"; };
 		3F8D99841CAAE36B001F9934 /* Blazing_Racers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blazing_Racers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F8D99871CAAE36B001F9934 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				3FD2F6EB1CBC06F9005D9F2D /* SinglePlayerRace.swift */,
 				3FD2F6ED1CBC072C005D9F2D /* SinglePlayerTime.swift */,
 				3F5937D21CBEA24A00D46B4D /* SplitScreen.swift */,
+				3F31C7DB1CBFFAC10001EBE0 /* BluetoothMultiplayer.swift */,
 				3F8D998B1CAAE36B001F9934 /* GameScene.swift */,
 				3F8D998F1CAAE36B001F9934 /* Main.storyboard */,
 				3F8D99921CAAE36B001F9934 /* Assets.xcassets */,
@@ -281,6 +284,7 @@
 				3F8D998C1CAAE36B001F9934 /* GameScene.swift in Sources */,
 				3F8D998E1CAAE36B001F9934 /* GameViewController.swift in Sources */,
 				3FD2F6EC1CBC06F9005D9F2D /* SinglePlayerRace.swift in Sources */,
+				3F31C7DC1CBFFAC10001EBE0 /* BluetoothMultiplayer.swift in Sources */,
 				3F5937D31CBEA24A00D46B4D /* SplitScreen.swift in Sources */,
 				3FD2F6EE1CBC072C005D9F2D /* SinglePlayerTime.swift in Sources */,
 				3FCB5D8A1CB6C1ED0028AFBD /* Metal.metal in Sources */,
