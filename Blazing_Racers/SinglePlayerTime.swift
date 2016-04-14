@@ -10,6 +10,7 @@ import UIKit
 
 class SinglePlayerTime: SKScene
 {
+    //test to see if it's deleted
     override func didMoveToView(view: SKView) {
     }
     
