@@ -10,7 +10,8 @@ import UIKit
 
 class SinglePlayerRace: SKScene
 {
-    override func didMoveToView(view: SKView) {
+    override func didMoveToView(view: SKView)
+    {
         let myDistance = SKLabelNode(text: "Distance")
         myDistance.fontSize = 120
         myDistance.fontColor = UIColor.blackColor()
@@ -29,4 +30,5 @@ class SinglePlayerRace: SKScene
         self.addChild(myTime)
         self.addChild(myDistance)
 
+   }
 }

@@ -10,7 +10,8 @@ import UIKit
 
 class SinglePlayerTime: SKScene
 {
-    override func didMoveToView(view: SKView) {
+    override func didMoveToView(view: SKView)
+    {
         let myDistance = SKLabelNode(text: "Distance")
         myDistance.fontSize = 120
         myDistance.fontColor = UIColor.blackColor()
