@@ -10,24 +10,44 @@ import UIKit
 
 class SinglePlayerTime: SKScene
 {
-    override func didMoveToView(view: SKView) {
-        let myDistance = SKLabelNode(text: "Distance")
+    var taps = 0
+    var time = 0
+    var distance = 0
+    let myTime = SKLabelNode()
+    let myDistance = SKLabelNode()
+    let mySpeed = SKLabelNode()
+    var myCar = SKSpriteNode()
+    override func didMoveToView(view: SKView)
+    {
+        myDistance.text = "\(distance)"
         myDistance.fontSize = 120
         myDistance.fontColor = UIColor.blackColor()
         myDistance.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMaxY(self.frame) - 100)
-        let myTime = SKLabelNode(text: "Time")
+        
+        myTime.text = "\(time)"
         myTime.fontSize = 120
         myTime.fontColor = UIColor.blackColor()
         myTime.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
-        let mySpeed = SKLabelNode(text: "Speed")
+        
+        mySpeed.text = "\(taps)"
         mySpeed.fontSize = 120
         mySpeed.fontColor = UIColor.blackColor()
         mySpeed.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMinY(self.frame) + 20)
         
+        myCar = SKSpriteNode(imageNamed: "car2_special")
         
         self.addChild(mySpeed)
         self.addChild(myTime)
         self.addChild(myDistance)
-
+        self.addChild(myCar)
+    }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        for touch in touches {
+            let location = touch.locationInNode(myCar)
+            print("touch")
+            taps += 1
+        }
     }
 }
+
+
