@@ -28,5 +28,6 @@ class SinglePlayerRace: SKScene
         self.addChild(mySpeed)
         self.addChild(myTime)
         self.addChild(myDistance)
-
+}
+    
 }
