@@ -17,7 +17,10 @@ class SplitScreen: SKScene {
     let myTime = SKLabelNode()
     let mySpeed = SKLabelNode()
     var myCar = SKSpriteNode()
+    let mySpeedometer = SKSpriteNode(imageNamed: "speedometer")
     var myTestCar = SKSpriteNode(imageNamed: "car2_grey")
+    
+    
     override func didMoveToView(view: SKView) {
         
         myDistance.text = "\(distance)"
