@@ -17,18 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3M-f1-shT">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3M-f1-shT">
                                 <rect key="frame" x="194" y="380" width="125" height="30"/>
                                 <state key="normal" title="One Player Racing"/>
                                 <connections>
                                     <segue destination="NIk-yG-54r" kind="show" id="u6H-1y-czH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ln8-KY-qpd">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ln8-KY-qpd">
                                 <rect key="frame" x="192" y="443" width="128" height="30"/>
                                 <state key="normal" title="Splitscreen Racing"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCA-33-BRC">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCA-33-BRC">
                                 <rect key="frame" x="183" y="498" width="146" height="30"/>
                                 <state key="normal" title="Bluetooth Multiplayer"/>
                             </button>
@@ -37,6 +37,11 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PCA-33-BRC" firstAttribute="centerX" secondItem="DCd-Yw-wa9" secondAttribute="centerX" id="EBP-3V-asH"/>
+                            <constraint firstItem="R3M-f1-shT" firstAttribute="centerX" secondItem="DCd-Yw-wa9" secondAttribute="centerX" id="R7n-YK-4M1"/>
+                            <constraint firstItem="Ln8-KY-qpd" firstAttribute="centerX" secondItem="DCd-Yw-wa9" secondAttribute="centerX" id="qfr-Lb-etB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DFW-zk-N3l"/>
                 </viewController>
