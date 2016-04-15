@@ -366,6 +366,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="myGameView" destination="0YX-sq-4JJ" id="Zgw-2m-lmO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="heN-XK-2HH" sceneMemberID="firstResponder"/>
             </objects>

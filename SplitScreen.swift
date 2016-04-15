@@ -41,10 +41,15 @@ class SplitScreen: SKScene {
         myCar = SKSpriteNode(imageNamed: "\(myTestCar)")
         myCar.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 300)
         
+        mySpeedometer.position = CGPoint(x: CGRectGetMaxX(self.frame) - 130, y: CGRectGetMinY(self.frame) + 120)
+        
+        
+        
         self.addChild(mySpeed)
         self.addChild(myTime)
         self.addChild(myDistance)
         self.addChild(myCar)
+        self.addChild(mySpeedometer)
     }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches {
