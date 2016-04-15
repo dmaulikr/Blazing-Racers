@@ -47,7 +47,7 @@ class SplitScreen: SKScene {
         for touch in touches {
             let location = touch.locationInNode(myCar)
             print("touch")
-            ++taps
+            taps += 1
         }
     }
 }
