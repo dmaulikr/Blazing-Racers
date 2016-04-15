@@ -10,7 +10,7 @@
 import SpriteKit
 import Metal
 
-//No Pushing or Pulling, except for Jose, he can pull and push anytime :)
+//No Pushing or Pulling, except for Jose, he can pull and push anytime 😉😉😉😉
 class GameScene: SKScene, SKPhysicsContactDelegate
 {
     let playerSpeed: CGFloat = 150.0
