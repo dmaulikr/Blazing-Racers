@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View View Controller-->
         <scene sceneID="2fr-uj-pQc">
             <objects>
-                <viewController id="Toh-wO-etG" sceneMemberID="viewController">
+                <viewController id="Toh-wO-etG" customClass="MainViewViewController" customModule="Blazing_Racers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gKR-sg-MqB"/>
                         <viewControllerLayoutGuide type="bottom" id="bSs-1h-vLx"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="194" y="380" width="125" height="30"/>
                                 <state key="normal" title="One Player Racing"/>
                                 <connections>
-                                    <segue destination="NIk-yG-54r" kind="show" id="u6H-1y-czH"/>
+                                    <action selector="singlePlayerButton:" destination="Toh-wO-etG" eventType="touchUpInside" id="C8J-BP-oXz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ln8-KY-qpd">
@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="-1295" y="323"/>
         </scene>
-        <!--View Controller-->
+        <!--Single Player View-->
         <scene sceneID="lpb-Az-Rop">
             <objects>
-                <viewController id="NIk-yG-54r" sceneMemberID="viewController">
+                <viewController id="NIk-yG-54r" customClass="SinglePlayerView" customModule="Blazing_Racers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k6Q-xb-n37"/>
                         <viewControllerLayoutGuide type="bottom" id="OMl-TO-ceA"/>
@@ -64,16 +64,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3Z-3b-zTa">
                                 <rect key="frame" x="390" y="467" width="82" height="30"/>
                                 <state key="normal" title="Speed Race"/>
-                                <connections>
-                                    <segue destination="P6R-Ve-8In" kind="show" id="qpo-JA-Og3"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W37-AM-pBk">
                                 <rect key="frame" x="129" y="467" width="68" height="30"/>
                                 <state key="normal" title="Time Trial"/>
-                                <connections>
-                                    <segue destination="P6R-Ve-8In" kind="show" id="XKN-k1-Gcw"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="-495" y="329"/>
         </scene>
-        <!--View Controller-->
+        <!--Split Screen View-->
         <scene sceneID="NmY-o0-pWc">
             <objects>
-                <viewController id="Rvz-5g-qpx" sceneMemberID="viewController">
+                <viewController id="Rvz-5g-qpx" customClass="SplitScreenView" customModule="Blazing_Racers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="O1A-zr-9Iy"/>
                         <viewControllerLayoutGuide type="bottom" id="j4b-WR-e2T"/>
@@ -98,9 +92,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lif-DU-gm0">
                                 <rect key="frame" x="233" y="497" width="134" height="30"/>
                                 <state key="normal" title="Split Screen Racing"/>
-                                <connections>
-                                    <segue destination="P6R-Ve-8In" kind="show" id="3Wz-tV-huy"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -110,10 +101,10 @@
             </objects>
             <point key="canvasLocation" x="-495" y="1119"/>
         </scene>
-        <!--View Controller-->
+        <!--Cars-->
         <scene sceneID="vZh-1t-JqV">
             <objects>
-                <viewController id="P6R-Ve-8In" sceneMemberID="viewController">
+                <viewController id="P6R-Ve-8In" customClass="Cars" customModule="Blazing_Racers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MZv-Dc-drR"/>
                         <viewControllerLayoutGuide type="bottom" id="NaM-Qw-9Ku"/>
@@ -125,44 +116,26 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddi-3J-RId">
                                 <rect key="frame" x="107" y="285" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="UmC-Aw-aob" kind="show" id="GAj-wJ-cAC"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qc5-Yf-Nlw">
                                 <rect key="frame" x="452" y="285" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="UmC-Aw-aob" kind="show" id="xOl-66-LuB"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRD-oI-9jv">
                                 <rect key="frame" x="107" y="345" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="UmC-Aw-aob" kind="show" id="zRw-Hw-kTn"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3M-GT-bwn">
                                 <rect key="frame" x="452" y="345" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="UmC-Aw-aob" kind="show" id="6qU-Xf-hGZ"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kt4-uQ-LDh">
                                 <rect key="frame" x="107" y="421" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="UmC-Aw-aob" kind="show" id="jNA-Am-8mi"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EX1-GM-zED">
                                 <rect key="frame" x="452" y="421" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="UmC-Aw-aob" kind="show" id="alr-NI-WGz"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -172,10 +145,10 @@
             </objects>
             <point key="canvasLocation" x="275" y="1124"/>
         </scene>
-        <!--View Controller-->
+        <!--Color-->
         <scene sceneID="rx6-Qf-Haq">
             <objects>
-                <viewController id="UmC-Aw-aob" sceneMemberID="viewController">
+                <viewController id="UmC-Aw-aob" customClass="Color" customModule="Blazing_Racers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0nu-kH-cIs"/>
                         <viewControllerLayoutGuide type="bottom" id="QbJ-Wq-3fA"/>
@@ -216,10 +189,10 @@
             </objects>
             <point key="canvasLocation" x="959" y="1124"/>
         </scene>
-        <!--View Controller-->
+        <!--Tracks-->
         <scene sceneID="P2Q-Uj-95q">
             <objects>
-                <viewController id="R7G-V2-Ujg" sceneMemberID="viewController">
+                <viewController id="R7G-V2-Ujg" customClass="Tracks" customModule="Blazing_Racers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MeE-5h-Mxq"/>
                         <viewControllerLayoutGuide type="bottom" id="VR2-Kz-G5l"/>
@@ -326,10 +299,10 @@
             </objects>
             <point key="canvasLocation" x="3147" y="1875"/>
         </scene>
-        <!--View Controller-->
+        <!--Multiplayer View-->
         <scene sceneID="PSC-qh-WFY">
             <objects>
-                <viewController id="gMa-Vb-ydI" sceneMemberID="viewController">
+                <viewController id="gMa-Vb-ydI" customClass="MultiplayerView" customModule="Blazing_Racers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="78P-Qc-sYO"/>
                         <viewControllerLayoutGuide type="bottom" id="S6X-Ui-GoZ"/>
@@ -341,9 +314,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7LH-8Y-N7f">
                                 <rect key="frame" x="242" y="514" width="117" height="30"/>
                                 <state key="normal" title="Bluetooth Racing"/>
-                                <connections>
-                                    <segue destination="P6R-Ve-8In" kind="show" id="lAa-G4-Pgb"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -420,8 +390,4 @@
             <point key="canvasLocation" x="-2116" y="323"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="lAa-G4-Pgb"/>
-        <segue reference="zRw-Hw-kTn"/>
-    </inferredMetricsTieBreakers>
 </document>

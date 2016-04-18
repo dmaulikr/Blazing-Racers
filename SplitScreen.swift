@@ -19,7 +19,7 @@ class SplitScreen: SKScene {
     var myCar = SKSpriteNode()
     let mySpeedometer = SKSpriteNode(imageNamed: "speedometer")
     var myTestCar = SKSpriteNode(imageNamed: "car2_grey")
-    
+    var road = SKSpriteNode(imageNamed: "road_singleplayer")
     
     override func didMoveToView(view: SKView) {
         
@@ -43,6 +43,7 @@ class SplitScreen: SKScene {
         
         mySpeedometer.position = CGPoint(x: CGRectGetMaxX(self.frame) - 130, y: CGRectGetMinY(self.frame) + 120)
         
+        road.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
         
         
         self.addChild(mySpeed)
@@ -50,10 +51,11 @@ class SplitScreen: SKScene {
         self.addChild(myDistance)
         self.addChild(myCar)
         self.addChild(mySpeedometer)
+        //self.addChild(road)
     }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches {
-            let location = touch.locationInNode(myCar)
+            let location = touch.locationInNode(myTestCar)
             print("touch")
             ++taps
         }
