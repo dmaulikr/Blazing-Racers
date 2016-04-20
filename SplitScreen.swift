@@ -18,9 +18,8 @@ class SplitScreen: SKScene {
     let mySpeed = SKLabelNode()
     var myCar = SKSpriteNode()
     let mySpeedometer = SKSpriteNode(imageNamed: "speedometer")
-    var myTestCar = SKSpriteNode(imageNamed: "car2_grey")
     var road = SKSpriteNode(imageNamed: "road_singleplayer")
-    
+    var car1 = "car2_grey"
     override func didMoveToView(view: SKView) {
         
         myDistance.text = "\(distance)"
@@ -38,24 +37,26 @@ class SplitScreen: SKScene {
         mySpeed.fontColor = UIColor.blackColor()
         mySpeed.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMinY(self.frame) + 20)
     
-        myCar = SKSpriteNode(imageNamed: "\(myTestCar)")
+        myCar = SKSpriteNode(imageNamed: car1)
         myCar.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 300)
         
         mySpeedometer.position = CGPoint(x: CGRectGetMaxX(self.frame) - 130, y: CGRectGetMinY(self.frame) + 120)
+     
         
         road.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
-        
-        
+        road.zPosition = -1
+        road.size = self.frame.size
+            
         self.addChild(mySpeed)
         self.addChild(myTime)
         self.addChild(myDistance)
         self.addChild(myCar)
         self.addChild(mySpeedometer)
-        //self.addChild(road)
+        self.addChild(road)
     }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches {
-            let location = touch.locationInNode(myTestCar)
+            let location = touch.locationInNode(myCar)
             print("touch")
             ++taps
         }

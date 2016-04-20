@@ -17,6 +17,7 @@ class SinglePlayerTime: SKScene
     let myDistance = SKLabelNode()
     let mySpeed = SKLabelNode()
     var myCar = SKSpriteNode()
+    
     override func didMoveToView(view: SKView)
     {
         myDistance.text = "\(distance)"
@@ -40,6 +41,7 @@ class SinglePlayerTime: SKScene
         self.addChild(myTime)
         self.addChild(myDistance)
         self.addChild(myCar)
+        
     }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches {
