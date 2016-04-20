@@ -23,25 +23,32 @@ class SplitScreen: SKScene {
     override func didMoveToView(view: SKView) {
         
         myDistance.text = "\(distance)"
+        myDistance.fontName = "DBLCDTempBlack"
         myDistance.fontSize = 120
-        myDistance.fontColor = UIColor.blackColor()
+        myDistance.fontColor = UIColor.whiteColor()
         myDistance.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMaxY(self.frame) - 100)
+        myDistance.zPosition = 1
         
         myTime.text = "\(time)"
+        myTime.fontName = "DBLCDTempBlack"
         myTime.fontSize = 120
-        myTime.fontColor = UIColor.blackColor()
+        myTime.fontColor = UIColor.whiteColor()
         myTime.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        myTime.zPosition = 1
         
         mySpeed.text = "\(taps)"
+        mySpeed.fontName = "DBLCDTempBlack"
         mySpeed.fontSize = 120
-        mySpeed.fontColor = UIColor.blackColor()
+        mySpeed.fontColor = UIColor.whiteColor()
         mySpeed.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMinY(self.frame) + 20)
-    
+        mySpeed.zPosition = 1
+        
         myCar = SKSpriteNode(imageNamed: car1)
         myCar.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 300)
         
         mySpeedometer.position = CGPoint(x: CGRectGetMaxX(self.frame) - 130, y: CGRectGetMinY(self.frame) + 120)
-     
+        mySpeedometer.xScale *= 2
+        mySpeedometer.yScale *= 2
         
         road.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
         road.zPosition = -1
@@ -56,8 +63,8 @@ class SplitScreen: SKScene {
     }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches {
-            let location = touch.locationInNode(myCar)
-            print("touch")
+           // let location = touch.locationInNode(myCar.nodeAtPoint(self))
+            print("tapped")
             ++taps
         }
     }
