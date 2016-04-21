@@ -2,17 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "car4_pink-3.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "car4_pink-1.png",
+      "filename" : "road_1_singleplayer-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "car4_pink-2.png",
+      "filename" : "road_1_singleplayer-2.png",
       "scale" : "3x"
     }
   ],
