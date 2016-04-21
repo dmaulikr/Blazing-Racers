@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 
 class SplitScreen: SKScene {
-    var taps = 0
+    var taps = 120
     var time = 0
     var distance = 0
     let myDistance = SKLabelNode()
@@ -33,22 +33,24 @@ class SplitScreen: SKScene {
         myTime.fontName = "DBLCDTempBlack"
         myTime.fontSize = 120
         myTime.fontColor = UIColor.whiteColor()
-        myTime.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        myTime.position = CGPoint(x:CGRectGetMinX(self.frame) + 140, y:CGRectGetMidY(self.frame))
         myTime.zPosition = 1
         
         mySpeed.text = "\(taps)"
         mySpeed.fontName = "DBLCDTempBlack"
-        mySpeed.fontSize = 120
+        mySpeed.fontSize = 115
         mySpeed.fontColor = UIColor.whiteColor()
-        mySpeed.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMinY(self.frame) + 20)
+        mySpeed.position = CGPoint(x:CGRectGetMaxX(self.frame) - 130, y:CGRectGetMinY(self.frame) + 50)
         mySpeed.zPosition = 1
         
         myCar = SKSpriteNode(imageNamed: car1)
-        myCar.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 300)
+        myCar.name = "myCar"
+        myCar.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMinY(self.frame) + 300)
+        myCar.userInteractionEnabled = false
         
-        mySpeedometer.position = CGPoint(x: CGRectGetMaxX(self.frame) - 130, y: CGRectGetMinY(self.frame) + 120)
-        mySpeedometer.xScale *= 2
-        mySpeedometer.yScale *= 2
+        mySpeedometer.position = CGPoint(x: CGRectGetMaxX(self.frame) - 140, y: CGRectGetMinY(self.frame) + 120)
+        mySpeedometer.xScale *= 1.5
+        mySpeedometer.yScale *= 1.5
         
         road.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
         road.zPosition = -1
@@ -61,11 +63,18 @@ class SplitScreen: SKScene {
         self.addChild(mySpeedometer)
         self.addChild(road)
     }
+
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches {
-           // let location = touch.locationInNode(myCar.nodeAtPoint(self))
-            print("tapped")
-            ++taps
+            let location = touch.locationInNode(self)
+            let touchedNode = self.nodeAtPoint(location)
+            if let name = touchedNode.name {
+                if name == "\(myCar.name)" {
+                    print("tapped")
+                    ++taps
+                }
+            }
+            
         }
     }
 }
