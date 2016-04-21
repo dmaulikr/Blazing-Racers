@@ -22,15 +22,22 @@
                                 <state key="normal" title="One Player Racing"/>
                                 <connections>
                                     <action selector="singlePlayerButton:" destination="Toh-wO-etG" eventType="touchUpInside" id="C8J-BP-oXz"/>
+                                    <segue destination="NIk-yG-54r" kind="show" id="W1O-RH-B5s"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ln8-KY-qpd">
                                 <rect key="frame" x="192" y="443" width="128" height="30"/>
                                 <state key="normal" title="Splitscreen Racing"/>
+                                <connections>
+                                    <segue destination="Rvz-5g-qpx" kind="show" id="Li6-YM-U8C"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCA-33-BRC">
                                 <rect key="frame" x="183" y="498" width="146" height="30"/>
                                 <state key="normal" title="Bluetooth Multiplayer"/>
+                                <connections>
+                                    <segue destination="gMa-Vb-ydI" kind="show" id="HFP-Rt-6Z1"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HE3-hb-VKe">
                                 <rect key="frame" x="174" y="107" width="240" height="128"/>
@@ -75,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Af9-JD-tqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-495" y="329"/>
+            <point key="canvasLocation" x="-486" y="364"/>
         </scene>
         <!--Split Screen View-->
         <scene sceneID="NmY-o0-pWc">
@@ -92,6 +99,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lif-DU-gm0">
                                 <rect key="frame" x="233" y="497" width="134" height="30"/>
                                 <state key="normal" title="Split Screen Racing"/>
+                                <connections>
+                                    <segue destination="P6R-Ve-8In" kind="show" id="nmp-SC-XGs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -99,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CN5-6E-hp8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-495" y="1119"/>
+            <point key="canvasLocation" x="-486" y="1124"/>
         </scene>
         <!--Cars-->
         <scene sceneID="vZh-1t-JqV">
@@ -179,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLd-O7-5jT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="959" y="1119"/>
+            <point key="canvasLocation" x="959" y="1124"/>
         </scene>
         <!--Tracks-->
         <scene sceneID="P2Q-Uj-95q">
@@ -290,6 +300,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7LH-8Y-N7f">
                                 <rect key="frame" x="242" y="514" width="117" height="30"/>
                                 <state key="normal" title="Bluetooth Racing"/>
+                                <connections>
+                                    <segue destination="vX1-to-KTY" kind="show" id="8Sr-ZR-Mra"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -297,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PX5-el-K23" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-495" y="1896"/>
+            <point key="canvasLocation" x="-486" y="1845"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="Jow-kp-uNd">
