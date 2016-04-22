@@ -65,16 +65,21 @@ class SplitScreen: SKScene {
     }
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        for touch in touches {
-            let location = touch.locationInNode(self)
-            let touchedNode = self.nodeAtPoint(location)
-            if let name = touchedNode.name {
-                if name == "\(myCar.name)" {
-                    print("tapped")
-                    ++taps
-                }
-            }
-            
+//        //for touch in touches {
+//        let touch:UITouch = touches.
+//            let location = touch.locationInNode(self)
+//            let touchedNode = self.nodeAtPoint(location)
+//            if let name = touchedNode.name {
+//                if name == "myCar" {
+//                    print("tapped")
+//                    ++taps
+//                }
+//            }
+//            
+//        //}
+        let touch = touches.first!
+        if myCar.containsPoint(touch.locationInNode(self)) {
+            print("tapped")
         }
     }
 }
