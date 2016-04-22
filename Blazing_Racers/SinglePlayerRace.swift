@@ -10,6 +10,7 @@ import UIKit
 //memes
 class SinglePlayerRace: SKScene
 {
+    
     var taps = 0
     var time = 0
     var distance = 0
@@ -17,6 +18,9 @@ class SinglePlayerRace: SKScene
     let myDistance = SKLabelNode()
     let mySpeed = SKLabelNode()
     var myCar = SKSpriteNode()
+    var car1 = "car2_special"
+    let mySpeedometer = SKSpriteNode(imageNamed: "speedometer")
+    var road = SKSpriteNode(imageNamed: "road_singleplayer")
     override func didMoveToView(view: SKView)
     {
         myDistance.text = "\(distance)"
@@ -34,7 +38,19 @@ class SinglePlayerRace: SKScene
         mySpeed.fontColor = UIColor.blackColor()
         mySpeed.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMinY(self.frame) + 20)
         
-        myCar = SKSpriteNode(imageNamed: "car2_special")
+        myCar = SKSpriteNode(imageNamed: car1)
+        myCar.name = "myCar"
+        myCar.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMinY(self.frame) + 300)
+        myCar.userInteractionEnabled = false
+        
+        mySpeedometer.position = CGPoint(x: CGRectGetMaxX(self.frame) - 140, y: CGRectGetMinY(self.frame) + 120)
+        mySpeedometer.xScale *= 1.5
+        mySpeedometer.yScale *= 1.5
+        
+        road.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
+        road.zPosition = -1
+        road.size = self.frame.size
+
         
         self.addChild(mySpeed)
         self.addChild(myTime)

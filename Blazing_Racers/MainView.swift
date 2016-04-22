@@ -13,7 +13,8 @@ class MainViewViewController: UIViewController {
         super.didReceiveMemoryWarning()
 
     }
-    @IBAction func singlePlayerButton(sender: AnyObject) {
+    @IBAction func singlePlayerButton(sender: AnyObject)
+    {
        
     }
     
