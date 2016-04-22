@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 
 class SplitScreen: SKScene {
-    var taps = 120
+    var taps = 0
     var time = 0
     var distance = 0
     let myDistance = SKLabelNode()
@@ -65,21 +65,19 @@ class SplitScreen: SKScene {
     }
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//        //for touch in touches {
-//        let touch:UITouch = touches.
-//            let location = touch.locationInNode(self)
-//            let touchedNode = self.nodeAtPoint(location)
-//            if let name = touchedNode.name {
-//                if name == "myCar" {
-//                    print("tapped")
-//                    ++taps
-//                }
-//            }
-//            
-//        //}
-        let touch = touches.first!
-        if myCar.containsPoint(touch.locationInNode(self)) {
-            print("tapped")
+        for touch in touches {
+            let positionInScene = touch.locationInNode(self)
+            let touchedNode = self.nodeAtPoint(positionInScene)
+            
+            if let name = touchedNode.name {
+                if name == "myCar" {
+                    ++taps
+                    distance += taps * 114
+                    print("\(taps)")
+                    print("\(distance)")
+                }
+            }
+            
         }
     }
 }
