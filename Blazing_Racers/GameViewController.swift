@@ -22,7 +22,7 @@ class GameViewController: UIViewController {
             skView.showsFPS = true
             skView.showsNodeCount = true
             
-            myGameView.backgroundColor = UIColor(patternImage: UIImage(named: "road_singleplayer")!)
+          //  myGameView.backgroundColor = UIColor(patternImage: UIImage(named: "road_1_singleplayer")!)
             /* Sprite Kit applies additional optimizations to improve rendering performance */
             skView.ignoresSiblingOrder = true
             
