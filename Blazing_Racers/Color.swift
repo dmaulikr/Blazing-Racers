@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Color: UIViewController {
+class Color: UIViewController {//memes
 
     override func viewDidLoad() {
         super.viewDidLoad()
