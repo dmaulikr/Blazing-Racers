@@ -71,8 +71,10 @@ class SplitScreen: SKScene {
             
             if let name = touchedNode.name {
                 if name == "myCar" {
-                    ++taps
-                    distance += taps * 114
+                    taps += 3
+                    mySpeed.text = "\(taps)"
+                    distance += taps * 2
+                    myDistance.text = "\(distance)"
                     print("\(taps)")
                     print("\(distance)")
                 }
