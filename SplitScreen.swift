@@ -18,7 +18,7 @@ class SplitScreen: SKScene {
     let mySpeed = SKLabelNode()
     var myCar = SKSpriteNode()
     let mySpeedometer = SKSpriteNode(imageNamed: "speedometer")
-    var road = SKSpriteNode(imageNamed: "road_singleplayer")
+    var road = SKSpriteNode(imageNamed: "road_1_singleplayer")
     var car1 = "car2_grey"
     override func didMoveToView(view: SKView) {
         
