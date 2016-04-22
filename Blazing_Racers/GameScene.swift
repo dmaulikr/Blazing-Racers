@@ -3,7 +3,7 @@
 //  Blazing_Racers
 //
 //  Created by nmalin-jones on 3/29/16.
-//  Copyright (c) 2016 nmalin-balsamo-mexican-Stark. All rights reserved.
+//  Copyright (c) 2016 nmalin-balsamo-mexican-Stark. All memes reserved.
 
 
 

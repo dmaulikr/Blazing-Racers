@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//memes
 class SplitScreenView: UIViewController {
 
     override func viewDidLoad() {
