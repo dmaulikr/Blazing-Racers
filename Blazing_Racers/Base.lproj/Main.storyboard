@@ -241,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="doY-tD-mkr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="1875"/>
+            <point key="canvasLocation" x="1783" y="2551"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gYO-1h-uq5">
@@ -259,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAt-kG-9LS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2475" y="1878"/>
+            <point key="canvasLocation" x="2678" y="1878"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5RV-Bs-qfG">
@@ -283,7 +283,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLl-5f-Ccj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3147" y="1875"/>
+            <point key="canvasLocation" x="3383" y="1878"/>
         </scene>
         <!--Multiplayer View-->
         <scene sceneID="PSC-qh-WFY">
@@ -378,10 +378,10 @@
             </objects>
             <point key="canvasLocation" x="-2116" y="323"/>
         </scene>
-        <!--View Controller-->
+        <!--Tracks3-->
         <scene sceneID="Jep-gn-XWS">
             <objects>
-                <viewController id="6Ip-Ty-zup" sceneMemberID="viewController">
+                <viewController id="6Ip-Ty-zup" customClass="Tracks3" customModule="Blazing_Racers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xMp-gD-dlt"/>
                         <viewControllerLayoutGuide type="bottom" id="g4w-v2-pVU"/>
@@ -406,10 +406,10 @@
             </objects>
             <point key="canvasLocation" x="1783" y="1845"/>
         </scene>
-        <!--View Controller-->
+        <!--Tracks2-->
         <scene sceneID="KQH-Nh-dDM">
             <objects>
-                <viewController id="iDP-dN-Gk3" sceneMemberID="viewController">
+                <viewController id="iDP-dN-Gk3" customClass="Tracks2" customModule="Blazing_Racers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bU0-QP-FMA"/>
                         <viewControllerLayoutGuide type="bottom" id="WFN-GY-BH8"/>
@@ -434,10 +434,10 @@
             </objects>
             <point key="canvasLocation" x="1783" y="364"/>
         </scene>
-        <!--View Controller-->
+        <!--Color2-->
         <scene sceneID="fcs-EV-yVa">
             <objects>
-                <viewController id="kcb-nO-eEx" sceneMemberID="viewController">
+                <viewController id="kcb-nO-eEx" customClass="Color2" customModule="Blazing_Racers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bsH-8t-dgp"/>
                         <viewControllerLayoutGuide type="bottom" id="aqY-UG-raD"/>
@@ -478,10 +478,10 @@
             </objects>
             <point key="canvasLocation" x="959" y="364"/>
         </scene>
-        <!--View Controller-->
+        <!--Color3-->
         <scene sceneID="jIj-sH-T6q">
             <objects>
-                <viewController id="WDE-1I-gOe" sceneMemberID="viewController">
+                <viewController id="WDE-1I-gOe" customClass="Color3" customModule="Blazing_Racers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cYq-2l-KWM"/>
                         <viewControllerLayoutGuide type="bottom" id="38u-MC-qrY"/>
@@ -522,10 +522,10 @@
             </objects>
             <point key="canvasLocation" x="959" y="1845"/>
         </scene>
-        <!--View Controller-->
+        <!--Cars2-->
         <scene sceneID="cyM-AO-qtT">
             <objects>
-                <viewController id="N8M-QY-wKc" sceneMemberID="viewController">
+                <viewController id="N8M-QY-wKc" customClass="Cars2" customModule="Blazing_Racers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hd4-vU-uyo"/>
                         <viewControllerLayoutGuide type="bottom" id="Ddg-3y-Il8"/>
@@ -537,18 +537,30 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNY-Ze-nlw">
                                 <rect key="frame" x="107" y="285" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="kcb-nO-eEx" kind="show" id="jIo-E8-TVw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBM-5i-ssD">
                                 <rect key="frame" x="452" y="285" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="kcb-nO-eEx" kind="show" id="DhI-Ic-6eU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMf-Mg-xEn">
                                 <rect key="frame" x="107" y="345" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="kcb-nO-eEx" kind="show" id="JSJ-Nw-s5P"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htw-b9-60R">
                                 <rect key="frame" x="452" y="345" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="kcb-nO-eEx" kind="show" id="wbM-01-ldG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -558,10 +570,10 @@
             </objects>
             <point key="canvasLocation" x="223" y="364"/>
         </scene>
-        <!--View Controller-->
+        <!--Cars3-->
         <scene sceneID="z1i-c3-klC">
             <objects>
-                <viewController id="vX1-to-KTY" sceneMemberID="viewController">
+                <viewController id="vX1-to-KTY" customClass="Cars3" customModule="Blazing_Racers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9ml-9z-aWL"/>
                         <viewControllerLayoutGuide type="bottom" id="iHf-S1-XnS"/>
@@ -595,4 +607,7 @@
             <point key="canvasLocation" x="223" y="1845"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wbM-01-ldG"/>
+    </inferredMetricsTieBreakers>
 </document>
