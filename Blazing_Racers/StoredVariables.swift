@@ -4,9 +4,12 @@ import UIKit
 
 class StoredVariables: NSObject
 {
-  var amountOfPeople : Bool = true
-  var Bluetooth : Bool = true
- var car: String = ""
-    var color: String = ""
-    var track: String = ""
+    var singlePlayer = false
+    var timeTrial = false
+    var speedTest = false
+    var splitScreen = false
+    var Bluetooth = false
+    var car = ""
+    var color = ""
+    var track = ""
 }
