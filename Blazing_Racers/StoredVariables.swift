@@ -4,8 +4,9 @@ import UIKit
 
 class StoredVariables: NSObject
 {
-//Amount of people : Boolean
-//Bluetooth : boolean
-//car: String
-    
+  var amountOfPeople : Bool = true
+  var Bluetooth : Bool = true
+ var car: String = ""
+    var color: String = ""
+    var track: String = ""
 }
