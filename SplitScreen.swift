@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 
 class SplitScreen: SKScene {
-    var taps = 120
+    var taps = 0
     var time = 0
     var distance = 0
     let myDistance = SKLabelNode()
@@ -18,7 +18,7 @@ class SplitScreen: SKScene {
     let mySpeed = SKLabelNode()
     var myCar = SKSpriteNode()
     let mySpeedometer = SKSpriteNode(imageNamed: "speedometer")
-    var road = SKSpriteNode(imageNamed: "road_singleplayer")
+    var road = SKSpriteNode(imageNamed: "road_1_singleplayer")
     var car1 = "car2_grey"
     override func didMoveToView(view: SKView) {
         
@@ -66,12 +66,17 @@ class SplitScreen: SKScene {
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches {
-            let location = touch.locationInNode(self)
-            let touchedNode = self.nodeAtPoint(location)
+            let positionInScene = touch.locationInNode(self)
+            let touchedNode = self.nodeAtPoint(positionInScene)
+            
             if let name = touchedNode.name {
-                if name == "\(myCar.name)" {
-                    print("tapped")
-                    ++taps
+                if name == "myCar" {
+                    taps += 3
+                    mySpeed.text = "\(taps)"
+                    distance += taps * 2
+                    myDistance.text = "\(distance)"
+                    print("\(taps)")
+                    print("\(distance)")
                 }
             }
             
