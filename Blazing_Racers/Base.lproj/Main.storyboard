@@ -21,22 +21,26 @@
                                 <rect key="frame" x="194" y="380" width="125" height="30"/>
                                 <state key="normal" title="One Player Racing"/>
                                 <connections>
+                                    <action selector="onePlayerButtonTapped:" destination="Toh-wO-etG" eventType="touchUpInside" id="aob-5P-9Tg"/>
                                     <action selector="singlePlayerButton:" destination="Toh-wO-etG" eventType="touchUpInside" id="C8J-BP-oXz"/>
-                                    <segue destination="NIk-yG-54r" kind="show" id="W1O-RH-B5s"/>
+                                    <segue destination="NIk-yG-54r" kind="show" identifier="onePlayerSegue" id="W1O-RH-B5s"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ln8-KY-qpd">
                                 <rect key="frame" x="192" y="443" width="128" height="30"/>
                                 <state key="normal" title="Splitscreen Racing"/>
                                 <connections>
-                                    <segue destination="Rvz-5g-qpx" kind="show" id="Li6-YM-U8C"/>
+                                    <action selector="onePlayerButtonTapped:" destination="Toh-wO-etG" eventType="touchUpInside" id="bHX-ya-G2n"/>
+                                    <action selector="splitScreenButtonTapped:" destination="Toh-wO-etG" eventType="touchUpInside" id="DxR-VW-IvT"/>
+                                    <segue destination="Rvz-5g-qpx" kind="show" identifier="splitScreenSegue" id="Li6-YM-U8C"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCA-33-BRC">
                                 <rect key="frame" x="183" y="498" width="146" height="30"/>
                                 <state key="normal" title="Bluetooth Multiplayer"/>
                                 <connections>
-                                    <segue destination="gMa-Vb-ydI" kind="show" id="HFP-Rt-6Z1"/>
+                                    <action selector="multiPlayerButtonTapped:" destination="Toh-wO-etG" eventType="touchUpInside" id="b2F-DW-9SC"/>
+                                    <segue destination="gMa-Vb-ydI" kind="show" identifier="multiPlayerSegue" id="HFP-Rt-6Z1"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HE3-hb-VKe">
@@ -352,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PX5-el-K23" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-486" y="1845"/>
+            <point key="canvasLocation" x="-486" y="1825"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="Jow-kp-uNd">
