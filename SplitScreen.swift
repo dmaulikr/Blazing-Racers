@@ -10,18 +10,28 @@ import UIKit
 import SpriteKit
 
 class SplitScreen: SKScene {
+    //Int Variables
     var taps = 0
-    var time = 0
     var distance = 0
+    var milisecond = 0
+    var second = 3
+    var minute = 0
+    //Timer Variables
+    var timerOne = NSTimer()
+    var timerTwo = NSTimer()
+    //Node Variables
     let myDistance = SKLabelNode()
     let myTime = SKLabelNode()
     let mySpeed = SKLabelNode()
     var myCar = SKSpriteNode()
+    //Specific Node Variables
+    var myButton = SKSpriteNode(imageNamed: "button_tap")
     let mySpeedometer = SKSpriteNode(imageNamed: "speedometer")
     var road = SKSpriteNode(imageNamed: "road_1_singleplayer")
     var car1 = "car2_grey"
+   
     override func didMoveToView(view: SKView) {
-        
+        //Distance label with features(to be deleted once do
         myDistance.text = "\(distance)"
         myDistance.fontName = "DBLCDTempBlack"
         myDistance.fontSize = 120
@@ -29,7 +39,7 @@ class SplitScreen: SKScene {
         myDistance.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMaxY(self.frame) - 100)
         myDistance.zPosition = 1
         
-        myTime.text = "\(time)"
+        myTime.text = "\(second)"
         myTime.fontName = "DBLCDTempBlack"
         myTime.fontSize = 120
         myTime.fontColor = UIColor.whiteColor()
@@ -40,22 +50,27 @@ class SplitScreen: SKScene {
         mySpeed.fontName = "DBLCDTempBlack"
         mySpeed.fontSize = 115
         mySpeed.fontColor = UIColor.whiteColor()
-        mySpeed.position = CGPoint(x:CGRectGetMaxX(self.frame) - 130, y:CGRectGetMinY(self.frame) + 50)
+        mySpeed.position = CGPoint(x:CGRectGetMaxX(self.frame) - 130, y:CGRectGetMinY(self.frame) + 180)
         mySpeed.zPosition = 1
         
         myCar = SKSpriteNode(imageNamed: car1)
-        myCar.name = "myCar"
         myCar.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMinY(self.frame) + 300)
         myCar.userInteractionEnabled = false
         
-        mySpeedometer.position = CGPoint(x: CGRectGetMaxX(self.frame) - 140, y: CGRectGetMinY(self.frame) + 120)
+        mySpeedometer.position = CGPoint(x: CGRectGetMaxX(self.frame) - 140, y: CGRectGetMinY(self.frame) + 250)
         mySpeedometer.xScale *= 1.5
         mySpeedometer.yScale *= 1.5
         
         road.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
         road.zPosition = -1
         road.size = self.frame.size
-            
+        
+        myButton.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMinY(self.frame) + 70)
+        myButton.name = "button"
+        myButton.xScale *= 5
+        myButton.yScale *= 3
+        
+        self.addChild(myButton)
         self.addChild(mySpeed)
         self.addChild(myTime)
         self.addChild(myDistance)
@@ -70,14 +85,33 @@ class SplitScreen: SKScene {
             let touchedNode = self.nodeAtPoint(positionInScene)
             
             if let name = touchedNode.name {
-                if name == "myCar" {
-                    ++taps
-                    distance += taps * 114
+                if name == "button" {
+                    taps += 3
+                    mySpeed.text = "\(taps)"
+                    distance += taps * 2
+                    myDistance.text = "\(distance)"
                     print("\(taps)")
                     print("\(distance)")
                 }
             }
             
         }
+    }
+    func countdown() {
+        timerOne = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "countdownAction", userInfo: nil, repeats: true)
+    }
+    func countdownAction() {
+        second -= 1
+        switchToClock()
+        displayCountdown()
+    }
+    func switchToClock() {
+        if second == 0 {
+           myTime.text = "00:00.00"
+            timerOne = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerAction", userInfo: nil, repeats: true)
+        }
+    }
+    func displayCountdown() {
+        myTime.text = "\(second)"
     }
 }

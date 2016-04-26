@@ -1,13 +1,15 @@
-//
-//  StoredVariables.swift
-//  Blazing_Racers
-//
-//  Created by nmalin-jones on 4/14/16.
-//  Copyright © 2016 nmalin-jones. All rights reserved.
-//
+
 
 import UIKit
 
-class StoredVariables: NSObject {
-//meme
+class StoredVariables: NSObject
+{
+    var singlePlayer = false
+    var timeTrial = false
+    var speedTest = false
+    var splitScreen = false
+    var Bluetooth = false
+    var car = ""
+    var color = ""
+    var track = ""
 }
