@@ -136,6 +136,7 @@ class SplitScreen: SKScene {
             minute++
         }
     }
+    
         func time() {
             if minute < 10 && second < 10 && milisecond < 10
             {
