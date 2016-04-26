@@ -112,15 +112,16 @@ class SplitScreen: SKScene {
             timerOne.invalidate()
            myTime.text = "00:00.00"
             myTime.fontSize = 70
+            newTimer()
         }
     }
     func newTimer() {
-        timerOne = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerAction", userInfo: nil, repeats: true)
+        timerOne = NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: "timerAction", userInfo: nil, repeats: true)
     }
     func timerAction() {
         ++milisecond
         rollover()
-        
+        time()
     }
     func rollover() {
         if milisecond > 59
@@ -134,6 +135,7 @@ class SplitScreen: SKScene {
             second = 0
             minute++
         }
+    }
         func time() {
             if minute < 10 && second < 10 && milisecond < 10
             {
