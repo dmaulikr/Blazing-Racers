@@ -43,7 +43,7 @@ class SplitScreen: SKScene {
         myTime.fontName = "DBLCDTempBlack"
         myTime.fontSize = 120
         myTime.fontColor = UIColor.whiteColor()
-        myTime.position = CGPoint(x:CGRectGetMinX(self.frame) + 140, y:CGRectGetMidY(self.frame))
+        myTime.position = CGPoint(x:CGRectGetMinX(self.frame) + 150, y:CGRectGetMidY(self.frame))
         myTime.zPosition = 1
         
         mySpeed.text = "\(taps)"
@@ -69,6 +69,8 @@ class SplitScreen: SKScene {
         myButton.name = "button"
         myButton.xScale *= 5
         myButton.yScale *= 3
+        
+        countdown()
         
         self.addChild(myButton)
         self.addChild(mySpeed)
@@ -102,15 +104,67 @@ class SplitScreen: SKScene {
     }
     func countdownAction() {
         second -= 1
-        switchToClock()
         displayCountdown()
+        switchToClock()
     }
     func switchToClock() {
         if second == 0 {
+            timerOne.invalidate()
            myTime.text = "00:00.00"
-            timerOne = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerAction", userInfo: nil, repeats: true)
+            myTime.fontSize = 70
         }
     }
+    func newTimer() {
+        timerOne = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerAction", userInfo: nil, repeats: true)
+    }
+    func timerAction() {
+        ++milisecond
+        rollover()
+        
+    }
+    func rollover() {
+        if milisecond > 59
+        {
+            milisecond = 0
+            second++
+        }
+        if second > 59
+        {
+            milisecond = 0
+            second = 0
+            minute++
+        }
+        func time() {
+            if minute < 10 && second < 10 && milisecond < 10
+            {
+                myTime.text = "0\(minute):0\(second).0\(milisecond)"
+            }
+            if minute < 10 && second < 10 && milisecond >= 10
+            {
+                myTime.text = "0\(minute):0\(second).\(milisecond)"
+            }
+            if minute < 10 && second >= 10 && milisecond < 10
+            {
+                myTime.text = "0\(minute):\(second).0\(milisecond)"
+            }
+            if minute >= 10 && second < 10 && milisecond < 10
+            {
+                myTime.text = "\(minute):0\(second).0\(milisecond)"
+            }
+            if minute < 10 && second >= 10 && milisecond >= 10
+            {
+                myTime.text = "0\(minute):\(second).\(milisecond)"
+            }
+            if minute >= 10 && second < 10 && milisecond >= 10
+            {
+                myTime.text = "\(minute):0\(second).\(milisecond)"
+            }
+            if minute >= 10 && second >= 10 && milisecond < 10
+            {
+                myTime.text = "\(minute):\(second).0\(milisecond)"
+            }
+        }
+        
     func displayCountdown() {
         myTime.text = "\(second)"
     }
