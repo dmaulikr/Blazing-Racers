@@ -33,7 +33,7 @@ var variables = StoredVariables()
         let multiVC = segue.destinationViewController as! MultiplayerView
         let splitVC = segue.destinationViewController as! SplitScreenView
         if segue.identifier == "onePlayerSegue" {
-            variables.singlePlayer = true
+            singleVC.dataToPass = "true"
             print(variables.singlePlayer.boolValue)
         } else if segue.identifier == "splitScreenSegue" {
             variables.splitScreen = true
