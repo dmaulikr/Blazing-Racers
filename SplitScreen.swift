@@ -116,7 +116,7 @@ class SplitScreen: SKScene {
         }
     }
     func newTimer() {
-        timerOne = NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: "timerAction", userInfo: nil, repeats: true)
+        timerOne = NSTimer.scheduledTimerWithTimeInterval(0.0017, target: self, selector: "timerAction", userInfo: nil, repeats: true)
     }
     func timerAction() {
         ++milisecond
