@@ -9,9 +9,12 @@
 import UIKit
 
 class SinglePlayerView: UIViewController {
+    
+    var dataToPass = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(dataToPass)
 
         // Do any additional setup after loading the view.
     }
