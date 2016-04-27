@@ -122,7 +122,7 @@ class SplitScreen: SKScene {
         ++milisecond
         rollover()
         time()
-        //speedFormula()
+        speedFormula()
     }
     func rollover() {
         if milisecond > 59
@@ -138,8 +138,8 @@ class SplitScreen: SKScene {
         }
     }
     func speedFormula() {
-        if second % 2 == 0{
-            taps += 1
+        if second / 2 == 0{
+            taps -= 1
         }
     }
         func time() {
