@@ -3,11 +3,11 @@ import UIKit
 
 class SinglePlayerView: UIViewController {
     
-    var dataToPass = StoredVariables()
+    var variables = StoredVariables()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(dataToPass.singlePlayer.boolValue)
+        print(variables.singlePlayer.boolValue)
 
     }
 
