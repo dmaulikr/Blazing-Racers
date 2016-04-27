@@ -9,7 +9,7 @@
 import UIKit
 
 class MultiplayerView: UIViewController {
-
+var variables = StoredVariables()
     override func viewDidLoad() {
         super.viewDidLoad()
         //memes
