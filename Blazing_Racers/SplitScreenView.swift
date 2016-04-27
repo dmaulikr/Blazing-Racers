@@ -9,7 +9,7 @@
 import UIKit
 //memes
 class SplitScreenView: UIViewController {
-
+var variables = StoredVariables()
     override func viewDidLoad() {
         super.viewDidLoad()
 

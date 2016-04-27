@@ -32,12 +32,13 @@ variables.Bluetooth = true
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "singlePlayerSegue" {
             let singleVC = segue.destinationViewController as! SinglePlayerView
-            singleVC.dataToPass = variables
+            singleVC.variables = variables
         } else if segue.identifier == "splitscreenSegue" {
-            let multiVC = segue.destinationViewController as! MultiplayerView
-        } else if segue.identifier == "multiPlayerSegue" {
             let splitVC = segue.destinationViewController as! SplitScreenView
-            
+            splitVC.variables = variables
+        } else if segue.identifier == "multiPlayerSegue" {
+            let multiVC = segue.destinationViewController as! MultiplayerView
+            multiVC.variables = variables
         }
     }
 }

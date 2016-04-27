@@ -21,8 +21,8 @@
                                 <rect key="frame" x="194" y="380" width="125" height="30"/>
                                 <state key="normal" title="One Player Racing"/>
                                 <connections>
-                                    <action selector="onePlayerButtonTapped:" destination="Toh-wO-etG" eventType="touchUpInside" id="awG-Ap-eOP"/>
-                                    <segue destination="NIk-yG-54r" kind="show" identifier="singlePlayerSegue" id="268-7u-M0K"/>
+                                    <action selector="onePlayerButtonTapped:" destination="Toh-wO-etG" eventType="touchUpInside" id="aob-5P-9Tg"/>
+                                    <segue destination="NIk-yG-54r" kind="show" identifier="onePlayerSegue" id="W1O-RH-B5s"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ln8-KY-qpd">
@@ -38,6 +38,7 @@
                                 <state key="normal" title="Bluetooth Multiplayer"/>
                                 <connections>
                                     <action selector="multiPlayerButtonTapped:" destination="Toh-wO-etG" eventType="touchUpInside" id="b2F-DW-9SC"/>
+                                    <segue destination="gMa-Vb-ydI" kind="show" identifier="multiPlayerSegue" id="jlJ-s9-dKI"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HE3-hb-VKe">
@@ -73,14 +74,14 @@
                                 <rect key="frame" x="390" y="467" width="82" height="30"/>
                                 <state key="normal" title="Speed Race"/>
                                 <connections>
-                                    <segue destination="N8M-QY-wKc" kind="show" id="yVF-9p-foR"/>
+                                    <segue destination="N8M-QY-wKc" kind="show" identifier="speedRaceSegue" id="yVF-9p-foR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W37-AM-pBk">
                                 <rect key="frame" x="129" y="467" width="68" height="30"/>
                                 <state key="normal" title="Time Trial"/>
                                 <connections>
-                                    <segue destination="N8M-QY-wKc" kind="show" id="E5O-1v-HX3"/>
+                                    <segue destination="N8M-QY-wKc" kind="show" identifier="timeTrialSegue" id="E5O-1v-HX3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -353,7 +354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PX5-el-K23" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-486" y="1825"/>
+            <point key="canvasLocation" x="-486" y="1845"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="Jow-kp-uNd">
@@ -623,7 +624,7 @@
                                 <rect key="frame" x="107" y="285" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="kcb-nO-eEx" kind="show" id="jIo-E8-TVw"/>
+                                    <segue destination="kcb-nO-eEx" kind="show" identifier="car1Segue" id="jIo-E8-TVw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBM-5i-ssD">
@@ -705,13 +706,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yVF-9p-foR"/>
-        <segue reference="wbM-01-ldG"/>
-        <segue reference="nBF-Fh-M1K"/>
-        <segue reference="UEJ-J0-3wE"/>
+        <segue reference="zYs-13-UMl"/>
         <segue reference="WrZ-6N-2RG"/>
         <segue reference="zhY-QD-SWV"/>
-        <segue reference="zYs-13-UMl"/>
+        <segue reference="E5O-1v-HX3"/>
+        <segue reference="JSJ-Nw-s5P"/>
+        <segue reference="nBF-Fh-M1K"/>
+        <segue reference="UEJ-J0-3wE"/>
         <segue reference="xHb-W5-y06"/>
     </inferredMetricsTieBreakers>
 </document>
