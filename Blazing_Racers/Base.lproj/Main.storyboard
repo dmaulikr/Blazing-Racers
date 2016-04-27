@@ -30,7 +30,7 @@
                                 <state key="normal" title="Splitscreen Racing"/>
                                 <connections>
                                     <action selector="splitScreenButtonTapped:" destination="Toh-wO-etG" eventType="touchUpInside" id="DxR-VW-IvT"/>
-                                    <segue destination="Rvz-5g-qpx" kind="show" identifier="splitScreenSegue" id="Li6-YM-U8C"/>
+                                    <segue destination="Rvz-5g-qpx" kind="show" identifier="splitscreenSegue" id="P30-ZQ-eMb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCA-33-BRC">
@@ -38,7 +38,6 @@
                                 <state key="normal" title="Bluetooth Multiplayer"/>
                                 <connections>
                                     <action selector="multiPlayerButtonTapped:" destination="Toh-wO-etG" eventType="touchUpInside" id="b2F-DW-9SC"/>
-                                    <segue destination="gMa-Vb-ydI" kind="show" identifier="multiPlayerSegue" id="HFP-Rt-6Z1"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HE3-hb-VKe">
