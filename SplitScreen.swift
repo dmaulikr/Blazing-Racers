@@ -88,7 +88,7 @@ class SplitScreen: SKScene {
             
             if let name = touchedNode.name {
                 if name == "button" {
-                    taps += 3
+                    ++taps
                     mySpeed.text = "\(taps)"
                     distance += taps * 2
                     myDistance.text = "\(distance)"
@@ -122,6 +122,7 @@ class SplitScreen: SKScene {
         ++milisecond
         rollover()
         time()
+        //speedFormula()
     }
     func rollover() {
         if milisecond > 59
@@ -136,7 +137,11 @@ class SplitScreen: SKScene {
             minute++
         }
     }
-    
+    func speedFormula() {
+        if second % 2 == 0{
+            taps += 1
+        }
+    }
         func time() {
             if minute < 10 && second < 10 && milisecond < 10
             {
