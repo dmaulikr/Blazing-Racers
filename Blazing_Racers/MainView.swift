@@ -6,6 +6,7 @@ class MainViewViewController: UIViewController {
 var variables = StoredVariables()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "main_title.png")!)
 
     }
 
