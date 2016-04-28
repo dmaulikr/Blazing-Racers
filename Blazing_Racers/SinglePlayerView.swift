@@ -16,6 +16,15 @@ class SinglePlayerView: UIViewController {
         
     }
     
+    @IBAction func button_TimeTrial(sender: UIButton)
+    {
+        
+    }
+    @IBAction func button_SpeedRace(sender: UIButton)
+    {
+        
+    }
+    
 
 
 }

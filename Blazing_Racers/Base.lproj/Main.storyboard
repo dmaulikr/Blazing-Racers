@@ -75,6 +75,7 @@
                                 <rect key="frame" x="115" y="379" width="68" height="30"/>
                                 <state key="normal" title="Time Trial"/>
                                 <connections>
+                                    <action selector="button_TimeTrial:" destination="NIk-yG-54r" eventType="touchUpInside" id="Kgu-go-dg5"/>
                                     <segue destination="N8M-QY-wKc" kind="show" identifier="timeTrialSegue" id="E5O-1v-HX3"/>
                                 </connections>
                             </button>
@@ -82,6 +83,7 @@
                                 <rect key="frame" x="101" y="475" width="82" height="30"/>
                                 <state key="normal" title="Speed Race"/>
                                 <connections>
+                                    <action selector="button_SpeedRace:" destination="NIk-yG-54r" eventType="touchUpInside" id="9Xw-yV-lZr"/>
                                     <segue destination="N8M-QY-wKc" kind="show" identifier="speedRaceSegue" id="yVF-9p-foR"/>
                                 </connections>
                             </button>
@@ -113,6 +115,7 @@
                                 <rect key="frame" x="233" y="497" width="134" height="30"/>
                                 <state key="normal" title="Split Screen Racing"/>
                                 <connections>
+                                    <action selector="button_SplitScreen:" destination="Rvz-5g-qpx" eventType="touchUpInside" id="x3M-7Q-JkE"/>
                                     <segue destination="P6R-Ve-8In" kind="show" identifier="sSRSegue" id="nmp-SC-XGs"/>
                                 </connections>
                             </button>
@@ -375,6 +378,7 @@
                                 <rect key="frame" x="242" y="514" width="117" height="30"/>
                                 <state key="normal" title="Bluetooth Racing"/>
                                 <connections>
+                                    <action selector="button_BluetoothRacing:" destination="gMa-Vb-ydI" eventType="touchUpInside" id="mXj-gn-dJn"/>
                                     <segue destination="vX1-to-KTY" kind="show" identifier="multiPlayerRaceSegue" id="8Sr-ZR-Mra"/>
                                 </connections>
                             </button>
@@ -672,35 +676,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNY-Ze-nlw">
-                                <rect key="frame" x="107" y="285" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="99" y="285" width="62" height="30"/>
+                                <state key="normal" title="Car Set 1"/>
                                 <connections>
                                     <action selector="car5ButtonTapped:" destination="N8M-QY-wKc" eventType="touchUpInside" id="D0O-MB-PPx"/>
                                     <segue destination="kcb-nO-eEx" kind="show" identifier="car5Segue" id="jIo-E8-TVw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBM-5i-ssD">
-                                <rect key="frame" x="452" y="285" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="car6ButtonTapped:" destination="N8M-QY-wKc" eventType="touchUpInside" id="Af1-ZH-r3H"/>
-                                    <segue destination="kcb-nO-eEx" kind="show" identifier="car6Segue" id="DhI-Ic-6eU"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMf-Mg-xEn">
-                                <rect key="frame" x="107" y="345" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="98" y="345" width="65" height="30"/>
+                                <state key="normal" title="Car Set 3"/>
                                 <connections>
                                     <action selector="car7ButtonTapped:" destination="N8M-QY-wKc" eventType="touchUpInside" id="KNN-rY-9J2"/>
                                     <segue destination="kcb-nO-eEx" kind="show" identifier="car7Segue" id="JSJ-Nw-s5P"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htw-b9-60R">
-                                <rect key="frame" x="452" y="345" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="443" y="345" width="65" height="30"/>
+                                <state key="normal" title="Car Set 4"/>
                                 <connections>
                                     <action selector="car8Segue:" destination="N8M-QY-wKc" eventType="touchUpInside" id="snB-rG-kvu"/>
                                     <segue destination="kcb-nO-eEx" kind="show" identifier="car8Segue" id="wbM-01-ldG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBM-5i-ssD">
+                                <rect key="frame" x="444" y="285" width="64" height="30"/>
+                                <state key="normal" title="Car Set 2"/>
+                                <connections>
+                                    <action selector="car6ButtonTapped:" destination="N8M-QY-wKc" eventType="touchUpInside" id="Af1-ZH-r3H"/>
+                                    <segue destination="kcb-nO-eEx" kind="show" identifier="car6Segue" id="DhI-Ic-6eU"/>
                                 </connections>
                             </button>
                         </subviews>
