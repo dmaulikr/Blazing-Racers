@@ -100,6 +100,9 @@ class SplitScreen: SKScene {
             
         }
     }
+    func speedDecreaser() {
+        timerDecrease = NSTimer.scheduledTimerWithTimeInterval(0.0017, target: self, selector: "speedFormula", userInfo: nil, repeats: true)
+    }
     func countdown() {
         timerOne = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "countdownAction", userInfo: nil, repeats: true)
     }
@@ -123,7 +126,7 @@ class SplitScreen: SKScene {
         ++milisecond
         rollover()
         time()
-        speedFormula()
+        speedDecreaser()
     }
     func rollover() {
         if milisecond > 59
@@ -139,10 +142,14 @@ class SplitScreen: SKScene {
         }
     }
     func speedFormula() {
-        if second / 2 == 0{
-            taps -= 1
+        if taps < 0 {
+            taps = 0
+            mySpeed.text = "\(taps)"
+        } else {
+            taps -= 2
         }
-    }
+        }
+
         func time() {
             if minute < 10 && second < 10 && milisecond < 10
             {
@@ -173,7 +180,7 @@ class SplitScreen: SKScene {
                 myTime.text = "\(minute):\(second).0\(milisecond)"
             }
         }
-        
+    
     func displayCountdown() {
         myTime.text = "\(second)"
     }
