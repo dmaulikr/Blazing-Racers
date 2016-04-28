@@ -19,6 +19,7 @@ class SplitScreen: SKScene {
     //Timer Variables
     var timerOne = NSTimer()
     var timerTwo = NSTimer()
+    var timerDecrease = NSTimer()
     //Node Variables
     let myDistance = SKLabelNode()
     let myTime = SKLabelNode()
