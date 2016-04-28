@@ -20,16 +20,30 @@ class Color3: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func color13ButtonTapped(sender: AnyObject)
+    {
+        
     }
-    */
+    @IBAction func color14ButtonTapped(sender: AnyObject)
+    {
+        
+    }
+    
+    @IBAction func color15ButtonTapped(sender: AnyObject)
+    {
+        
+    }
+    @IBAction func color16ButtonTapped(sender: AnyObject)
+    {
+        
+    }
+    @IBAction func color17ButtonTapped(sender: AnyObject)
+    {
+        
+    }
+    @IBAction func color18ButtonTapped(sender: AnyObject)
+    {
+        
+    }
 
 }

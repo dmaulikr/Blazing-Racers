@@ -20,16 +20,24 @@ class Cars2: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func car5ButtonTapped(sender: AnyObject)
+    {
+        
+    }
+   
+    @IBAction func car6ButtonTapped(sender: AnyObject)
+    {
+        
+    }
+    @IBAction func car7ButtonTapped(sender: AnyObject)
+    {
+        
+    }
+    @IBAction func car8Segue(sender: AnyObject)
+    {
+        
+    }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
