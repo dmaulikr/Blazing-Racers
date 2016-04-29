@@ -18,35 +18,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3M-f1-shT">
-                                <rect key="frame" x="194" y="380" width="125" height="30"/>
-                                <state key="normal" title="One Player Racing"/>
-                                <connections>
-                                    <action selector="onePlayerButtonTapped:" destination="Toh-wO-etG" eventType="touchUpInside" id="aob-5P-9Tg"/>
-                                    <segue destination="NIk-yG-54r" kind="show" identifier="onePlayerSegue" id="W1O-RH-B5s"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ln8-KY-qpd">
-                                <rect key="frame" x="192" y="443" width="128" height="30"/>
-                                <state key="normal" title="Splitscreen Racing"/>
+                                <rect key="frame" x="184" y="443" width="144" height="30"/>
+                                <color key="backgroundColor" red="0.99204033613204956" green="0.9924272894859314" blue="0.9956931471824646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="  Splitscreen Racing  ">
+                                    <color key="titleColor" red="0.48804634809494019" green="0.1178484782576561" blue="0.088988982141017914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="splitScreenButtonTapped:" destination="Toh-wO-etG" eventType="touchUpInside" id="DxR-VW-IvT"/>
                                     <segue destination="Rvz-5g-qpx" kind="show" identifier="splitscreenSegue" id="P30-ZQ-eMb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCA-33-BRC">
-                                <rect key="frame" x="183" y="498" width="146" height="30"/>
-                                <state key="normal" title="Bluetooth Multiplayer"/>
+                                <rect key="frame" x="175" y="498" width="162" height="30"/>
+                                <color key="backgroundColor" red="0.99204033613204956" green="0.9924272894859314" blue="0.9956931471824646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="  Bluetooth Multiplayer  ">
+                                    <color key="titleColor" red="0.48804634809494019" green="0.1178484782576561" blue="0.088988982141017914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="multiPlayerButtonTapped:" destination="Toh-wO-etG" eventType="touchUpInside" id="b2F-DW-9SC"/>
                                     <segue destination="gMa-Vb-ydI" kind="show" identifier="multiPlayerSegue" id="jlJ-s9-dKI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3M-f1-shT">
+                                <rect key="frame" x="186" y="380" width="141" height="30"/>
+                                <color key="backgroundColor" red="0.99204033613204956" green="0.9924272894859314" blue="0.9956931471824646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="  One Player Racing  ">
+                                    <color key="titleColor" red="0.48804634809494019" green="0.1178484782576561" blue="0.088988982141017914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onePlayerButtonTapped:" destination="Toh-wO-etG" eventType="touchUpInside" id="aob-5P-9Tg"/>
+                                    <segue destination="NIk-yG-54r" kind="show" identifier="onePlayerSegue" id="W1O-RH-B5s"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ln8-KY-qpd" firstAttribute="centerX" secondItem="DCd-Yw-wa9" secondAttribute="centerX" id="80v-Bb-zv4"/>
+                            <constraint firstItem="PCA-33-BRC" firstAttribute="top" secondItem="Ln8-KY-qpd" secondAttribute="bottom" constant="30" id="CFV-T1-M25"/>
                             <constraint firstItem="PCA-33-BRC" firstAttribute="centerX" secondItem="DCd-Yw-wa9" secondAttribute="centerX" id="EBP-3V-asH"/>
+                            <constraint firstItem="Ln8-KY-qpd" firstAttribute="top" secondItem="R3M-f1-shT" secondAttribute="bottom" constant="33" id="H2c-0l-Zhf"/>
                             <constraint firstItem="R3M-f1-shT" firstAttribute="centerX" secondItem="DCd-Yw-wa9" secondAttribute="centerX" id="R7n-YK-4M1"/>
                             <constraint firstItem="R3M-f1-shT" firstAttribute="centerX" secondItem="DCd-Yw-wa9" secondAttribute="centerX" id="SoC-Ch-Fe7"/>
                             <constraint firstItem="PCA-33-BRC" firstAttribute="centerX" secondItem="DCd-Yw-wa9" secondAttribute="centerX" id="pOS-aq-Dge"/>
@@ -54,6 +65,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DFW-zk-N3l"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="button_bluetoothmultiplayer" destination="PCA-33-BRC" id="LZG-91-qUI"/>
+                        <outlet property="button_oneplayerracing" destination="R3M-f1-shT" id="ueN-Rb-Zz4"/>
+                        <outlet property="button_splitscreenracing" destination="Ln8-KY-qpd" id="YXW-K6-V2R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r55-pl-GbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
