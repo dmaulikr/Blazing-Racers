@@ -66,6 +66,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="DFW-zk-N3l"/>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="button_bluetoothmultiplayer" destination="PCA-33-BRC" id="LZG-91-qUI"/>
                         <outlet property="button_oneplayerracing" destination="R3M-f1-shT" id="ueN-Rb-Zz4"/>
@@ -124,6 +125,7 @@
                             <constraint firstItem="yas-f7-f0d" firstAttribute="centerX" secondItem="Hwb-lT-bTP" secondAttribute="centerX" id="fmi-4p-Oje"/>
                         </constraints>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="button_speedrace" destination="e3Z-3b-zTa" id="mCC-eb-tsl"/>
                         <outlet property="button_timetrial" destination="W37-AM-pBk" id="I9j-da-QJm"/>
@@ -162,6 +164,7 @@
                             <constraint firstItem="lif-DU-gm0" firstAttribute="centerX" secondItem="MZG-aN-eoH" secondAttribute="centerX" id="hEY-Tq-NXb"/>
                         </constraints>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CN5-6E-hp8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -242,6 +245,7 @@
                             <constraint firstItem="kRD-oI-9jv" firstAttribute="top" secondItem="ddi-3J-RId" secondAttribute="bottom" constant="30" id="zST-bi-r8H"/>
                         </constraints>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="button_carset1" destination="ddi-3J-RId" id="TAc-pR-gcT"/>
                         <outlet property="button_carset2" destination="qc5-Yf-Nlw" id="oR6-RE-Ol6"/>
@@ -347,6 +351,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="button_black" destination="dzw-PZ-D2m" id="a4E-hV-Eds"/>
                         <outlet property="button_blue" destination="hhh-rB-B3y" id="AyU-Pi-msl"/>
@@ -404,6 +409,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="button_track1" destination="X9J-Ig-B78" id="4OR-j0-jQc"/>
                         <outlet property="button_track2" destination="5rn-Ga-usf" id="yfv-uZ-LGM"/>
@@ -505,6 +511,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PX5-el-K23" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -617,6 +624,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="button_track1" destination="aBX-nt-J44" id="2rQ-nt-zLS"/>
                         <outlet property="button_track2" destination="J4B-GC-usB" id="dVb-fa-kwz"/>
@@ -669,6 +677,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="button_track1" destination="3p2-hM-8fr" id="kbP-0r-KzY"/>
                         <outlet property="button_track2" destination="dhs-pd-rC2" id="Vfb-6G-b3B"/>
@@ -773,6 +782,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="button_black" destination="pNE-oD-Ymz" id="Tgn-V0-Mys"/>
                         <outlet property="button_blue" destination="2t3-zV-r9r" id="Y7P-r6-Jlg"/>
@@ -881,6 +891,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="button_black" destination="Jd4-Bq-XJy" id="4P3-tR-kDQ"/>
                         <outlet property="button_blue" destination="jiC-yU-uvw" id="cIU-bd-Gqj"/>
@@ -960,6 +971,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="button_carset1" destination="uNY-Ze-nlw" id="EVY-My-ubd"/>
                         <outlet property="button_carset2" destination="qBM-5i-ssD" id="oT5-or-Lq0"/>
@@ -1036,6 +1048,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="button_carset1" destination="aLS-px-0VH" id="Xfg-SU-pU0"/>
                         <outlet property="button_carset2" destination="m6V-Wp-fMe" id="XXz-VO-GYG"/>
@@ -1049,13 +1062,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="D0Q-n1-2uk"/>
+        <segue reference="86u-sG-k2Z"/>
         <segue reference="yaf-z7-P7i"/>
         <segue reference="E5O-1v-HX3"/>
-        <segue reference="wbM-01-ldG"/>
-        <segue reference="cCo-Mm-x6X"/>
+        <segue reference="jIo-E8-TVw"/>
+        <segue reference="nBF-Fh-M1K"/>
         <segue reference="UEJ-J0-3wE"/>
-        <segue reference="SOh-6o-e8G"/>
-        <segue reference="kQL-BL-gbZ"/>
+        <segue reference="PBP-Uh-jSn"/>
+        <segue reference="sSy-uF-Cxb"/>
     </inferredMetricsTieBreakers>
 </document>
