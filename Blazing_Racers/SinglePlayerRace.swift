@@ -55,7 +55,7 @@ class SinglePlayerRace: SKScene
         self.addChild(mySpeed)
         self.addChild(myTime)
         self.addChild(myDistance)
-        self.addChild(myCar)
+        self.addChild(myCar)//memes are my dreams
 
    }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
