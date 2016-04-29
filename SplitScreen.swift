@@ -124,7 +124,7 @@ class SplitScreen: SKScene {
         }
     }
 
-    
+    print("memes")
     func newTimer() {
         timerOne = NSTimer.scheduledTimerWithTimeInterval(0.0017, target: self, selector: "timerAction", userInfo: nil, repeats: true)
      timerDecrease = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "speedFormula", userInfo: nil, repeats: true)
