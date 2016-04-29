@@ -9,10 +9,16 @@
 import UIKit
 
 class Tracks: UIViewController {
+    @IBOutlet weak var button_track1: UIButton!
+    @IBOutlet weak var button_track2: UIButton!
 //memes
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)
+        var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
         // Do any additional setup after loading the view.
     }
 

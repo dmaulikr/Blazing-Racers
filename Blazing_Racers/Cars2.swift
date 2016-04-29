@@ -9,10 +9,18 @@
 import UIKit
 
 class Cars2: UIViewController {
+    @IBOutlet weak var button_carset1: UIButton!
+    @IBOutlet weak var button_carset2: UIButton!
+    @IBOutlet weak var button_carset3: UIButton!
+    @IBOutlet weak var button_carset4: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)
+        var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
         // Do any additional setup after loading the view.
     }
 

@@ -13,7 +13,7 @@ var variables = StoredVariables()
     
 
         UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "main_title.png")?.drawInRect(self.view.bounds)
+        UIImage(named: "main_title1.png")?.drawInRect(self.view.bounds)
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
