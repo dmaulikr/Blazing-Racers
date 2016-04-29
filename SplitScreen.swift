@@ -19,6 +19,7 @@ class SplitScreen: SKScene {
     //Timer Variables
     var timerOne = NSTimer()
     var timerTwo = NSTimer()
+    var timerDecrease = NSTimer()
     //Node Variables
     let myDistance = SKLabelNode()
     let myTime = SKLabelNode()
@@ -94,36 +95,47 @@ class SplitScreen: SKScene {
                     myDistance.text = "\(distance)"
                     print("\(taps)")
                     print("\(distance)")
+                    
                 }
             }
             
         }
     }
+    
     func countdown() {
         timerOne = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "countdownAction", userInfo: nil, repeats: true)
     }
+    
     func countdownAction() {
         second -= 1
         displayCountdown()
         switchToClock()
     }
+    func displayCountdown() {
+        myTime.text = "\(second)"
+    }
+    
     func switchToClock() {
         if second == 0 {
             timerOne.invalidate()
-           myTime.text = "00:00.00"
+            myTime.text = "00:00.00"
             myTime.fontSize = 70
             newTimer()
         }
     }
+
     func newTimer() {
         timerOne = NSTimer.scheduledTimerWithTimeInterval(0.0017, target: self, selector: "timerAction", userInfo: nil, repeats: true)
+     timerDecrease = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "speedFormula", userInfo: nil, repeats: true)
     }
+    
+    
     func timerAction() {
         ++milisecond
         rollover()
         time()
-        //speedFormula()
     }
+    
     func rollover() {
         if milisecond > 59
         {
@@ -137,11 +149,8 @@ class SplitScreen: SKScene {
             minute++
         }
     }
-    func speedFormula() {
-        if second % 2 == 0{
-            taps += 1
-        }
-    }
+    
+
         func time() {
             if minute < 10 && second < 10 && milisecond < 10
             {
@@ -172,8 +181,17 @@ class SplitScreen: SKScene {
                 myTime.text = "\(minute):\(second).0\(milisecond)"
             }
         }
-        
-    func displayCountdown() {
-        myTime.text = "\(second)"
+    
+    
+    
+    func speedFormula() {
+        mySpeed.text = "\(taps)"
+        taps -= 1
+        if taps < 0 {
+            taps = 0
+            mySpeed.text = "\(taps)"
+        } else if taps > 0 {
+            mySpeed.text = "\(taps)"
+        }
     }
 }
