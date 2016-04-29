@@ -22,6 +22,8 @@ var variables = StoredVariables()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func button_BluetoothRacing(sender: UIButton) {
+    }
 
     /*
     // MARK: - Navigation

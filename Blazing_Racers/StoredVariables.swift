@@ -11,5 +11,5 @@ class StoredVariables: NSObject
     var Bluetooth = false
     var car = ""
     var color = ""
-    var track = ""
+    var track = "" 
 }

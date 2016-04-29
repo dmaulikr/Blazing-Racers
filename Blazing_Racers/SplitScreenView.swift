@@ -21,6 +21,8 @@ var variables = StoredVariables()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func button_SplitScreen(sender: UIButton) {
+    }
 
     /*
     // MARK: - Navigation
