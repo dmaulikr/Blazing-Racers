@@ -64,6 +64,8 @@ class Color3: UIViewController
     {
         
     }
+    @IBAction func color_special(sender: UIButton) {
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {

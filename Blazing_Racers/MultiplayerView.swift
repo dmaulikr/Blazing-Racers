@@ -4,6 +4,7 @@ import UIKit
 
 class MultiplayerView: UIViewController
 {
+    @IBOutlet var button_bluetooth: UIView!
     
 var variables = StoredVariables()
     

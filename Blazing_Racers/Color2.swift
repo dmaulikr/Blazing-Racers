@@ -66,6 +66,8 @@ class Color2: UIViewController
     {
         
     }
+    @IBAction func nateisspecial(sender: UIButton) {
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
