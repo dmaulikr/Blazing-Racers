@@ -16,6 +16,9 @@ class SinglePlayerView: UIViewController {
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
+        button_timetrial.layer.cornerRadius = 10;
+        button_speedrace.layer.cornerRadius = 10;
+
     }
 
     override func didReceiveMemoryWarning() {

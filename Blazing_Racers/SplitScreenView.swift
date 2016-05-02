@@ -18,7 +18,8 @@ var variables = StoredVariables()
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
-        print("nate your a weeaboo")
+
+        
     }
 
     override func didReceiveMemoryWarning() {

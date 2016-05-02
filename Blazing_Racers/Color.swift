@@ -24,7 +24,15 @@ class Color: UIViewController {//memes
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
-        // Do any additional setup after loading the view.
+        button_black.layer.cornerRadius = 10;
+        button_blue.layer.cornerRadius = 10;
+        button_grey.layer.cornerRadius = 10;
+        button_purple.layer.cornerRadius = 10;
+        button_pink.layer.cornerRadius = 10;
+        button_orange.layer.cornerRadius = 10;
+        button_special.layer.cornerRadius = 10;
+
+    
     }
 
     override func didReceiveMemoryWarning() {

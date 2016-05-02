@@ -21,7 +21,11 @@ class Cars: UIViewController {
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
-        // Do any additional setup after loading the view.
+        button_carset1.layer.cornerRadius = 10;
+        button_carset2.layer.cornerRadius = 10;
+        button_carset3.layer.cornerRadius = 10;
+        button_carset4.layer.cornerRadius = 10;
+
     }
 
     override func didReceiveMemoryWarning() {

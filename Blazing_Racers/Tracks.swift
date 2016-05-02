@@ -19,8 +19,9 @@ class Tracks: UIViewController {
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
-        // Do any additional setup after loading the view.
-    }
+        button_track2.layer.cornerRadius = 10;
+        button_track1.layer.cornerRadius = 10;
+}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
