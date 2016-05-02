@@ -21,7 +21,6 @@
 		3F7F6CFE1CC14EA800B8962A /* Tracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7F6CFD1CC14EA800B8962A /* Tracks.swift */; };
 		3F8D99881CAAE36B001F9934 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D99871CAAE36B001F9934 /* AppDelegate.swift */; };
 		3F8D998A1CAAE36B001F9934 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F8D99891CAAE36B001F9934 /* GameScene.sks */; };
-		3F8D998C1CAAE36B001F9934 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D998B1CAAE36B001F9934 /* GameScene.swift */; };
 		3F8D998E1CAAE36B001F9934 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D998D1CAAE36B001F9934 /* GameViewController.swift */; };
 		3F8D99911CAAE36B001F9934 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F8D998F1CAAE36B001F9934 /* Main.storyboard */; };
 		3F8D99931CAAE36B001F9934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F8D99921CAAE36B001F9934 /* Assets.xcassets */; };
@@ -70,7 +69,6 @@
 		3F8D99841CAAE36B001F9934 /* Blazing_Racers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blazing_Racers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F8D99871CAAE36B001F9934 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F8D99891CAAE36B001F9934 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		3F8D998B1CAAE36B001F9934 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		3F8D998D1CAAE36B001F9934 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		3F8D99901CAAE36B001F9934 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F8D99921CAAE36B001F9934 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 				3FD2F6EB1CBC06F9005D9F2D /* SinglePlayerRace.swift */,
 				3F5937D21CBEA24A00D46B4D /* SplitScreen.swift */,
 				3F31C7DB1CBFFAC10001EBE0 /* BluetoothMultiplayer.swift */,
-				3F8D998B1CAAE36B001F9934 /* GameScene.swift */,
 			);
 			name = SKScenes;
 			sourceTree = "<group>";
@@ -342,7 +339,6 @@
 				3F62EC4C1CCA87E700668C4E /* Cars3.swift in Sources */,
 				3F62EC4E1CCA881F00668C4E /* Color3.swift in Sources */,
 				3F62EC501CCA888A00668C4E /* Tracks2.swift in Sources */,
-				3F8D998C1CAAE36B001F9934 /* GameScene.swift in Sources */,
 				3FC25EBD1CC44EB80019FEFC /* MainView.swift in Sources */,
 				3F62EC461CCA877600668C4E /* Cars2.swift in Sources */,
 				3F6F5FC61CC066CF008573CC /* StoredVariables.swift in Sources */,

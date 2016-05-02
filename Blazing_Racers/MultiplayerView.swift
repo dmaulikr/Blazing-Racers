@@ -1,18 +1,16 @@
-//
-//  MultiplayerView.swift
-//  Blazing_Racers
-//
-//  Created by nmalin-jones on 4/17/16.
-//  Copyright © 2016 nmalin-jones. All rights reserved.
-//
+
 
 import UIKit
 
-class MultiplayerView: UIViewController {
+class MultiplayerView: UIViewController
+{
+    
 var variables = StoredVariables()
-    override func viewDidLoad() {
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        //memes
+        
         UIGraphicsBeginImageContext(self.view.frame.size)
         UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -21,22 +19,23 @@ var variables = StoredVariables()
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func button_BluetoothRacing(sender: UIButton) {
+    @IBAction func button_BluetoothRacing(sender: UIButton)
+    {
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        let carsThreeVC = segue.destinationViewController as! Cars3
+        carsThreeVC.variables = variables
+        
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

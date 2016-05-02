@@ -1,13 +1,15 @@
 
 import UIKit
 
-class SinglePlayerView: UIViewController {
+class SinglePlayerView: UIViewController
+{
     @IBOutlet weak var button_timetrial: UIButton!
     @IBOutlet weak var button_speedrace: UIButton!
     
     var variables = StoredVariables()
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         print(variables.singlePlayer.boolValue)
         
@@ -21,20 +23,28 @@ class SinglePlayerView: UIViewController {
 
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         
     }
     
     @IBAction func button_TimeTrial(sender: UIButton)
     {
-        
+        variables.timeTrial = true
+        variables.speedTest = false
     }
     @IBAction func button_SpeedRace(sender: UIButton)
     {
-        
+        variables.timeTrial = false
+        variables.speedTest = true
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        let carsTwoVC = segue.destinationViewController as! Cars2
+        carsTwoVC.variables = variables
+    }
 
 
 }

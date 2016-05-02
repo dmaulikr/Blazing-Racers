@@ -1,21 +1,20 @@
-//
-//  Cars2.swift
-//  Blazing_Racers
-//
-//  Created by cstark on 4/22/16.
-//  Copyright © 2016 nmalin-jones. All rights reserved.
-//
+
 
 import UIKit
 
-class Cars2: UIViewController {
+class Cars2: UIViewController
+{
     @IBOutlet weak var button_carset1: UIButton!
     @IBOutlet weak var button_carset2: UIButton!
     @IBOutlet weak var button_carset3: UIButton!
     @IBOutlet weak var button_carset4: UIButton!
-
-    override func viewDidLoad() {
+    
+    var variables = StoredVariables()
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        
         UIGraphicsBeginImageContext(self.view.frame.size)
         UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -27,10 +26,12 @@ class Cars2: UIViewController {
         button_carset4.layer.cornerRadius = 10;
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func car5ButtonTapped(sender: AnyObject)
     {
         
@@ -40,15 +41,22 @@ class Cars2: UIViewController {
     {
         
     }
+    
     @IBAction func car7ButtonTapped(sender: AnyObject)
     {
         
     }
+    
     @IBAction func car8Segue(sender: AnyObject)
     {
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        let colorTwoVC = segue.destinationViewController as! Color2
+        colorTwoVC.variables = variables
+    }
 
 
 }
