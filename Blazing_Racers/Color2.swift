@@ -15,7 +15,7 @@ class Color2: UIViewController
     var variables = StoredVariables()
     
     override func viewDidLoad()
-    {
+    {//meeme
         super.viewDidLoad()
         
         UIGraphicsBeginImageContext(self.view.frame.size)
