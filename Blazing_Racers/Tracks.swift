@@ -1,19 +1,18 @@
-//
-//  Tracks.swift
-//  Blazing_Racers
-//
-//  Created by cstark on 4/15/16.
-//  Copyright © 2016 nmalin-jones. All rights reserved.
-//
+
 
 import UIKit
 
-class Tracks: UIViewController {
+class Tracks: UIViewController
+{
     @IBOutlet weak var button_track1: UIButton!
     @IBOutlet weak var button_track2: UIButton!
-//memes
-    override func viewDidLoad() {
+    
+    var variables = StoredVariables()
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        
         UIGraphicsBeginImageContext(self.view.frame.size)
         UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -22,7 +21,8 @@ class Tracks: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -36,4 +36,9 @@ class Tracks: UIViewController {
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        let gameVC = segue.destinationViewController as! GameViewController
+        gameVC.variables = variables
+    }
 }

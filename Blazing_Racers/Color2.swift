@@ -1,14 +1,9 @@
-//
-//  Color2.swift
-//  Blazing_Racers
-//
-//  Created by cstark on 4/22/16.
-//  Copyright © 2016 nmalin-jones. All rights reserved.
-//
+
 
 import UIKit
 
-class Color2: UIViewController {
+class Color2: UIViewController
+{
     @IBOutlet weak var button_black: UIButton!
     @IBOutlet weak var button_purple: UIButton!
     @IBOutlet weak var button_blue: UIButton!
@@ -16,9 +11,13 @@ class Color2: UIViewController {
     @IBOutlet weak var button_grey: UIButton!
     @IBOutlet weak var button_orange: UIButton!
     @IBOutlet weak var button_special: UIButton!
-
-    override func viewDidLoad() {
+    
+    var variables = StoredVariables()
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        
         UIGraphicsBeginImageContext(self.view.frame.size)
         UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -27,10 +26,12 @@ class Color2: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
-//nate your black
+
     }
+    
     @IBAction func color1ButtonTapped(sender: AnyObject)
     {
         
@@ -40,10 +41,12 @@ class Color2: UIViewController {
     {
         
     }
+    
     @IBAction func color3ButtonTapped(sender: AnyObject)
     {
         
     }
+    
     @IBAction func color4ButtonTapped(sender: AnyObject)
     {
         
@@ -53,8 +56,15 @@ class Color2: UIViewController {
     {
         
     }
+    
     @IBAction func color6ButtonTapped(sender: AnyObject)
     {
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+       let tracksTwoVC = segue.destinationViewController as! Tracks2
+        tracksTwoVC.variables = variables
     }
 }
