@@ -32,7 +32,7 @@ class Cars: UIViewController
 
 //        button_carset2.backgroundColor = UIColor(patternImage: UIImage(named: "car2_grey")!)
 
-    }
+    
     
     override func didReceiveMemoryWarning()
     {
@@ -64,5 +64,5 @@ class Cars: UIViewController
         let colorVC = segue.destinationViewController as! Color
         colorVC.variables = variables
     }
-    
 }
+
