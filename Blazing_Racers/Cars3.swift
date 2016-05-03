@@ -59,33 +59,26 @@ class Cars3: UIViewController
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
     @IBAction func car9ButtonTapped(sender: AnyObject)
     {
         
     }
-    
     @IBAction func car10ButtonTapped(sender: AnyObject)
     {
         
     }
-    
     @IBAction func car11ButtonTapped(sender: AnyObject)
     {
         
-    }
-    
+    } 
     @IBAction func car12ButtonTapped(sender: AnyObject)
     {
         
     }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
         let colorThreeVC = segue.destinationViewController as! Color3
         colorThreeVC.variables = variables
     }
-
 }
