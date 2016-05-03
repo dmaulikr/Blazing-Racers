@@ -51,10 +51,21 @@ class Color: UIViewController
     
     @IBAction func color7ButtonTapped(sender: AnyObject)
     {
-        if variables.car == "car1_grey" {
+        if variables.car == "car1_grey"
+        {
             variables.colors = "car1_black"
-        } else if variables.car == "car2_grey" {
+        }
+        else if variables.car == "car2_grey"
+        {
             variables.colors = "car2_black"
+        }
+        else if variables.car == "car3_grey"
+        {
+            variables.colors = "car3_black"
+        }
+        else if variables.car == "car4_grey"
+        {
+            variables.colors = "car4_black"
         }
     }
     
