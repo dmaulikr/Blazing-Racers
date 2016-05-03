@@ -23,12 +23,11 @@ class Cars: UIViewController
         button_carset2.layer.cornerRadius = 10;
         button_carset3.layer.cornerRadius = 10;
         button_carset4.layer.cornerRadius = 10;
-        
-        button_carset1.alpha = 0
-        button_carset2.alpha = 0
-        button_carset3.alpha = 0
-        button_carset4.alpha = 0
-
+        button_carset1.backgroundColor = UIColor(patternImage:UIImage(named:"car1_grey")!)
+        button_carset2.backgroundColor = UIColor(patternImage:UIImage(named:"car1_grey")!)
+        button_carset3.backgroundColor = UIColor(patternImage:UIImage(named:"car1_grey")!)
+        button_carset4.backgroundColor = UIColor(patternImage:UIImage(named:"car1_grey")!)
+    }
 
     }
     override func viewDidAppear(animated: Bool)
@@ -72,21 +71,21 @@ class Cars: UIViewController
     
     @IBAction func color1ButtonPressed(sender: AnyObject)
     {
-        
+        variables.car = "car1_grey"
     }
     @IBAction func colorButton2Pressed(sender: AnyObject)
     {
-        
+        variables.car = "car2_grey"
     }
     
     @IBAction func color3Pressed(sender: AnyObject)
     {
-        
+        variables.car = "car3_grey"
     }
     
     @IBAction func color4Pressed(sender: AnyObject)
     {
-        
+        variables.car = "car4_grey"
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
