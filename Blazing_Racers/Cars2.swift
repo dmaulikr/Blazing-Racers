@@ -29,7 +29,6 @@ class Cars2: UIViewController
         button_carset3.backgroundColor = UIColor(patternImage:UIImage(named:"car1_grey")!)
         button_carset4.backgroundColor = UIColor(patternImage:UIImage(named:"car1_grey")!)
     }
-
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()

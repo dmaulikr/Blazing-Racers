@@ -34,28 +34,23 @@ class MainViewViewController: UIViewController
     
     override func viewDidAppear(animated: Bool)
     {
-        
         super.viewDidAppear(animated)
-        
         view.addSubview(button_oneplayerracing)
         view.addSubview(button_bluetoothmultiplayer)
         view.addSubview(button_splitscreenracing)
-        
+           UIView.animateWithDuration(2, animations:
+            {
+            self.button_bluetoothmultiplayer.alpha = 1.0
+        })
         UIView.animateWithDuration(1.8, animations:
             {
             self.button_splitscreenracing.alpha = 1.0
         })
-        
-        UIView.animateWithDuration(2, animations:
-            {
-            self.button_bluetoothmultiplayer.alpha = 1.0
-        })
-        
         UIView.animateWithDuration(1.5, animations:
             {
             self.button_oneplayerracing.alpha = 1.0
         })
-
+print("this app is certified spicy")
     }
     
     //make the nav bar dissappear
@@ -64,8 +59,6 @@ class MainViewViewController: UIViewController
         self.navigationController?.setNavigationBarHidden(false, animated: animated);
         super.viewWillDisappear(animated)
     }
-    
-    //make it come back after you leave the first page
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
