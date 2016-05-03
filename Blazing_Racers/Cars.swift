@@ -57,10 +57,6 @@ class Cars: UIViewController
     }
     
         
-        //Run it in a loop so all for cars get into a button
-        //set the car variable equal to the button you pressed
-
-//        button_carset2.backgroundColor = UIColor(patternImage: UIImage(named: "car2_grey")!)
     
     
     

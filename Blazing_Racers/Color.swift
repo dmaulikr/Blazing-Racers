@@ -33,7 +33,7 @@ class Color: UIViewController
         
         if variables.car == "car1_grey" {
             button_black.backgroundColor = UIColor(patternImage: UIImage(named: "car1_black")!)
-            //set of colors
+            
         }
         else if variables.car == "car1_grey" {
             
