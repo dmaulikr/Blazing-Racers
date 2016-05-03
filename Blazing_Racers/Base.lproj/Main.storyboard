@@ -323,6 +323,9 @@
                                 <state key="normal" title=" Special ">
                                     <color key="titleColor" red="0.48804634809494019" green="0.1178484782576561" blue="0.088988982141017914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="color13ButtonTapped:" destination="UmC-Aw-aob" eventType="touchUpInside" id="H13-YF-NT2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="CAR COLOR SELECTOR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mc8-jG-Km3">
                                 <rect key="frame" x="15" y="44" width="560" height="116"/>

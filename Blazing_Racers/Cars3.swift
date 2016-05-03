@@ -25,8 +25,11 @@ class Cars3: UIViewController
         button_carset2.layer.cornerRadius = 10;
         button_carset3.layer.cornerRadius = 10;
         button_carset4.layer.cornerRadius = 10;
+        button_carset1.backgroundColor = UIColor(patternImage:UIImage(named:"car1_grey")!)
+        button_carset2.backgroundColor = UIColor(patternImage:UIImage(named:"car1_grey")!)
+        button_carset3.backgroundColor = UIColor(patternImage:UIImage(named:"car1_grey")!)
+        button_carset4.backgroundColor = UIColor(patternImage:UIImage(named:"car1_grey")!)
     }
-
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -35,22 +38,22 @@ class Cars3: UIViewController
     
     @IBAction func car9ButtonTapped(sender: AnyObject)
     {
-        
+        variables.car = "car1_grey"
     }
     
     @IBAction func car10ButtonTapped(sender: AnyObject)
     {
-        
+        variables.car = "car2_grey"
     }
     
     @IBAction func car11ButtonTapped(sender: AnyObject)
     {
-        
+        variables.car = "car3_grey"
     }
     
     @IBAction func car12ButtonTapped(sender: AnyObject)
     {
-        
+        variables.car = "car4_grey"
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
