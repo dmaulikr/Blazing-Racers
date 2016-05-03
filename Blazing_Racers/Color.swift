@@ -17,6 +17,7 @@ class Color: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+
         
         UIGraphicsBeginImageContext(self.view.frame.size)
         UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)
