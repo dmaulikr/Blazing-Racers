@@ -38,33 +38,145 @@ class Color3: UIViewController
     
     @IBAction func color13ButtonTapped(sender: AnyObject)
     {
-        
+        if variables.car == "car1_grey"
+        {
+            variables.colors = "car1_black"
+        }
+        else if variables.colors == "car2_grey"
+        {
+            variables.colors = "car2_black"
+        }
+        else if variables.colors == "car3_grey"
+        {
+            variables.colors = "car3_black"
+        }
+        else if variables.colors == "car4_grey"
+        {
+            variables.colors = "car4_black"
+        }
+
     }
     @IBAction func color14ButtonTapped(sender: AnyObject)
     {
-        
+        if variables.car == "car1_grey"
+        {
+            variables.colors = "car1_blue"
+        }
+        else if variables.colors == "car2_grey"
+        {
+            variables.colors = "car2_blue"
+        }
+        else if variables.colors == "car3_grey"
+        {
+            variables.colors = "car3_blue"
+        }
+        else if variables.colors == "car4_grey"
+        {
+            variables.colors = "car4_blue"
+        }
+
     }
     
     @IBAction func color15ButtonTapped(sender: AnyObject)
     {
-        
+        if variables.car == "car1_grey"
+        {
+            variables.colors = "car1_grey"
+        }
+        else if variables.colors == "car2_grey"
+        {
+            variables.colors = "car2_grey"
+        }
+        else if variables.colors == "car3_grey"
+        {
+            variables.colors = "car3_grey"
+        }
+        else if variables.colors == "car4_grey"
+        {
+            variables.colors = "car4_grey"
+        }
     }
     
     @IBAction func color16ButtonTapped(sender: AnyObject)
     {
-        
+        if variables.car == "car1_grey"
+        {
+            variables.colors = "car1_orange"
+        }
+        else if variables.colors == "car2_grey"
+        {
+            variables.colors = "car2_orange"
+        }
+        else if variables.colors == "car3_grey"
+        {
+            variables.colors = "car3_orange"
+        }
+        else if variables.colors == "car4_grey"
+        {
+            variables.colors = "car4_orange"
+        }
+ 
     }
     
     @IBAction func color17ButtonTapped(sender: AnyObject)
     {
-        
+        if variables.car == "car1_grey"
+        {
+            variables.colors = "car1_pink"
+        }
+        else if variables.colors == "car2_grey"
+        {
+            variables.colors = "car2_pink"
+        }
+        else if variables.colors == "car3_grey"
+        {
+            variables.colors = "car3_pink"
+        }
+        else if variables.colors == "car4_grey"
+        {
+            variables.colors = "car4_pink"
+        }
+
     }
     
     @IBAction func color18ButtonTapped(sender: AnyObject)
     {
-        
+        if variables.car == "car1_grey"
+        {
+            variables.colors = "car1_purple"
+        }
+        else if variables.colors == "car2_grey"
+        {
+            variables.colors = "car2_purple"
+        }
+        else if variables.colors == "car3_grey"
+        {
+            variables.colors = "car3_purple"
+        }
+        else if variables.colors == "car4_grey"
+        {
+            variables.colors = "car4_purple"
+        }
+
     }
-    @IBAction func color_special(sender: UIButton) {
+    @IBAction func color_special(sender: UIButton)
+    {
+        if variables.car == "car1_grey"
+        {
+            variables.colors = "car1_special"
+        }
+        else if variables.colors == "car2_grey"
+        {
+            variables.colors = "car2_special"
+        }
+        else if variables.colors == "car3_grey"
+        {
+            variables.colors = "car3_special"
+        }
+        else if variables.colors == "car4_grey"
+        {
+            variables.colors = "car4_special"
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
