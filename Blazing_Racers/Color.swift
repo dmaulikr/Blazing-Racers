@@ -30,7 +30,14 @@ class Color: UIViewController
         button_pink.layer.cornerRadius = 10;
         button_orange.layer.cornerRadius = 10;
         button_special.layer.cornerRadius = 10;
-
+        
+        if variables.car == "car1_grey" {
+            button_black.backgroundColor = UIColor(patternImage: UIImage(named: "car1_black")!)
+            //set of colors
+        }
+        else if variables.car == "car1_grey" {
+            
+        }
     
     }
 
@@ -42,7 +49,11 @@ class Color: UIViewController
     
     @IBAction func color7ButtonTapped(sender: AnyObject)
     {
-        
+        if variables.car == "car1_grey" {
+            variables.colors = "car1_black"
+        } else if variables.car == "car2_grey" {
+            variables.colors = "car2_black"
+        }
     }
     
     @IBAction func color8ButtonTapped(sender: AnyObject)
