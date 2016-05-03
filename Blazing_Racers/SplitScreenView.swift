@@ -5,6 +5,7 @@ import UIKit
 class SplitScreenView: UIViewController
 {
 var variables = StoredVariables()
+    @IBOutlet weak var button_splitscreen: UIButton!
     override func viewDidLoad()
     {
         
@@ -15,10 +16,21 @@ var variables = StoredVariables()
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
-
-        
+        button_splitscreen.layer.cornerRadius = 10;
+        self.button_splitscreen.alpha = 0.0
     }
-
+    
+    override func viewDidAppear(animated: Bool)
+    {
+        
+        super.viewDidAppear(animated)
+        view.addSubview(button_splitscreen)
+        UIView.animateWithDuration(0.5, animations:
+            {
+                self.button_splitscreen.alpha = 1
+        })
+    
+    }
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()

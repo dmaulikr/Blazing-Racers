@@ -29,8 +29,33 @@ class Cars: UIViewController
         button_carset3.backgroundColor = UIColor(patternImage: UIImage(named: "car3_grey")!)
         button_carset4.backgroundColor = UIColor(patternImage: UIImage(named: "car4_grey")!)
 
-    }
 
+    }
+    override func viewDidAppear(animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        view.addSubview(button_carset1)
+        view.addSubview(button_carset2)
+        view.addSubview(button_carset3)
+        view.addSubview(button_carset4)
+        UIView.animateWithDuration(0.5, animations:
+            {
+                self.button_carset1.alpha = 1
+        })
+        UIView.animateWithDuration(0.7, animations:
+            {
+                self.button_carset2.alpha = 1
+        })
+        UIView.animateWithDuration(0.8, animations:
+            {
+                self.button_carset3.alpha = 1
+        })
+        UIView.animateWithDuration(0.9, animations:
+            {
+                self.button_carset4.alpha = 1
+        })
+    }
+    
         
         //Run it in a loop so all for cars get into a button
         //set the car variable equal to the button you pressed

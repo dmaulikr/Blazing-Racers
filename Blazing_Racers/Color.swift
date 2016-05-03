@@ -40,6 +40,8 @@ class Color: UIViewController
         }
     
     }
+    
+    
 
     override func didReceiveMemoryWarning()
     {
@@ -80,6 +82,7 @@ class Color: UIViewController
     {
         
     }
+    @IBOutlet weak var color_special: UIButton!
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {

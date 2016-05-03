@@ -29,8 +29,47 @@ class Color2: UIViewController
         button_purple.layer.cornerRadius = 10;
         button_pink.layer.cornerRadius = 10;
         button_orange.layer.cornerRadius = 10;
-        button_special.layer.cornerRadius = 10;    }
+        button_special.layer.cornerRadius = 10;
+        button_black.alpha = 0
+        button_blue.alpha = 0
+        button_grey.alpha = 0
+        button_orange.alpha = 0
+        button_pink.alpha = 0
+        button_purple.alpha = 0
+        button_special.alpha = 0
+    }
+    override func viewDidAppear(animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        view.addSubview(button_black)
+        view.addSubview(button_blue)
+        view.addSubview(button_grey)
+        view.addSubview(button_orange)
+        view.addSubview(button_pink)
+        view.addSubview(button_purple)
+        view.addSubview(button_special)
+        UIView.animateWithDuration(0.6, animations:
+            {
+                self.button_black.alpha = 1
+                self.button_special.alpha = 1
+        })
+        UIView.animateWithDuration(0.8, animations:
+            {
+                self.button_blue.alpha = 1
+                self.button_orange.alpha = 1
+                self.button_purple.alpha = 1
+        })
+        UIView.animateWithDuration(1.1, animations:
+            {
+                self.button_grey.alpha = 1
+                self.button_special.alpha = 1
+                self.button_pink.alpha = 1
 
+        })
+    }
+    
+    
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -65,6 +104,8 @@ class Color2: UIViewController
     @IBAction func color6ButtonTapped(sender: AnyObject)
     {
         
+    }
+    @IBAction func nateisspecial(sender: UIButton) {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)

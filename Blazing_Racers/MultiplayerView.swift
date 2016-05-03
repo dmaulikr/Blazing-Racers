@@ -4,6 +4,7 @@ import UIKit
 
 class MultiplayerView: UIViewController
 {
+    @IBOutlet var button_bluetooth: UIView!
     
 var variables = StoredVariables()
     
@@ -16,9 +17,22 @@ var variables = StoredVariables()
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
-        // Do any additional setup after loading the view.
+        
+//       button_bluetooth.alpha = 0
     }
-
+//    override func viewDidAppear(animated: Bool)
+//    {
+//        
+//        super.viewDidAppear(animated)
+//        
+//        view.addSubview(button_bluetooth)
+//        
+//        UIView.animateWithDuration(1.8, animations:
+//            {
+//                self.button_bluetooth.alpha = 1
+//        })
+//    }
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()

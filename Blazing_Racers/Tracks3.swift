@@ -17,8 +17,24 @@ class Tracks3: UIViewController {
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
         button_track2.layer.cornerRadius = 10;
-        button_track1.layer.cornerRadius = 10;    }
-
+        button_track1.layer.cornerRadius = 10;
+        
+        button_track2.alpha = 0
+        button_track1.alpha = 0
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        view.addSubview(button_track2)
+        view.addSubview(button_track1)
+        UIView.animateWithDuration(0.6, animations:
+            {
+                self.button_track1.alpha = 1
+        })
+        UIView.animateWithDuration(0.9, animations:
+            {
+                self.button_track2.alpha = 1
+        })
+    }
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
