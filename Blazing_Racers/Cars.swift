@@ -29,7 +29,7 @@ class Cars: UIViewController
         button_carset4.backgroundColor = UIColor(patternImage:UIImage(named:"car1_grey")!)
     }
 
-    }
+    
     override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
@@ -61,7 +61,7 @@ class Cars: UIViewController
 
 //        button_carset2.backgroundColor = UIColor(patternImage: UIImage(named: "car2_grey")!)
 
-    
+
     
     override func didReceiveMemoryWarning()
     {
