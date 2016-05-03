@@ -17,10 +17,20 @@ var variables = StoredVariables()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
         button_splitscreen.layer.cornerRadius = 10;
-
-        
+        self.button_splitscreen.alpha = 0.0
     }
-
+    
+    override func viewDidAppear(animated: Bool)
+    {
+        
+        super.viewDidAppear(animated)
+        view.addSubview(button_splitscreen)
+        UIView.animateWithDuration(0.5, animations:
+            {
+                self.button_splitscreen.alpha = 1
+        })
+    
+    }
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
