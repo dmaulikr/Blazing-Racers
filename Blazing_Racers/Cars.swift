@@ -76,17 +76,17 @@ class Cars: UIViewController
     }
     @IBAction func colorButton2Pressed(sender: AnyObject)
     {
-        
+        variables.car = "car2_grey"
     }
     
     @IBAction func color3Pressed(sender: AnyObject)
     {
-        
+        variables.car = "car3_grey"
     }
     
     @IBAction func color4Pressed(sender: AnyObject)
     {
-        
+        variables.car = "car4_grey"
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
