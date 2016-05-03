@@ -35,7 +35,8 @@ class SplitScreen: SKScene
     //SKActions
     var moveUp = SKAction.moveByX(0, y: 15, duration: 1)
     var moveDown = SKAction.moveByX(0, y: -20, duration: 1)
-    
+    var moveLeft = SKAction.moveByX(-20, y: 0, duration: 0.5)
+    var moveRight = SKAction.moveByX(20, y: 0, duration: 0.5)
    
     override func didMoveToView(view: SKView)
     {
@@ -78,6 +79,7 @@ class SplitScreen: SKScene
         myCar = SKSpriteNode(imageNamed: gameViewController.variables.colors)
         //sets up the postion
         myCar.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMinY(self.frame) + 300)
+        
         
         //The image where the speed label goes in
         //sets up the postion
@@ -256,6 +258,19 @@ class SplitScreen: SKScene
         mySpeed.text = "\(taps)"
         taps -= 1
        myCar.runAction(moveDown)
+       
+        while gameViewController.variables.splitScreen == true
+        {
+            myCar.runAction(moveLeft)
+            myCar.runAction(moveRight)
+        }
+        
+        while gameViewController.variables.splitScreen == true
+        {
+         myCar.runAction(moveRight)
+         myCar.runAction(moveLeft)
+        }
+        
         if taps < 0
         {
             taps = 0

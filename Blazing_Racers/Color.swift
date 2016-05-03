@@ -31,42 +31,14 @@ class Color: UIViewController
         button_orange.layer.cornerRadius = 10;
         button_special.layer.cornerRadius = 10;
         
-        button_black.alpha = 0
-        button_blue.alpha = 0
-        button_grey.alpha = 0
-        button_orange.alpha = 0
-        button_pink.alpha = 0
-        button_purple.alpha = 0
-        button_special.alpha = 0
-    }
-    override func viewDidAppear(animated: Bool)
-    {
-        super.viewDidAppear(animated)
-        view.addSubview(button_black)
-        view.addSubview(button_blue)
-        view.addSubview(button_grey)
-        view.addSubview(button_orange)
-        view.addSubview(button_pink)
-        view.addSubview(button_purple)
-        view.addSubview(button_special)
-        UIView.animateWithDuration(0.6, animations:
-            {
-                self.button_black.alpha = 1
-                self.button_special.alpha = 1
-        })
-        UIView.animateWithDuration(0.8, animations:
-            {
-                self.button_blue.alpha = 1
-                self.button_orange.alpha = 1
-                self.button_purple.alpha = 1
-        })
-        UIView.animateWithDuration(1.1, animations:
-            {
-                self.button_grey.alpha = 1
-                self.button_special.alpha = 1
-                self.button_pink.alpha = 1
-
-        })
+        if variables.car == "car1_grey" {
+            button_black.backgroundColor = UIColor(patternImage: UIImage(named: "car1_black")!)
+            
+        }
+        else if variables.car == "car1_grey" {
+            
+        }
+    
     }
     
     
@@ -79,21 +51,10 @@ class Color: UIViewController
     
     @IBAction func color7ButtonTapped(sender: AnyObject)
     {
-        if variables.car == "car1_grey"
-        {
+        if variables.car == "car1_grey" {
             variables.colors = "car1_black"
-        }
-        else if variables.colors == "car2_grey"
-        {
+        } else if variables.car == "car2_grey" {
             variables.colors = "car2_black"
-        }
-        else if variables.colors == "car3_grey"
-        {
-            variables.colors = "car3_black"
-        }
-        else if variables.colors == "car4_grey"
-        {
-            variables.colors = "car4_black"
         }
     }
     

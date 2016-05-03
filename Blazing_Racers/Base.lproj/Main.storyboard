@@ -373,7 +373,6 @@
                         <outlet property="button_pink" destination="vi8-LF-fOP" id="w9K-Lj-Jtq"/>
                         <outlet property="button_purple" destination="kSa-ZX-Xym" id="xKP-VP-eTZ"/>
                         <outlet property="button_special" destination="akB-s4-0N1" id="C2b-pv-kbr"/>
-                        <outlet property="color_special" destination="akB-s4-0N1" id="CSM-8c-Bzn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLd-O7-5jT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -805,7 +804,6 @@
                                     <color key="titleColor" red="0.48804634809494019" green="0.1178484782576561" blue="0.088988982141017914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="nate:" destination="kcb-nO-eEx" eventType="touchUpInside" id="Q7L-Dd-Gh4"/>
                                     <action selector="nateisspecial:" destination="kcb-nO-eEx" eventType="touchUpInside" id="pdL-m7-Tao"/>
                                 </connections>
                             </button>
@@ -921,7 +919,6 @@
                                     <color key="titleColor" red="0.48804634809494019" green="0.1178484782576561" blue="0.088988982141017914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="color18ButtonTapped:" destination="WDE-1I-gOe" eventType="touchUpInside" id="MCE-0A-sZk"/>
                                     <action selector="color_special:" destination="WDE-1I-gOe" eventType="touchUpInside" id="8ZW-ps-kt8"/>
                                 </connections>
                             </button>
@@ -1108,13 +1105,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="86u-sG-k2Z"/>
-        <segue reference="yaf-z7-P7i"/>
-        <segue reference="E5O-1v-HX3"/>
-        <segue reference="jIo-E8-TVw"/>
         <segue reference="nBF-Fh-M1K"/>
-        <segue reference="PBP-Uh-jSn"/>
+        <segue reference="jIo-E8-TVw"/>
+        <segue reference="E5O-1v-HX3"/>
+        <segue reference="WrZ-6N-2RG"/>
         <segue reference="sSy-uF-Cxb"/>
         <segue reference="dFg-AW-yTv"/>
+        <segue reference="yaf-z7-P7i"/>
+        <segue reference="86u-sG-k2Z"/>
     </inferredMetricsTieBreakers>
 </document>
