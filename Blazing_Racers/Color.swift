@@ -39,12 +39,6 @@ class Color: UIViewController
         button_pink.alpha = 0
         button_purple.alpha = 0
         button_special.alpha = 0
-        if variables.car == "car1_grey" {
-            button_black.backgroundColor = UIColor(patternImage: UIImage(named: "car1_black")!)
-            
-        }
-        else if variables.car == "car1_grey" {
-        }
     }
     override func viewDidAppear(animated: Bool)
     {
@@ -84,10 +78,21 @@ class Color: UIViewController
     }
     @IBAction func color7ButtonTapped(sender: AnyObject)
     {
-        if variables.car == "car1_grey" {
+        if variables.car == "car1_grey"
+        {
             variables.colors = "car1_black"
-        } else if variables.car == "car2_grey" {
+        }
+        else if variables.car == "car2_grey"
+        {
             variables.colors = "car2_black"
+        }
+        else if variables.car == "car3_grey"
+        {
+            variables.colors = "car3_black"
+        }
+        else if variables.car == "car4_grey"
+        {
+            variables.colors = "car4_black"
         }
     }
     @IBAction func color8ButtonTapped(sender: AnyObject)
