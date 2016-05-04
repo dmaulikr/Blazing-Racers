@@ -41,7 +41,7 @@ class Color: UIViewController
         button_special.alpha = 0
         
         if variables.car == "car1_grey" {
-            button_black.backgroundColor = UIColor(patternImage: UIImage(named: "ca1_black")!)
+            button_black.backgroundColor = UIColor(patternImage: UIImage(named: "car1_black")!)
             button_blue.backgroundColor = UIColor(patternImage: UIImage(named: "car1_blue")!)
             button_grey.backgroundColor = UIColor(patternImage: UIImage(named: "car1_grey")!)
             button_purple.backgroundColor = UIColor(patternImage: UIImage(named: "car1_purple")!)
