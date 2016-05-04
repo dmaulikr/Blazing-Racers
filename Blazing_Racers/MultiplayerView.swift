@@ -17,26 +17,11 @@ var variables = StoredVariables()
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
-        
-//       button_bluetooth.alpha = 0
-    }
-//    override func viewDidAppear(animated: Bool)
-//    {
-//        
-//        super.viewDidAppear(animated)
-//        
-//        view.addSubview(button_bluetooth)
-//        
-//        UIView.animateWithDuration(1.8, animations:
-//            {
-//                self.button_bluetooth.alpha = 1
-//        })
-//    }
+}
     
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func button_BluetoothRacing(sender: UIButton)
