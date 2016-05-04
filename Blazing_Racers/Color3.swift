@@ -64,6 +64,45 @@ class Color3: UIViewController
                 self.button_special.alpha = 1
                 self.button_pink.alpha = 1
         })
+        if variables.car == "car1_grey"
+        {
+            button_black.backgroundColor = UIColor(patternImage: UIImage(named: "car1_black")!)
+            button_blue.backgroundColor = UIColor(patternImage: UIImage(named: "car1_blue")!)
+            button_grey.backgroundColor = UIColor(patternImage: UIImage(named: "car1_grey")!)
+            button_purple.backgroundColor = UIColor(patternImage: UIImage(named: "car1_purple")!)
+            button_pink.backgroundColor = UIColor(patternImage: UIImage(named: "car1_pink")!)
+            button_orange.backgroundColor = UIColor(patternImage: UIImage(named: "car1_orange")!)
+            button_special.backgroundColor = UIColor(patternImage: UIImage(named: "car1_special")!)
+        } else if variables.car == "car2_grey"
+        {
+            button_black.backgroundColor = UIColor(patternImage: UIImage(named: "car2_black")!)
+            button_blue.backgroundColor = UIColor(patternImage: UIImage(named: "car2_blue")!)
+            button_grey.backgroundColor = UIColor(patternImage: UIImage(named: "car2_grey")!)
+            button_purple.backgroundColor = UIColor(patternImage: UIImage(named: "car2_purple")!)
+            button_pink.backgroundColor = UIColor(patternImage: UIImage(named: "car2_pink")!)
+            button_orange.backgroundColor = UIColor(patternImage: UIImage(named: "car2_orange")!)
+            button_special.backgroundColor = UIColor(patternImage: UIImage(named: "car2_special")!)
+        }
+        else if variables.car == "car3_grey"
+        {
+            button_black.backgroundColor = UIColor(patternImage: UIImage(named: "car3_black")!)
+            button_blue.backgroundColor = UIColor(patternImage: UIImage(named: "car3_blue")!)
+            button_grey.backgroundColor = UIColor(patternImage: UIImage(named: "car3_grey")!)
+            button_purple.backgroundColor = UIColor(patternImage: UIImage(named: "car3_purple")!)
+            button_pink.backgroundColor = UIColor(patternImage: UIImage(named: "car3_pink")!)
+            button_orange.backgroundColor = UIColor(patternImage: UIImage(named: "car3_orange")!)
+            button_special.backgroundColor = UIColor(patternImage: UIImage(named: "car3_special")!)
+        }
+        else if variables.car == "car_4grey"
+        {
+            button_black.backgroundColor = UIColor(patternImage: UIImage(named: "car4_black")!)
+            button_blue.backgroundColor = UIColor(patternImage: UIImage(named: "car4_blue")!)
+            button_grey.backgroundColor = UIColor(patternImage: UIImage(named: "car4_grey")!)
+            button_purple.backgroundColor = UIColor(patternImage: UIImage(named: "car4_purple")!)
+            button_pink.backgroundColor = UIColor(patternImage: UIImage(named: "car4_pink")!)
+            button_orange.backgroundColor = UIColor(patternImage: UIImage(named: "car4_orange")!)
+            button_special.backgroundColor = UIColor(patternImage: UIImage(named: "car4_special")!)
+        }
     }
     
     override func didReceiveMemoryWarning()
