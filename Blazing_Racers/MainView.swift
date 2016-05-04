@@ -14,14 +14,15 @@ class MainViewViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-    
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.translucent = true
 
         UIGraphicsBeginImageContext(self.view.frame.size)
         UIImage(named: "main_title1.png")?.drawInRect(self.view.bounds)
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
-        
 
         button_bluetoothmultiplayer.layer.cornerRadius = 10;
         button_splitscreenracing.layer.cornerRadius = 10;
@@ -118,4 +119,5 @@ print("this app is certified spicy")
             multiVC.variables = variables
         }
     }
+    
 }
