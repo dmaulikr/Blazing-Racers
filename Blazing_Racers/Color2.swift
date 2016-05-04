@@ -11,11 +11,10 @@ class Color2: UIViewController
     @IBOutlet weak var button_grey: UIButton!
     @IBOutlet weak var button_orange: UIButton!
     @IBOutlet weak var button_special: UIButton!
-    
     var variables = StoredVariables()
     
     override func viewDidLoad()
-    {//meeme
+    {
         super.viewDidLoad()
         
         UIGraphicsBeginImageContext(self.view.frame.size)

@@ -23,7 +23,6 @@ class MainViewViewController: UIViewController
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
-        
 
         button_bluetoothmultiplayer.layer.cornerRadius = 10;
         button_splitscreenracing.layer.cornerRadius = 10;
