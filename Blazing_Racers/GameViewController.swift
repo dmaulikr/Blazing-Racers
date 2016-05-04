@@ -27,6 +27,7 @@ class GameViewController: UIViewController
                 print(variables.splitScreen.boolValue)
                 /* Set the scale mode to scale to fit the window */
                 scene.scaleMode = .AspectFill
+                scene.gameViewController = self
                 
                 print("A")
                 skView.presentScene(scene)
@@ -46,6 +47,7 @@ class GameViewController: UIViewController
                 print(variables.splitScreen.boolValue)
                 /* Set the scale mode to scale to fit the window */
                 scene.scaleMode = .AspectFill
+                scene.gameViewController = self
                 
                 print("B")
                 skView.presentScene(scene)
@@ -65,9 +67,12 @@ class GameViewController: UIViewController
             print(variables.splitScreen.boolValue)
             /* Set the scale mode to scale to fit the window */
             scene.scaleMode = .AspectFill
+            scene.gameViewController = self
+            
             
             print("C")
             skView.presentScene(scene)
+            
         }
         }
         else if variables.Bluetooth == true
@@ -84,6 +89,7 @@ class GameViewController: UIViewController
                 print(variables.splitScreen.boolValue)
                 /* Set the scale mode to scale to fit the window */
                 scene.scaleMode = .AspectFill
+                scene.gameViewController = self
                 
                 print("D")
                 skView.presentScene(scene)

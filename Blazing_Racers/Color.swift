@@ -18,6 +18,7 @@ class Color: UIViewController
     {
         super.viewDidLoad()
         
+        print(variables.car)
         UIGraphicsBeginImageContext(self.view.frame.size)
         UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()

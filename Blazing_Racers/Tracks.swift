@@ -12,7 +12,7 @@ class Tracks: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        print(variables.colors)
         UIGraphicsBeginImageContext(self.view.frame.size)
         UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
