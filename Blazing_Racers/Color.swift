@@ -39,6 +39,18 @@ class Color: UIViewController
         button_pink.alpha = 0
         button_purple.alpha = 0
         button_special.alpha = 0
+        
+        if variables.car = "car1_grey" {
+            button_black.backgroundColor = UIColor(patternImage: UIImage(named: "ca1_black")!)
+            button_blue.backgroundColor = UIColor(patternImage: UIImage(named: "car1_blue")!)
+            button_grey.backgroundColor = UIColor(patternImage: UIImage(named: "car1_grey")!)
+            button_purple.backgroundColor = UIColor(patternImage: UIImage(named: "car1_purple")!)
+            button_pink.backgroundColor = UIColor(patternImage: UIImage(named: "car1_pink")!)
+            button_orange.backgroundColor = UIColor(patternImage: UIImage(named: "car1_orange")!)
+            button_special.backgroundColor = UIColor(patternImage: UIImage(named: "car1_special")!)
+        } else if variables.car = "car2_grey" {
+            
+        }
     }
     override func viewDidAppear(animated: Bool)
     {
