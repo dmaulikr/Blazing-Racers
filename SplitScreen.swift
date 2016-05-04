@@ -35,8 +35,8 @@ class SplitScreen: SKScene
     //SKActions
     var moveUp = SKAction.moveByX(0, y: 15, duration: 1)
     var moveDown = SKAction.moveByX(0, y: -20, duration: 1)
-    var moveLeft = SKAction.moveByX(-20, y: 0, duration: 0.5)
-    var moveRight = SKAction.moveByX(20, y: 0, duration: 0.5)
+    var moveLeft = SKAction.moveByX(-30, y: 0, duration: 0.5)
+    var moveRight = SKAction.moveByX(30, y: 0, duration: 0.5)
    
     override func didMoveToView(view: SKView)
     {
@@ -251,6 +251,15 @@ class SplitScreen: SKScene
             }
         }
     
+    func movingRight() {
+            myCar.runAction(moveRight)
+            myCar.runAction(moveLeft)
+    }
+    
+    func movingLeft() {
+        myCar.runAction(moveLeft)
+            myCar.runAction(moveRight)
+    }
     
     // this is the function that decrease your speed
     func speedFormula()
@@ -259,17 +268,9 @@ class SplitScreen: SKScene
         taps -= 1
        myCar.runAction(moveDown)
        
-        while gameViewController.variables.splitScreen == true
-        {
-            myCar.runAction(moveLeft)
-            myCar.runAction(moveRight)
-        }
         
-        while gameViewController.variables.splitScreen == true
-        {
-         myCar.runAction(moveRight)
-         myCar.runAction(moveLeft)
-        }
+        
+        
         
         if taps < 0
         {
