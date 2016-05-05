@@ -31,7 +31,11 @@ class SinglePlayerTime: SKScene
     var myButton = SKSpriteNode(imageNamed: "button_tap")
     let mySpeedometer = SKSpriteNode(imageNamed: "speedometer")
     
-    
+    //SKActions
+    var moveUp = SKAction.moveByX(0, y: 15, duration: 1)
+    var moveDown = SKAction.moveByX(0, y: -20, duration: 1)
+    var moveLeft = SKAction.moveByX(-200, y: 0, duration: 2)
+    var moveRight = SKAction.moveByX(200, y: 0, duration: 2)
     
     override func didMoveToView(view: SKView)
     {
@@ -75,6 +79,7 @@ class SinglePlayerTime: SKScene
         //sets up the postion
         myCar.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMinY(self.frame) + 300)
         
+        
         //The image where the speed label goes in
         //sets up the postion
         mySpeedometer.position = CGPoint(x: CGRectGetMaxX(self.frame) - 140, y: CGRectGetMinY(self.frame) + 250)
@@ -103,6 +108,8 @@ class SinglePlayerTime: SKScene
         //The timers for the game
         countdown()
         
+        
+        
         //Adds all the sprites above into the game scene
         self.addChild(myButton)
         self.addChild(mySpeed)
@@ -111,6 +118,7 @@ class SinglePlayerTime: SKScene
         self.addChild(myCar)
         self.addChild(mySpeedometer)
         self.addChild(road)
+        
     }
     
     //When you touch it runs this line of code to see if the button was touched
@@ -138,6 +146,7 @@ class SinglePlayerTime: SKScene
                     distance += taps * 2
                     //sets distance equal to the label
                     myDistance.text = "\(distance)"
+                    myCar.runAction(moveUp)
                     print("\(taps)")
                     print("\(distance)")
                     
@@ -191,6 +200,7 @@ class SinglePlayerTime: SKScene
         ++milisecond
         rollover()
         time()
+        movingRight()
     }
     
     //This allows it to act like a digital clock
@@ -242,12 +252,23 @@ class SinglePlayerTime: SKScene
         }
     }
     
+    func movingRight() {
+        myCar.runAction(moveRight)
+        myCar.runAction(moveLeft)
+    }
+    
+    func movingLeft() {
+        myCar.runAction(moveLeft)
+        myCar.runAction(moveRight)
+    }
     
     // this is the function that decrease your speed
     func speedFormula()
     {
         mySpeed.text = "\(taps)"
         taps -= 1
+        myCar.runAction(moveDown)
+        
         if taps < 0
         {
             taps = 0

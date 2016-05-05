@@ -67,7 +67,7 @@ class GameViewController: UIViewController
             print(variables.splitScreen.boolValue)
             /* Set the scale mode to scale to fit the window */
             scene.scaleMode = .AspectFill
-            scene.gameViewController = self
+            //scene.gameViewController = self
             
             
             print("C")

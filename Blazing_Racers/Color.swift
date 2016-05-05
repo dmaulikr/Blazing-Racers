@@ -117,7 +117,7 @@ class Color: UIViewController
         super.didReceiveMemoryWarning()
     }
     @IBAction func color7ButtonTapped(sender: AnyObject)
-    {
+    {print("color tapped")
         if variables.car == "car1_grey"
         {
             variables.colors = "car1_black"
@@ -136,7 +136,7 @@ class Color: UIViewController
         }
     }
     @IBAction func color8ButtonTapped(sender: AnyObject)
-    {
+    {print("color tapped")
         if variables.car == "car1_grey"
         {
             variables.colors = "car1_blue"
@@ -156,7 +156,7 @@ class Color: UIViewController
    
     }
     @IBAction func color9ButtonTapped(sender: AnyObject)
-    {
+    {print("color tapped")
         if variables.car == "car1_grey"
         {
             variables.colors = "car1_grey"
@@ -176,7 +176,7 @@ class Color: UIViewController
    
     }
     @IBAction func color10ButtonTapped(sender: AnyObject)
-    {
+    {print("color tapped")
         if variables.car == "car1_grey"
         {
             variables.colors = "car1_orange"
@@ -196,7 +196,7 @@ class Color: UIViewController
 
     }
     @IBAction func color11ButtonTapped(sender: AnyObject)
-    {
+    {print("color tapped")
         if variables.car == "car1_grey"
         {
             variables.colors = "car1_pink"
@@ -216,7 +216,7 @@ class Color: UIViewController
 
     }
     @IBAction func color12ButtonTapped(sender: AnyObject)
-    {
+    {print("color tapped")
         if variables.car == "car1_grey"
         {
             variables.colors = "car1_purple"
@@ -236,7 +236,7 @@ class Color: UIViewController
 
     }
     @IBAction func color13ButtonTapped(sender: AnyObject)
-    {
+    {print("color tapped")
         if variables.car == "car1_grey"
         {
             variables.colors = "car1_special"
@@ -261,6 +261,7 @@ class Color: UIViewController
     {
         let tracksVC = segue.destinationViewController as! Tracks
         tracksVC.variables = variables
+        print("var passed")
     }
 
     
