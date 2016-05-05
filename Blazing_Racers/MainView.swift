@@ -51,7 +51,7 @@ class MainViewViewController: UIViewController
             {
             self.button_oneplayerracing.alpha = 1.0
         })
-print("this app is certified spicy")
+print("( ͡° ͜ʖ ͡°) this app is gr8 m8")
     }
     
     //make the nav bar dissappear

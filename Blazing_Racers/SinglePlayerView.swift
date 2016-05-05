@@ -10,6 +10,7 @@ class SinglePlayerView: UIViewController
 
     override func viewDidLoad()
     {
+        
         super.viewDidLoad()
         print(variables.singlePlayer.boolValue)
         

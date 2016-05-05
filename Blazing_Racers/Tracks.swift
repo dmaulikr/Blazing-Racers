@@ -42,7 +42,6 @@ class Tracks: UIViewController
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     @IBAction func tracks3ButtonTapped(sender: AnyObject)
     {
