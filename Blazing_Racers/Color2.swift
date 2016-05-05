@@ -13,6 +13,8 @@ class Color2: UIViewController
     @IBOutlet weak var button_special: UIButton!
     var variables = StoredVariables()
     
+    //blaze it race it
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
