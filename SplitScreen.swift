@@ -35,8 +35,8 @@ class SplitScreen: SKScene
     //SKActions
     var moveUp = SKAction.moveByX(0, y: 15, duration: 1)
     var moveDown = SKAction.moveByX(0, y: -20, duration: 1)
-    var moveLeft = SKAction.moveByX(-30, y: 0, duration: 0.5)
-    var moveRight = SKAction.moveByX(30, y: 0, duration: 0.5)
+    var moveLeft = SKAction.moveByX(-200, y: 0, duration: 2)
+    var moveRight = SKAction.moveByX(200, y: 0, duration: 2)
    
     override func didMoveToView(view: SKView)
     {
@@ -119,6 +119,7 @@ class SplitScreen: SKScene
         self.addChild(myCar)
         self.addChild(mySpeedometer)
         self.addChild(road)
+        
     }
 
     //When you touch it runs this line of code to see if the button was touched
@@ -200,6 +201,7 @@ class SplitScreen: SKScene
         ++milisecond
         rollover()
         time()
+        movingRight()
     }
     
     //This allows it to act like a digital clock
@@ -267,11 +269,7 @@ class SplitScreen: SKScene
         mySpeed.text = "\(taps)"
         taps -= 1
        myCar.runAction(moveDown)
-       
-        
-        
-        
-        
+      
         if taps < 0
         {
             taps = 0
