@@ -117,15 +117,15 @@ class Color3: UIViewController
         {
             variables.colors = "car1_black"
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
             variables.colors = "car2_black"
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
             variables.colors = "car3_black"
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
             variables.colors = "car4_black"
         }
@@ -137,15 +137,15 @@ class Color3: UIViewController
         {
             variables.colors = "car1_blue"
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
             variables.colors = "car2_blue"
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
             variables.colors = "car3_blue"
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
             variables.colors = "car4_blue"
         }
@@ -158,15 +158,15 @@ class Color3: UIViewController
         {
             variables.colors = "car1_grey"
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
             variables.colors = "car2_grey"
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
             variables.colors = "car3_grey"
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
             variables.colors = "car4_grey"
         }
@@ -178,15 +178,15 @@ class Color3: UIViewController
         {
             variables.colors = "car1_orange"
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
             variables.colors = "car2_orange"
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
             variables.colors = "car3_orange"
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
             variables.colors = "car4_orange"
         }
@@ -199,17 +199,17 @@ class Color3: UIViewController
         {
             variables.colors = "car1_pink"
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
             variables.colors = "car2_pink"
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
-            variables.colors = "car3_pink"
+            variables.colors = "car3_grey"
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
-            variables.colors = "car4_pink"
+            variables.colors = "car4_grey"
         }
 
     }
@@ -218,19 +218,19 @@ class Color3: UIViewController
     {
         if variables.car == "car1_grey"
         {
-            variables.colors = "car1_purple"
+            variables.colors = "car1_orange"
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
-            variables.colors = "car2_purple"
+            variables.colors = "car2_orange"
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
-            variables.colors = "car3_purple"
+            variables.colors = "car3_orange"
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
-            variables.colors = "car4_purple"
+            variables.colors = "car4_orange"
         }
 
     }
@@ -240,15 +240,15 @@ class Color3: UIViewController
         {
             variables.colors = "car1_special"
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
             variables.colors = "car2_special"
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
             variables.colors = "car3_special"
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
             variables.colors = "car4_special"
         }
