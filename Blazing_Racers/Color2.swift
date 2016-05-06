@@ -123,17 +123,17 @@ class Color2: UIViewController
             variables.colors = "car1_black"
             button_black.backgroundColor = UIColor(patternImage: UIImage(named: "car1_black")!)
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
             variables.colors = "car2_black"
             button_black.backgroundColor = UIColor(patternImage: UIImage(named: "car2_black")!)
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
             variables.colors = "car3_black"
             button_black.backgroundColor = UIColor(patternImage: UIImage(named: "car3_black")!)
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
             variables.colors = "car4_black"
             button_black.backgroundColor = UIColor(patternImage: UIImage(named: "car4_black")!)
@@ -145,22 +145,22 @@ class Color2: UIViewController
     {
         if variables.car == "car1_grey"
         {
-            variables.colors = "car1_blue"
+            variables.colors = "car1_purple"
             button_blue.backgroundColor = UIColor(patternImage: UIImage(named: "car1_blue")!)
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
-            variables.colors = "car2_blue"
+            variables.colors = "car2_purple"
             button_blue.backgroundColor = UIColor(patternImage: UIImage(named: "car2_blue")!)
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
-            variables.colors = "car3_blue"
+            variables.colors = "car3_purple"
             button_blue.backgroundColor = UIColor(patternImage: UIImage(named: "car3_blue")!)
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
-            variables.colors = "car4_blue"
+            variables.colors = "car4_purple"
             button_blue.backgroundColor = UIColor(patternImage: UIImage(named: "car4_blue")!)
         }
 
@@ -170,22 +170,22 @@ class Color2: UIViewController
     {
         if variables.car == "car1_grey"
         {
-            variables.colors = "car1_grey"
+            variables.colors = "car1_blue"
             button_grey.backgroundColor = UIColor(patternImage: UIImage(named: "car1_grey")!)
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
-            variables.colors = "car2_grey"
+            variables.colors = "car2_blue"
             button_grey.backgroundColor = UIColor(patternImage: UIImage(named: "car2_grey")!)
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
-            variables.colors = "car3_grey"
+            variables.colors = "car3_blue"
             button_grey.backgroundColor = UIColor(patternImage: UIImage(named: "car3_grey")!)
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
-            variables.colors = "car4_grey"
+            variables.colors = "car4_blue"
             button_grey.backgroundColor = UIColor(patternImage: UIImage(named: "car4_grey")!)
         }
     }
@@ -194,22 +194,22 @@ class Color2: UIViewController
     {
         if variables.car == "car1_grey"
         {
-            variables.colors = "car1_orange"
+            variables.colors = "car1_pink"
             button_orange.backgroundColor = UIColor(patternImage: UIImage(named: "car1_orange")!)
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
-            variables.colors = "car2_orange"
+            variables.colors = "car2_pink"
             button_orange.backgroundColor = UIColor(patternImage: UIImage(named: "car2_orange")!)
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
-            variables.colors = "car3_orange"
+            variables.colors = "car3_pink"
             button_orange.backgroundColor = UIColor(patternImage: UIImage(named: "car3_orange")!)
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
-            variables.colors = "car4_orange"
+            variables.colors = "car4_pink"
             button_orange.backgroundColor = UIColor(patternImage: UIImage(named: "car4_orange")!)
         }
 
@@ -219,22 +219,22 @@ class Color2: UIViewController
     {
         if variables.car == "car1_grey"
         {
-            variables.colors = "car1_pink"
+            variables.colors = "car1_grey"
             button_pink.backgroundColor = UIColor(patternImage: UIImage(named: "car1_pink")!)
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
-            variables.colors = "car2_pink"
+            variables.colors = "car2_grey"
             button_pink.backgroundColor = UIColor(patternImage: UIImage(named: "car2_pink")!)
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
-            variables.colors = "car3_pink"
+            variables.colors = "car3_grey"
             button_pink.backgroundColor = UIColor(patternImage: UIImage(named: "car3_pink")!)
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
-            variables.colors = "car4_pink"
+            variables.colors = "car4_grey"
             button_pink.backgroundColor = UIColor(patternImage: UIImage(named: "car4_pink")!)
         }
 
@@ -244,22 +244,22 @@ class Color2: UIViewController
     {
         if variables.car == "car1_grey"
         {
-            variables.colors = "car1_purple"
+            variables.colors = "car1_orange"
             button_purple.backgroundColor = UIColor(patternImage: UIImage(named: "car1_purple")!)
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
-            variables.colors = "car2_purple"
+            variables.colors = "car2_orange"
             button_purple.backgroundColor = UIColor(patternImage: UIImage(named: "car2_purple")!)
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
-            variables.colors = "car3_purple"
+            variables.colors = "car3_orange"
             button_purple.backgroundColor = UIColor(patternImage: UIImage(named: "car3_purple")!)
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
-            variables.colors = "car4_purple"
+            variables.colors = "car4_orange"
             button_purple.backgroundColor = UIColor(patternImage: UIImage(named: "car4_purple")!)
         }
    
@@ -271,17 +271,17 @@ class Color2: UIViewController
             variables.colors = "car1_special"
             button_special.backgroundColor = UIColor(patternImage: UIImage(named: "car1_special")!)
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
             variables.colors = "car2_special"
             button_special.backgroundColor = UIColor(patternImage: UIImage(named: "car2_special")!)
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
             variables.colors = "car3_special"
             button_special.backgroundColor = UIColor(patternImage: UIImage(named: "car3_special")!)
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
             variables.colors = "car4_special"
             button_special.backgroundColor = UIColor(patternImage: UIImage(named: "car4_special")!)
