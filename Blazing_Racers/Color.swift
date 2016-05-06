@@ -236,7 +236,8 @@ class Color: UIViewController
 
     }
     @IBAction func color13ButtonTapped(sender: AnyObject)
-    {print("color tapped")
+    {
+        print("color tapped")
         if variables.car == "car1_grey"
         {
             variables.colors = "car1_special"
