@@ -201,7 +201,7 @@ class SplitScreen: SKScene
         ++milisecond
         rollover()
         time()
-        movingRight()
+        conditionToWin()
     }
     
     //This allows it to act like a digital clock
@@ -253,15 +253,7 @@ class SplitScreen: SKScene
             }
         }
     
-    func movingRight() {
-            myCar.runAction(moveRight)
-            myCar.runAction(moveLeft)
-    }
     
-    func movingLeft() {
-        myCar.runAction(moveLeft)
-            myCar.runAction(moveRight)
-    }
     
     // this is the function that decrease your speed
     func speedFormula()
@@ -278,6 +270,12 @@ class SplitScreen: SKScene
         else if taps > 0
         {
             mySpeed.text = "\(taps)"
+        }
+    }
+    func conditionToWin() {
+        if distance >= 20000 {
+            timerOne.invalidate()
+            timerDecrease.invalidate()
         }
     }
 }
