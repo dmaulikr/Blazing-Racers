@@ -11,9 +11,10 @@ class BluetoothMultiplayer: SKScene
     
     //Int Variables
     var taps = 0
+    var count = 3
     var distance = 0
     var milisecond = 0
-    var second = 3
+    var second = 0
     var minute = 0
     
     //Timer Variables
@@ -33,10 +34,10 @@ class BluetoothMultiplayer: SKScene
     let mySpeedometer = SKSpriteNode(imageNamed: "speedometer")
     
     //SKActions
-    var moveUp = SKAction.moveByX(0, y: 15, duration: 1)
-    var moveDown = SKAction.moveByX(0, y: -20, duration: 1)
-    var moveLeft = SKAction.moveByX(-200, y: 0, duration: 2)
-    var moveRight = SKAction.moveByX(200, y: 0, duration: 2)
+    var moveUp = SKAction.moveByX(0, y: 35, duration: 1)
+    var moveDown = SKAction.moveByX(0, y: -40, duration: 1)
+    var moveAway = SKAction.moveByX(0, y: 30, duration: 1)
+    var backInBounds = SKAction.moveByX(0, y: -30, duration: 1)
     
     override func didMoveToView(view: SKView)
     {
@@ -53,7 +54,7 @@ class BluetoothMultiplayer: SKScene
         myDistance.zPosition = 1
         
         //This is what keeps track on the time
-        myTime.text = "\(second)"
+        myTime.text = "\(count)"
         //Changes the font to look digital
         myTime.fontName = "DBLCDTempBlack"
         myTime.fontSize = 120
@@ -105,6 +106,8 @@ class BluetoothMultiplayer: SKScene
         //scales the button to fit the screen
         myButton.xScale *= 5
         myButton.yScale *= 3
+        //sends it to the very front
+        myButton.zPosition = 2
         
         //The timers for the game
         countdown()
@@ -132,30 +135,36 @@ class BluetoothMultiplayer: SKScene
             let positionInScene = touch.locationInNode(self)
             //it checks for the node that was touched
             let touchedNode = self.nodeAtPoint(positionInScene)
-            
-            //sets the variable to the name of the touched node
-            if let name = touchedNode.name
-            {
-                //checks to see if it is the same as the button
-                if name == "button"
+            if count == 0 {
+                //sets the variable to the name of the touched node
+                if let name = touchedNode.name
                 {
-                    //increases the speed
-                    ++taps
-                    //sets the speed equal to the label
-                    mySpeed.text = "\(taps)"
-                    //sets the distance that monitors how far you go
-                    distance += taps * 2
-                    //sets distance equal to the label
-                    myDistance.text = "\(distance)"
-                    myCar.runAction(moveUp)
-                    print("\(taps)")
-                    print("\(distance)")
-                    
+                    //checks to see if it is the same as the button
+                    if name == "button"
+                    {
+                        if distance <= 20000 {
+                            //increases the speed
+                            ++taps
+                            //sets the speed equal to the label
+                            mySpeed.text = "\(taps)"
+                            //sets the distance that monitors how far you go
+                            distance += taps * 2
+                            //sets distance equal to the label
+                            myDistance.text = "\(distance)"
+                            myCar.runAction(moveUp)
+                            print("\(taps)")
+                            print("\(distance)")
+                        }
+                        else if distance >= 20000 {
+                            timerOne.invalidate()
+                            timerDecrease.invalidate()
+                        }
+                    }
                 }
             }
-            
         }
     }
+    
     
     //this is the timer that starts the game off
     func countdown()
@@ -166,7 +175,7 @@ class BluetoothMultiplayer: SKScene
     //The action the timer tuns
     func countdownAction()
     {
-        second -= 1
+        count -= 1
         displayCountdown()
         switchToClock()
     }
@@ -174,13 +183,13 @@ class BluetoothMultiplayer: SKScene
     //sets the label of the timer
     func displayCountdown()
     {
-        myTime.text = "\(second)"
+        myTime.text = "\(count)"
     }
     
     //this is what switches to the new timer after it finishes
     func switchToClock()
     {
-        if second == 0 {
+        if count == 0 {
             timerOne.invalidate()
             myTime.text = "00:00.00"
             myTime.fontSize = 70
@@ -201,7 +210,8 @@ class BluetoothMultiplayer: SKScene
         ++milisecond
         rollover()
         time()
-        movingRight()
+        // conditionToWin()
+        carCollidesButton()
     }
     
     //This allows it to act like a digital clock
@@ -253,15 +263,7 @@ class BluetoothMultiplayer: SKScene
         }
     }
     
-    func movingRight() {
-        myCar.runAction(moveRight)
-        myCar.runAction(moveLeft)
-    }
     
-    func movingLeft() {
-        myCar.runAction(moveLeft)
-        myCar.runAction(moveRight)
-    }
     
     // this is the function that decrease your speed
     func speedFormula()
@@ -280,4 +282,13 @@ class BluetoothMultiplayer: SKScene
             mySpeed.text = "\(taps)"
         }
     }
+    
+    func carCollidesButton() {
+        if myCar.position.y <= myButton.position.y {
+            myCar.runAction(moveAway)
+        } else if myCar.position.y >= road.position.y * 2 {
+            myCar.runAction(backInBounds)
+        }
+    }
+    
 }
