@@ -23,6 +23,7 @@ class Tracks: UIViewController
         
         button_track2.alpha = 0
         button_track1.alpha = 0
+        // sets track = to background image of track
         if variables.track == "road_1_multiplayer"
         {
             button_track1.backgroundColor = UIColor(patternImage: UIImage(named: "road_1_multiplayer")!)
@@ -53,6 +54,7 @@ class Tracks: UIViewController
     }
     @IBAction func tracks3ButtonTapped(sender: AnyObject)
     {
+        // sets the track in the game.
         if variables.track == "road_1_multiplayer"
         {
             button_track1.backgroundColor = UIColor(patternImage: UIImage(named:"road_1_multiplayer")!)

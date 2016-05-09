@@ -118,7 +118,7 @@ class Color: UIViewController
     }
     @IBAction func color7ButtonTapped(sender: AnyObject)
     {print("color tapped")
-        // this sets the cars equal to the color you chose
+        // this sets the cars equal to the color you chose and then that carries over to the game.
         if variables.car == "car1_grey"
         {
             variables.colors = "car1_black"
