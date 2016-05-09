@@ -45,7 +45,10 @@ class Tracks: UIViewController
     }
     @IBAction func tracks3ButtonTapped(sender: AnyObject)
     {
-        
+        if variables.track == "road_1_multiplayer"
+        {
+            button_track1.backgroundColor = UIColor(patternImage: UIImage(named:"road_1_multiplayer")!)
+        }
     }
     
     @IBAction func tracks4ButtonTapped(sender: AnyObject)
