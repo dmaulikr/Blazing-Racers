@@ -23,6 +23,14 @@ class Tracks: UIViewController
         
         button_track2.alpha = 0
         button_track1.alpha = 0
+        if variables.track == "road_1_multiplayer"
+        {
+            button_track1.backgroundColor = UIColor(patternImage: UIImage(named: "road_1_multiplayer")!)
+        }
+        else if variables.track == "road_2_multiplayer"
+        {
+            button_track2.backgroundColor = UIColor(patternImage: UIImage(named: "road_2_multiplayer")!)
+        }
 }
     
     override func viewDidAppear(animated: Bool) {
@@ -53,7 +61,10 @@ class Tracks: UIViewController
     
     @IBAction func tracks4ButtonTapped(sender: AnyObject)
     {
-        
+        if variables.track == "road_2_multiplayer"
+        {
+            button_track2.backgroundColor = UIColor(patternImage: UIImage(named:"road_2_multiplayer")!)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)

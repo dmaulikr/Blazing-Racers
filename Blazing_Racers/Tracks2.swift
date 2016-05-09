@@ -37,6 +37,14 @@ class Tracks2: UIViewController
             {
                 self.button_track2.alpha = 1
         })
+        if variables.track == "road_1_singleplayer"
+        {
+            button_track1.backgroundColor = UIColor(patternImage: UIImage(named: "road_1_singleplayer")!)
+        }
+        else if variables.track == "road_2_singleplayer"
+        {
+            button_track2.backgroundColor = UIColor(patternImage: UIImage(named: "road_2_singleplayer")!)
+        }
     }
 
     override func didReceiveMemoryWarning()
@@ -47,12 +55,19 @@ class Tracks2: UIViewController
     
     @IBAction func track1ButtonTapped(sender: AnyObject)
     {
-        
+        if variables.track == "road_1_singleplayer"
+        {
+            button_track1.backgroundColor = UIColor(patternImage: UIImage(named:"road_1_singleplayer")!)
+        }
+
     }
     
     @IBAction func tracks2ButtonTapped(sender: AnyObject)
     {
-        
+        if variables.track == "road_2_singleplayer"
+        {
+            button_track1.backgroundColor = UIColor(patternImage: UIImage(named:"road_2_singleplayer")!)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
