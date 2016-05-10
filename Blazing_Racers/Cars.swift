@@ -23,6 +23,7 @@ class Cars: UIViewController
         button_carset2.layer.cornerRadius = 10;
         button_carset3.layer.cornerRadius = 10;
         button_carset4.layer.cornerRadius = 10;
+        // this sets the background colors for the cars in the view when it loads-Claydol
         button_carset1.backgroundColor = UIColor(patternImage: UIImage(named: "car1_grey")!)
         button_carset2.backgroundColor = UIColor(patternImage: UIImage(named: "car2_grey")!)
         button_carset3.backgroundColor = UIColor(patternImage: UIImage(named: "car3_grey")!)
@@ -72,6 +73,7 @@ class Cars: UIViewController
     
     @IBAction func color1ButtonPressed(sender: AnyObject)
     {
+        // this sets the variable car = to the car set you chose based on the button, which then transfers it to the next view
         variables.car = "car1_grey"
     }
     @IBAction func colorButton2Pressed(sender: AnyObject)

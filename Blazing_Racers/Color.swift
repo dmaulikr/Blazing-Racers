@@ -39,7 +39,7 @@ class Color: UIViewController
         button_pink.alpha = 0
         button_purple.alpha = 0
         button_special.alpha = 0
-        
+        // sets the button backgrounds equal to the car images
         if variables.car == "car1_grey"
         {
             button_black.backgroundColor = UIColor(patternImage: UIImage(named: "car1_black")!)
@@ -118,6 +118,7 @@ class Color: UIViewController
     }
     @IBAction func color7ButtonTapped(sender: AnyObject)
     {print("color tapped")
+        // this sets the cars equal to the color you chose and then that carries over to the game.
         if variables.car == "car1_grey"
         {
             variables.colors = "car1_black"
@@ -139,19 +140,19 @@ class Color: UIViewController
     {print("color tapped")
         if variables.car == "car1_grey"
         {
-            variables.colors = "car1_blue"
+            variables.colors = "car1_purple"
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
-            variables.colors = "car2_blue"
+            variables.colors = "car2_purple"
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
-            variables.colors = "car3_blue"
+            variables.colors = "car3_purple"
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
-            variables.colors = "car4_blue"
+            variables.colors = "car4_purple"
         }
    
     }
@@ -159,19 +160,19 @@ class Color: UIViewController
     {print("color tapped")
         if variables.car == "car1_grey"
         {
-            variables.colors = "car1_grey"
+            variables.colors = "car1_blue"
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
-            variables.colors = "car2_grey"
+            variables.colors = "car2_blue"
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
-            variables.colors = "car3_grey"
+            variables.colors = "car3_blue"
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
-            variables.colors = "car4_grey"
+            variables.colors = "car4_blue"
         }
    
     }
@@ -179,19 +180,19 @@ class Color: UIViewController
     {print("color tapped")
         if variables.car == "car1_grey"
         {
-            variables.colors = "car1_orange"
+            variables.colors = "car1_pink"
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
-            variables.colors = "car2_orange"
+            variables.colors = "car2_pink"
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
-            variables.colors = "car3_orange"
+            variables.colors = "car3_pink"
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
-            variables.colors = "car4_orange"
+            variables.colors = "car4_pink"
         }
 
     }
@@ -199,19 +200,19 @@ class Color: UIViewController
     {print("color tapped")
         if variables.car == "car1_grey"
         {
-            variables.colors = "car1_pink"
+            variables.colors = "car1_grey"
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
-            variables.colors = "car2_pink"
+            variables.colors = "car2_grey"
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
-            variables.colors = "car3_pink"
+            variables.colors = "car3_grey"
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
-            variables.colors = "car4_pink"
+            variables.colors = "car4_grey"
         }
 
     }
@@ -219,37 +220,38 @@ class Color: UIViewController
     {print("color tapped")
         if variables.car == "car1_grey"
         {
-            variables.colors = "car1_purple"
+            variables.colors = "car1_orange"
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
-            variables.colors = "car2_purple"
+            variables.colors = "car2_orange"
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
-            variables.colors = "car3_purple"
+            variables.colors = "car3_orange"
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
-            variables.colors = "car4_purple"
+            variables.colors = "car4_orange"
         }
 
     }
     @IBAction func color13ButtonTapped(sender: AnyObject)
-    {print("color tapped")
+    {
+        print("color tapped")
         if variables.car == "car1_grey"
         {
             variables.colors = "car1_special"
         }
-        else if variables.colors == "car2_grey"
+        else if variables.car == "car2_grey"
         {
             variables.colors = "car2_special"
         }
-        else if variables.colors == "car3_grey"
+        else if variables.car == "car3_grey"
         {
             variables.colors = "car3_special"
         }
-        else if variables.colors == "car4_grey"
+        else if variables.car == "car4_grey"
         {
             variables.colors = "car4_special"
         }

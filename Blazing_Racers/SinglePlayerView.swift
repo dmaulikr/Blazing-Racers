@@ -3,9 +3,10 @@ import UIKit
 
 class SinglePlayerView: UIViewController
 {
+    // sets the buttons
     @IBOutlet weak var button_timetrial: UIButton!
     @IBOutlet weak var button_speedrace: UIButton!
-    
+    // sets variables = the storied variables class
     var variables = StoredVariables()
 
     override func viewDidLoad()
@@ -55,6 +56,7 @@ class SinglePlayerView: UIViewController
     
     @IBAction func button_TimeTrial(sender: UIButton)
     {
+        // sets the vars time trial and speed test based on which button you click.
         variables.timeTrial = true
         variables.speedTest = false
     }
