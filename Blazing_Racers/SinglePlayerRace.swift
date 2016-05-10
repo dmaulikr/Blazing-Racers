@@ -282,12 +282,19 @@ class SinglePlayerRace: SKScene
         }
     }
     
-    func carCollidesButton() {
-        if myCar.position.y <= myButton.position.y {
+    func carCollidesButton()
+    {
+        if myCar.position.y <= myButton.position.y
+        {
             myCar.runAction(moveAway)
-        } else if myCar.position.y >= road.position.y * 2 {
+        } else if myCar.position.y >= road.position.y * 2
+        {
             myCar.runAction(backInBounds)
         }
     }
-    
+    //  way to win
+    func conditionToWin()
+    {
+        
+    }
 }

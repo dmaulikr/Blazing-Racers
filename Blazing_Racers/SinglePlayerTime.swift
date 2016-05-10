@@ -7,7 +7,7 @@ class SinglePlayerTime: SKScene
     
     //Creates a variable of the GameViewController
     var gameViewController = GameViewController()
-    
+    var variables = StoredVariables()
     //Int Variables
     var taps = 0
     var count = 3
@@ -157,6 +157,7 @@ class SinglePlayerTime: SKScene
                         else if distance >= 20000 {
                             timerOne.invalidate()
                             timerDecrease.invalidate()
+                            variables.StoredTime = myTime.text!
                         }
                     }
                 }
@@ -289,5 +290,9 @@ class SinglePlayerTime: SKScene
             myCar.runAction(backInBounds)
         }
     }
-    
+    // way to win
+    func conditionToWin()
+    {
+        
+    }
 }
