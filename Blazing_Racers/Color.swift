@@ -39,7 +39,7 @@ class Color: UIViewController
         button_pink.alpha = 0
         button_purple.alpha = 0
         button_special.alpha = 0
-        
+        // sets the button backgrounds equal to the car images
         if variables.car == "car1_grey"
         {
             button_black.backgroundColor = UIColor(patternImage: UIImage(named: "car1_black")!)
@@ -118,6 +118,7 @@ class Color: UIViewController
     }
     @IBAction func color7ButtonTapped(sender: AnyObject)
     {print("color tapped")
+        // this sets the cars equal to the color you chose and then that carries over to the game.
         if variables.car == "car1_grey"
         {
             variables.colors = "car1_black"
