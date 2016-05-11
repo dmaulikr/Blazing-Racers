@@ -299,14 +299,14 @@ class SinglePlayerTime: SKScene
             myCar.position.y = -30
             timerOne.invalidate()
             timerDecrease.invalidate()
-            
+            variables.StoredTime = myTime.text!
+            print(StoredVariables)
         }
         else if variables.StoredTime >= "2:00.00" && distance <= 20000
         {
             myCar.position.y = -30
             timerDecrease.invalidate()
             timerOne.invalidate()
-            
         }
     }
 }
