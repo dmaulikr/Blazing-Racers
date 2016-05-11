@@ -11,7 +11,9 @@ class StoredVariables: NSObject
     var Bluetooth = false
     
     var car = "car1_grey"
+    var carTwo = "car1_grey"
     var colors = "car1_grey"
+    var colorsTwo = "car1_grey"
     var track = "road_1_multiplayer"
     
     var cars : [String] = ["car1_grey", "car2_grey", "car3_grey", "car4_grey"]

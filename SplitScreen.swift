@@ -51,8 +51,8 @@ class SplitScreen: SKScene
     //Opposite SKActions 
     var moveUpTwo = SKAction.moveByX(0, y: -35, duration: 1)
     var moveDownTwo = SKAction.moveByX(0, y: 40, duration: 1)
-    var moveAwayTwo = SKAction.moveByX(0, y: -30, duration: 1)
-    var backInBoundTwo = SKAction.moveByX(0, y: 30, duration: 1)
+    var moveAwayTwo = SKAction.moveByX(0, y: 30, duration: 1)
+    var backInBoundTwo = SKAction.moveByX(0, y: -30, duration: 1)
     var backInPositionTwo = SKAction.moveToY(900, duration: 8)
     
     override func didMoveToView(view: SKView)
