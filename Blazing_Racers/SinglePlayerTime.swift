@@ -38,6 +38,7 @@ class SinglePlayerTime: SKScene
     var moveDown = SKAction.moveByX(0, y: -40, duration: 1)
     var moveAway = SKAction.moveByX(0, y: 30, duration: 1)
     var backInBounds = SKAction.moveByX(0, y: -30, duration: 1)
+    var backInPosition = SKAction.moveToY(300, duration: 8)
     
     override func didMoveToView(view: SKView)
     {
@@ -144,7 +145,7 @@ class SinglePlayerTime: SKScene
                     {
                         if distance <= 20000 {
                             //increases the speed
-                            ++taps
+                            taps += 2
                             //sets the speed equal to the label
                             mySpeed.text = "\(taps)"
                             //sets the distance that monitors how far you go
@@ -270,7 +271,7 @@ class SinglePlayerTime: SKScene
     func speedFormula()
     {
         mySpeed.text = "\(taps)"
-        taps -= 1
+        taps -= 2
         myCar.runAction(moveDown)
         
         if taps < 0
