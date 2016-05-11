@@ -7,7 +7,8 @@ class SinglePlayerRace: SKScene
     
     //Creates a variable of the GameViewController
     var gameViewController = GameViewController()
-    
+    // makes storiedvariables usable in this SKScene
+    var variables = StoredVariables()
     //Int Variables
     var taps = 0
     var count = 3

@@ -7,6 +7,7 @@ class SinglePlayerTime: SKScene
     
     //Creates a variable of the GameViewController
     var gameViewController = GameViewController()
+    //Lets StoriedVariables be used in this scene
     var variables = StoredVariables()
     //Int Variables
     var taps = 0
@@ -293,6 +294,19 @@ class SinglePlayerTime: SKScene
     // way to win
     func conditionToWin()
     {
-        
+        if variables.StoredTime <= "2:00.00" && distance >= 20000
+        {
+            myCar.position.y = -30
+            timerOne.invalidate()
+            timerDecrease.invalidate()
+            
+        }
+        else if variables.StoredTime >= "2:00.00" && distance <= 20000
+        {
+            myCar.position.y = -30
+            timerDecrease.invalidate()
+            timerOne.invalidate()
+            
+        }
     }
 }
