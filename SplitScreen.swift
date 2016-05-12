@@ -170,6 +170,7 @@ class SplitScreen: SKScene
         
         
         
+        
         //Adds all the sprites above into the game scene
         self.addChild(myButton)
         self.addChild(myButtonTwo)
@@ -185,6 +186,8 @@ class SplitScreen: SKScene
         
     }
 
+    
+    
     //When you touch it runs this line of code to see if the button was touched
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
     {
@@ -197,7 +200,7 @@ class SplitScreen: SKScene
             let touchedNode = self.nodeAtPoint(positionInScene)
             if count == 0 {
             //sets the variable to the name of the touched node
-            if let name = touchedNode.name
+            if var name = touchedNode.name
             {
                 //checks to see if it is the same as the button
                 if name == "button"
@@ -227,21 +230,21 @@ class SplitScreen: SKScene
                         mySpeedTwo.text = "\(taps)"
                         //sets the distance that monitors how far you go
                         distanceTwo += taps * 2
-                        myCar.runAction(moveUpTwo)
+                        myCarTwo.runAction(moveUpTwo)
                         print("\(taps)")
                         print("\(distance)")
                     }
                     else if distanceTwo >= 20000 {
                         timerPartTwo.invalidate()
                         timerDecreaseTwo.invalidate()
-                        myCar.runAction(backInPositionTwo)
+                        myCarTwo.runAction(backInPositionTwo)
                     }
                 }
             }
             }
         }
     }
-
+ 
     
     //this is the timer that starts the game off
     func countdown()
@@ -405,7 +408,7 @@ class SplitScreen: SKScene
     
     func speedFormulaTwo()
     {
-        mySpeedTwo.text = "\(taps)"
+        mySpeedTwo.text = "\(tapsTwo)"
         tapsTwo -= 2
         myCarTwo.runAction(moveDownTwo)
         
