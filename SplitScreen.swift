@@ -53,7 +53,7 @@ class SplitScreen: SKScene
     var moveDownTwo = SKAction.moveByX(0, y: 40, duration: 1)
     var moveAwayTwo = SKAction.moveByX(0, y: 30, duration: 1)
     var backInBoundTwo = SKAction.moveByX(0, y: -30, duration: 1)
-    var backInPositionTwo = SKAction.moveToY(900, duration: 8)
+    var backInPositionTwo = SKAction.moveToY(1600, duration: 8)
     
     override func didMoveToView(view: SKView)
     {
@@ -227,12 +227,12 @@ class SplitScreen: SKScene
                         //increases the speed
                         tapsTwo += 2
                         //sets the speed equal to the label
-                        mySpeedTwo.text = "\(taps)"
+                        mySpeedTwo.text = "\(tapsTwo)"
                         //sets the distance that monitors how far you go
-                        distanceTwo += taps * 2
+                        distanceTwo += tapsTwo * 2
                         myCarTwo.runAction(moveUpTwo)
-                        print("\(taps)")
-                        print("\(distance)")
+                        print("\(tapsTwo)")
+                        print("\(distanceTwo)")
                     }
                     else if distanceTwo >= 20000 {
                         timerPartTwo.invalidate()
