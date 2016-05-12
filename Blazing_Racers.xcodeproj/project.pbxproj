@@ -181,8 +181,8 @@
 				3F7F6CFB1CC14E9C00B8962A /* Color.swift */,
 				3F62EC491CCA87D500668C4E /* Color2.swift */,
 				3F62EC4D1CCA881F00668C4E /* Color3.swift */,
-				3F7F6CFD1CC14EA800B8962A /* Tracks.swift */,
 				3F62EC4F1CCA888A00668C4E /* Tracks2.swift */,
+				3F7F6CFD1CC14EA800B8962A /* Tracks.swift */,
 				3F62EC511CCA889700668C4E /* Tracks3.swift */,
 				3F8D998D1CAAE36B001F9934 /* GameViewController.swift */,
 			);
