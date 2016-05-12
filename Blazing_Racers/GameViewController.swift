@@ -55,6 +55,7 @@ class GameViewController: UIViewController
         }
         else if variables.splitScreen == true
         {
+            
         if let scene = SplitScreen(fileNamed: "GameScene")
         {
             // Configure the view.
@@ -74,7 +75,7 @@ class GameViewController: UIViewController
             skView.presentScene(scene)
             
         }
-        }
+
         else if variables.Bluetooth == true
         {
             if let scene = BluetoothMultiplayer(fileNamed: "GameScene")
