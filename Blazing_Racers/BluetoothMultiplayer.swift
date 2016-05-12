@@ -40,6 +40,24 @@ class BluetoothMultiplayer: SKScene
     var backInBounds = SKAction.moveByX(0, y: -30, duration: 1)
     var backInPosition = SKAction.moveToY(300, duration: 8)
     
+    
+    override func viewDidLoad()
+    {
+        devicesLabel.text = "Waiting for devices..."
+        searchForDevices()
+        NSLog("Ran searchForDevices()")
+    }
+    
+    private func searchForDevices()
+    {
+        GKMatchmaker.sharedMatchmaker().startBrowsingForNearbyPlayersWithHandler()
+        {
+            var status = $1 ? "true" : "false"
+            self.devicesLabel.text = "Reachability changed for player \($0) with status: \(status)"
+        }
+    }
+    
+    
     override func didMoveToView(view: SKView)
     {
         
