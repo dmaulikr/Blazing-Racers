@@ -55,6 +55,7 @@ class GameViewController: UIViewController
         }
         else if variables.splitScreen == true
         {
+            
         if let scene = SplitScreen(fileNamed: "GameScene")
         {
             // Configure the view.
@@ -67,13 +68,14 @@ class GameViewController: UIViewController
             print(variables.splitScreen.boolValue)
             /* Set the scale mode to scale to fit the window */
             scene.scaleMode = .AspectFill
-            //scene.gameViewController = self
+            scene.gameViewController = self
             
             
             print("C")
             skView.presentScene(scene)
             
         }
+            
         }
         else if variables.Bluetooth == true
         {
@@ -100,6 +102,17 @@ class GameViewController: UIViewController
     override func shouldAutorotate() -> Bool
     {
         return true
+    }
+    
+    override func viewWillDisappear(animated: Bool)
+    {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated);
+        super.viewWillDisappear(animated)
+    }
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask
