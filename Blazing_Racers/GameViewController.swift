@@ -75,7 +75,8 @@ class GameViewController: UIViewController
             skView.presentScene(scene)
             
         }
-
+            
+        }
         else if variables.Bluetooth == true
         {
             if let scene = BluetoothMultiplayer(fileNamed: "GameScene")
