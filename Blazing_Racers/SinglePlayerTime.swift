@@ -212,7 +212,7 @@ class SinglePlayerTime: SKScene
         ++milisecond
         rollover()
         time()
-        // conditionToWin()
+        conditionToWin()
         carCollidesButton()
     }
     
@@ -292,18 +292,19 @@ class SinglePlayerTime: SKScene
             myCar.runAction(backInBounds)
         }
     }
+    
     // way to win
     func conditionToWin()
     {
-        if variables.StoredTime <= "2:00.00" && distance >= 20000
+        if minute == 2 && second <= 60 && distance >= 20000
         {
             myCar.position.y = -30
             timerOne.invalidate()
             timerDecrease.invalidate()
-            variables.StoredTime = myTime.text!
-            print(StoredVariables)
+            gameViewController.variables.StoredTime = myTime.text!
+            print("yeah")
         }
-        else if variables.StoredTime >= "2:00.00" && distance <= 20000
+        else if minute == 2 && second >= 0 && distance <= 20000
         {
             myCar.position.y = -30
             timerDecrease.invalidate()
