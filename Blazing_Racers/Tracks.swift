@@ -1,4 +1,10 @@
-
+//
+//  CarsPlayerTwo.swift
+//  Blazing_Racers
+//
+//  Created by MBalsamo on 5/12/16.
+//  Copyright © 2016 MBalsamo. All rights reserved.
+//
 
 import UIKit
 
@@ -24,8 +30,8 @@ class Tracks: UIViewController
         button_track2.alpha = 0
         button_track1.alpha = 0
         // sets track = to background image of track
-            button_track1.backgroundColor = UIColor(patternImage: UIImage(named: "road_1_multiplayer")!)
-            button_track2.backgroundColor = UIColor(patternImage: UIImage(named: "road_2_multiplayer")!)
+//            button_track1.backgroundColor = UIColor(patternImage: UIImage(named: "road_1_multiplayer")!)
+//            button_track2.backgroundColor = UIColor(patternImage: UIImage(named: "road_2_multiplayer")!)
 }
     
     override func viewDidAppear(animated: Bool) {

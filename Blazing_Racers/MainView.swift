@@ -1,4 +1,10 @@
-
+//
+//  TheTWoCarsarePlayers
+//  BLAZED_RACED
+//
+//  Created by MBalsamo on 5/12/66.
+//  Copyright © 666 Weaboo. All righted reserves.
+//
 
 import UIKit
 
@@ -13,6 +19,7 @@ class MainViewViewController: UIViewController
     
     override func viewDidLoad()
     {
+        print("MEMES FOR EVERYONE!!!!!!!!!!!!!!!")
         super.viewDidLoad()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -27,7 +34,6 @@ class MainViewViewController: UIViewController
         button_bluetoothmultiplayer.layer.cornerRadius = 10;
         button_splitscreenracing.layer.cornerRadius = 10;
         button_oneplayerracing.layer.cornerRadius = 10;
-        
         button_oneplayerracing.alpha = 0
         button_bluetoothmultiplayer.alpha = 0
         button_splitscreenracing.alpha = 0
@@ -51,7 +57,6 @@ class MainViewViewController: UIViewController
             {
             self.button_oneplayerracing.alpha = 1.0
         })
-print("( ͡° ͜ʖ ͡°) this app is gr8 m8")
     }
     
     //make the nav bar dissappear

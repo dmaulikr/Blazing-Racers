@@ -1,3 +1,10 @@
+//
+//  CarsPlayerTwo.swift
+//  Blazing_Racers
+//
+//  Created by MBalsamo on 5/12/16.
+//  Copyright © 2016 MBalsamo. All rights reserved.
+//
 
 import UIKit
 
@@ -11,7 +18,6 @@ class SinglePlayerView: UIViewController
 
     override func viewDidLoad()
     {
-        
         super.viewDidLoad()
         print(variables.singlePlayer.boolValue)
         
@@ -51,7 +57,6 @@ class SinglePlayerView: UIViewController
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        
     }
     
     @IBAction func button_TimeTrial(sender: UIButton)

@@ -21,7 +21,10 @@
 		3F62EC4E1CCA881F00668C4E /* Color3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62EC4D1CCA881F00668C4E /* Color3.swift */; };
 		3F62EC501CCA888A00668C4E /* Tracks2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62EC4F1CCA888A00668C4E /* Tracks2.swift */; };
 		3F62EC521CCA889700668C4E /* Tracks3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62EC511CCA889700668C4E /* Tracks3.swift */; };
+		3F6819EF1CE4EA2D000C7E4F /* SplitScreeniPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6819EE1CE4EA2D000C7E4F /* SplitScreeniPod.swift */; };
 		3F6F5FC61CC066CF008573CC /* StoredVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6F5FC51CC066CF008573CC /* StoredVariables.swift */; };
+		3F71891B1CE4E6F300308FF7 /* CarsPlayerTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F71891A1CE4E6F300308FF7 /* CarsPlayerTwo.swift */; };
+		3F71891D1CE4E70E00308FF7 /* ColorPlayerTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F71891C1CE4E70E00308FF7 /* ColorPlayerTwo.swift */; };
 		3F7F6CFA1CC14B2800B8962A /* Cars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7F6CF91CC14B2800B8962A /* Cars.swift */; };
 		3F7F6CFC1CC14E9C00B8962A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7F6CFB1CC14E9C00B8962A /* Color.swift */; };
 		3F7F6CFE1CC14EA800B8962A /* Tracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7F6CFD1CC14EA800B8962A /* Tracks.swift */; };
@@ -74,7 +77,10 @@
 		3F62EC4D1CCA881F00668C4E /* Color3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color3.swift; sourceTree = "<group>"; };
 		3F62EC4F1CCA888A00668C4E /* Tracks2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracks2.swift; sourceTree = "<group>"; };
 		3F62EC511CCA889700668C4E /* Tracks3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracks3.swift; sourceTree = "<group>"; };
+		3F6819EE1CE4EA2D000C7E4F /* SplitScreeniPod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitScreeniPod.swift; sourceTree = "<group>"; };
 		3F6F5FC51CC066CF008573CC /* StoredVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoredVariables.swift; sourceTree = "<group>"; };
+		3F71891A1CE4E6F300308FF7 /* CarsPlayerTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarsPlayerTwo.swift; sourceTree = "<group>"; };
+		3F71891C1CE4E70E00308FF7 /* ColorPlayerTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPlayerTwo.swift; sourceTree = "<group>"; };
 		3F7F6CF91CC14B2800B8962A /* Cars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cars.swift; sourceTree = "<group>"; };
 		3F7F6CFB1CC14E9C00B8962A /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		3F7F6CFD1CC14EA800B8962A /* Tracks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracks.swift; sourceTree = "<group>"; };
@@ -164,6 +170,7 @@
 				3FD2F6ED1CBC072C005D9F2D /* SinglePlayerTime.swift */,
 				3FD2F6EB1CBC06F9005D9F2D /* SinglePlayerRace.swift */,
 				3F5937D21CBEA24A00D46B4D /* SplitScreen.swift */,
+				3F6819EE1CE4EA2D000C7E4F /* SplitScreeniPod.swift */,
 			);
 			name = SKScenes;
 			sourceTree = "<group>";
@@ -176,9 +183,11 @@
 				3FC25EC01CC44F2A0019FEFC /* SplitScreenView.swift */,
 				3FC25EC21CC44F610019FEFC /* MultiplayerView.swift */,
 				3F7F6CF91CC14B2800B8962A /* Cars.swift */,
+				3F71891A1CE4E6F300308FF7 /* CarsPlayerTwo.swift */,
 				3F62EC451CCA877600668C4E /* Cars2.swift */,
 				3F62EC4B1CCA87E700668C4E /* Cars3.swift */,
 				3F7F6CFB1CC14E9C00B8962A /* Color.swift */,
+				3F71891C1CE4E70E00308FF7 /* ColorPlayerTwo.swift */,
 				3F62EC491CCA87D500668C4E /* Color2.swift */,
 				3F62EC4D1CCA881F00668C4E /* Color3.swift */,
 				3F7F6CFD1CC14EA800B8962A /* Tracks.swift */,
@@ -390,6 +399,7 @@
 				3FC25EC31CC44F610019FEFC /* MultiplayerView.swift in Sources */,
 				3FC25EC11CC44F2A0019FEFC /* SplitScreenView.swift in Sources */,
 				3FC25EBF1CC44EFE0019FEFC /* SinglePlayerView.swift in Sources */,
+				3F6819EF1CE4EA2D000C7E4F /* SplitScreeniPod.swift in Sources */,
 				3F7F6CFC1CC14E9C00B8962A /* Color.swift in Sources */,
 				3F62EC521CCA889700668C4E /* Tracks3.swift in Sources */,
 				3F7F6CFE1CC14EA800B8962A /* Tracks.swift in Sources */,
@@ -399,7 +409,9 @@
 				3FD2F6EC1CBC06F9005D9F2D /* SinglePlayerRace.swift in Sources */,
 				3F31C7DC1CBFFAC10001EBE0 /* BluetoothMultiplayer.swift in Sources */,
 				3F5937D31CBEA24A00D46B4D /* SplitScreen.swift in Sources */,
+				3F71891D1CE4E70E00308FF7 /* ColorPlayerTwo.swift in Sources */,
 				3FD2F6EE1CBC072C005D9F2D /* SinglePlayerTime.swift in Sources */,
+				3F71891B1CE4E6F300308FF7 /* CarsPlayerTwo.swift in Sources */,
 				3F8D99881CAAE36B001F9934 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
