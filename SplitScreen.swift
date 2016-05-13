@@ -133,7 +133,7 @@ class SplitScreen: SKScene
         
         //This is the car that is in the scene
         //This give the SpriteNode an image
-        myCarTwo = SKSpriteNode(imageNamed: gameViewController.variables.colors)
+        myCarTwo = SKSpriteNode(imageNamed: gameViewController.variables.colorsTwo )
         //sets up the postion
         myCarTwo.position = CGPoint(x: CGRectGetMidX(self.frame) - 250, y: CGRectGetMaxY(self.frame) - 300)
         myCarTwo.zRotation = CGFloat(M_PI);
