@@ -157,8 +157,7 @@ class SinglePlayerTime: SKScene
                             print("\(distance)")
                         }
                         else if distance >= 20000 {
-                            timerOne.invalidate()
-                            timerDecrease.invalidate()
+                            conditionToWin()
                             variables.StoredTime = myTime.text!
                         }
                     }
@@ -296,15 +295,14 @@ class SinglePlayerTime: SKScene
     // way to win
     func conditionToWin()
     {
-        if minute == 2 && second <= 60 && distance >= 20000
+        if minute <= 2 && second <= 60 && distance >= 20000
         {
-            myCar.position.y = -30
             timerOne.invalidate()
             timerDecrease.invalidate()
             gameViewController.variables.StoredTime = myTime.text!
             print("yeah")
         }
-        else if minute == 2 && second >= 0 && distance <= 20000
+        else if minute >= 2 && second >= 0 && distance <= 20000
         {
             myCar.position.y = -30
             timerDecrease.invalidate()
