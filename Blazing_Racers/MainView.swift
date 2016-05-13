@@ -19,7 +19,6 @@ class MainViewViewController: UIViewController
     
     override func viewDidLoad()
     {
-        print("MEMES FOR EVERYONE!!!!!!!!!!!!!!!")
         super.viewDidLoad()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -57,6 +56,7 @@ class MainViewViewController: UIViewController
             {
             self.button_oneplayerracing.alpha = 1.0
         })
+print("Blaze")
     }
     
     //make the nav bar dissappear
