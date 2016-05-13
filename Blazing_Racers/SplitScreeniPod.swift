@@ -1,11 +1,17 @@
-
+//
+//  SplitScreeniPod.swift
+//  Blazing_Racers
+//
+//  Created by nmalin-jones on 5/12/16.
+//  Copyright © 2016 nmalin-jones. All rights reserved.
+//
 
 import UIKit
 import SpriteKit
 
-class SplitScreen: SKScene
+class SplitScreeniPod: SKScene
 {
-    
+
     //Creates a variable of the GameViewController
     var gameViewController = GameViewController()
     
@@ -118,9 +124,8 @@ class SplitScreen: SKScene
         //sends it to the front
         mySpeedTwo.zPosition = 1
         
-        carWin.text = "Hi"
         carWin.fontName = "DBLCDTempBlack"
-        carWin.fontSize = 100
+        carWin.fontSize = 300
         carWin.fontColor = UIColor.redColor()
         carWin.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMaxY(self.frame))
         carWin.zPosition = 1
@@ -200,7 +205,6 @@ class SplitScreen: SKScene
         self.addChild(myTimeTwo)
         self.addChild(myCar)
         self.addChild(myCarTwo)
-        self.addChild(carWin)
         self.addChild(mySpeedometer)
         self.addChild(mySpeedometerTwo)
         self.addChild(road)
@@ -329,6 +333,7 @@ class SplitScreen: SKScene
         carCollidesButtonTwo()
     }
     func timerActionThree() {
+        print("yeah")
         raceWinner()
     }
     //This allows it to act like a digital clock
@@ -481,11 +486,12 @@ class SplitScreen: SKScene
         if distance >= distanceTwo && finishOne == true && finishTwo == true {
             winner = "Player One wins"
             carWin.text = "\(winner)"
-            print("Yes")
+            self.addChild(carWin)
+            
         } else if distanceTwo >= distance && finishOne == true && finishTwo == true {
             winner = "Player Two wins"
             carWin.text = "\(winner)"
-            print("No")
+            self.addChild(carWin)
         }
     }
     

@@ -21,6 +21,7 @@
 		3F62EC4E1CCA881F00668C4E /* Color3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62EC4D1CCA881F00668C4E /* Color3.swift */; };
 		3F62EC501CCA888A00668C4E /* Tracks2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62EC4F1CCA888A00668C4E /* Tracks2.swift */; };
 		3F62EC521CCA889700668C4E /* Tracks3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62EC511CCA889700668C4E /* Tracks3.swift */; };
+		3F6819EF1CE4EA2D000C7E4F /* SplitScreeniPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6819EE1CE4EA2D000C7E4F /* SplitScreeniPod.swift */; };
 		3F6F5FC61CC066CF008573CC /* StoredVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6F5FC51CC066CF008573CC /* StoredVariables.swift */; };
 		3F7F6CFA1CC14B2800B8962A /* Cars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7F6CF91CC14B2800B8962A /* Cars.swift */; };
 		3F7F6CFC1CC14E9C00B8962A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7F6CFB1CC14E9C00B8962A /* Color.swift */; };
@@ -74,6 +75,7 @@
 		3F62EC4D1CCA881F00668C4E /* Color3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color3.swift; sourceTree = "<group>"; };
 		3F62EC4F1CCA888A00668C4E /* Tracks2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracks2.swift; sourceTree = "<group>"; };
 		3F62EC511CCA889700668C4E /* Tracks3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracks3.swift; sourceTree = "<group>"; };
+		3F6819EE1CE4EA2D000C7E4F /* SplitScreeniPod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitScreeniPod.swift; sourceTree = "<group>"; };
 		3F6F5FC51CC066CF008573CC /* StoredVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoredVariables.swift; sourceTree = "<group>"; };
 		3F7F6CF91CC14B2800B8962A /* Cars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cars.swift; sourceTree = "<group>"; };
 		3F7F6CFB1CC14E9C00B8962A /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				3FD2F6ED1CBC072C005D9F2D /* SinglePlayerTime.swift */,
 				3FD2F6EB1CBC06F9005D9F2D /* SinglePlayerRace.swift */,
 				3F5937D21CBEA24A00D46B4D /* SplitScreen.swift */,
+				3F6819EE1CE4EA2D000C7E4F /* SplitScreeniPod.swift */,
 			);
 			name = SKScenes;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				3FC25EC31CC44F610019FEFC /* MultiplayerView.swift in Sources */,
 				3FC25EC11CC44F2A0019FEFC /* SplitScreenView.swift in Sources */,
 				3FC25EBF1CC44EFE0019FEFC /* SinglePlayerView.swift in Sources */,
+				3F6819EF1CE4EA2D000C7E4F /* SplitScreeniPod.swift in Sources */,
 				3F7F6CFC1CC14E9C00B8962A /* Color.swift in Sources */,
 				3F62EC521CCA889700668C4E /* Tracks3.swift in Sources */,
 				3F7F6CFE1CC14EA800B8962A /* Tracks.swift in Sources */,
