@@ -242,22 +242,11 @@ class SinglePlayerRace: SKScene
         {
             myTime.text = "\(second).0\(milisecond)"
         }
-        if second < 10 && milisecond < 10
-        {
-            myTime.text = "0\(second).0\(milisecond)"
-        }
         if second >= 10 && milisecond >= 10
         {
             myTime.text = "\(second).\(milisecond)"
         }
-        if  second < 10 && milisecond >= 10
-        {
-            myTime.text = "0\(second).\(milisecond)"
-        }
-        if  second >= 10 && milisecond < 10
-        {
-            myTime.text = "\(second).0\(milisecond)"
-        }
+       
     }
     
     
