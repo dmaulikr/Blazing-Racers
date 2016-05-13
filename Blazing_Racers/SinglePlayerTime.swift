@@ -42,17 +42,7 @@ class SinglePlayerTime: SKScene
     
     override func didMoveToView(view: SKView)
     {
-        
-        //Distance label with features(to be deleted once done)
-        myDistance.text = "\(distance)"
-        //Changes the font to look digital
-        myDistance.fontName = "DBLCDTempBlack"
-        myDistance.fontSize = 120
-        myDistance.fontColor = UIColor.whiteColor()
-        //sets up the postion
-        myDistance.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMaxY(self.frame) - 100)
-        //sends it to the front
-        myDistance.zPosition = 1
+    
         
         //This is what keeps track on the time
         myTime.text = "\(count)"
