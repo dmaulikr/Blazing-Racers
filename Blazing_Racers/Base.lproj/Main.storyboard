@@ -143,13 +143,13 @@
                         <viewControllerLayoutGuide type="bottom" id="j4b-WR-e2T"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MZG-aN-eoH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lif-DU-gm0">
-                                <rect key="frame" x="202" y="533" width="142" height="30"/>
+                                <rect key="frame" x="145" y="658" width="143" height="30"/>
                                 <color key="backgroundColor" red="0.99204033613204956" green="0.9924272894859314" blue="0.9956931471824646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title=" Split Screen Racing ">
+                                <state key="normal" title="Continue Splitscreen">
                                     <color key="titleColor" red="0.48804634809494019" green="0.1178484782576561" blue="0.088988982141017914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -163,24 +163,26 @@
                                 <color key="textColor" red="0.99204033609999998" green="0.99242728950000003" blue="0.99569314720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cY0-ff-Hvb">
-                                <rect key="frame" x="145" y="63" width="256" height="457"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cY0-ff-Hvb">
+                                <rect key="frame" x="79" y="176" width="256" height="457"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.48804634809494019" green="0.1178484782576561" blue="0.088988982141017914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="M8e-3F-nTx" firstAttribute="centerX" secondItem="MZG-aN-eoH" secondAttribute="centerX" id="FSP-u2-zGr"/>
+                            <constraint firstItem="cY0-ff-Hvb" firstAttribute="centerX" secondItem="MZG-aN-eoH" secondAttribute="centerX" id="W01-Ua-Osc"/>
                             <constraint firstItem="lif-DU-gm0" firstAttribute="centerX" secondItem="MZG-aN-eoH" secondAttribute="centerX" id="hEY-Tq-NXb"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="button_splitscreen" destination="lif-DU-gm0" id="9Qo-Rv-EDY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CN5-6E-hp8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-486" y="1124"/>
+            <point key="canvasLocation" x="-708" y="1083"/>
         </scene>
         <!--Cars-->
         <scene sceneID="vZh-1t-JqV">
@@ -191,12 +193,14 @@
                         <viewControllerLayoutGuide type="bottom" id="NaM-Qw-9Ku"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jyT-cH-O60">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="CAR TYPE SELECTOR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUv-gB-ONP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUv-gB-ONP">
                                 <rect key="frame" x="20" y="44" width="560" height="116"/>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="36"/>
+                                <string key="text">PLAYER ONE
+SELECT YOUR CAR TYPE</string>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="33"/>
                                 <color key="textColor" red="0.99204033613204956" green="0.9924272894859314" blue="0.9956931471824646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -260,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUp-Fm-gWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="223" y="1124"/>
+            <point key="canvasLocation" x="-45" y="1083"/>
         </scene>
         <!--Color-->
         <scene sceneID="rx6-Qf-Haq">
@@ -282,7 +286,7 @@
                                 </state>
                                 <connections>
                                     <action selector="color9ButtonTapped:" destination="UmC-Aw-aob" eventType="touchUpInside" id="0eo-F7-c1b"/>
-                                    <segue destination="R7G-V2-Ujg" kind="show" identifier="color9Segue" id="sSy-uF-Cxb"/>
+                                    <segue destination="7V7-0X-xCO" kind="show" id="gby-Z9-EK1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzw-PZ-D2m">
@@ -293,15 +297,9 @@
                                 </state>
                                 <connections>
                                     <action selector="color7ButtonTapped:" destination="UmC-Aw-aob" eventType="touchUpInside" id="YvJ-0K-uLn"/>
-                                    <segue destination="R7G-V2-Ujg" kind="show" identifier="color7Segue" id="kQL-BL-gbZ"/>
+                                    <segue destination="7V7-0X-xCO" kind="show" id="daG-3k-597"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="CAR COLOR SELECTOR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mc8-jG-Km3">
-                                <rect key="frame" x="15" y="44" width="560" height="116"/>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="36"/>
-                                <color key="textColor" red="0.99204033613204956" green="0.9924272894859314" blue="0.9956931471824646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vi8-LF-fOP">
                                 <rect key="frame" x="242" y="282" width="163" height="140"/>
                                 <color key="backgroundColor" red="0.99204033613204956" green="0.9924272894859314" blue="0.9956931471824646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -310,7 +308,7 @@
                                 </state>
                                 <connections>
                                     <action selector="color10ButtonTapped:" destination="UmC-Aw-aob" eventType="touchUpInside" id="xfR-cd-WOr"/>
-                                    <segue destination="R7G-V2-Ujg" kind="show" identifier="color10Segue" id="J0c-Zj-egS"/>
+                                    <segue destination="7V7-0X-xCO" kind="show" id="5rN-hv-SGA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SjN-SN-d4u">
@@ -321,7 +319,7 @@
                                 </state>
                                 <connections>
                                     <action selector="color12ButtonTapped:" destination="UmC-Aw-aob" eventType="touchUpInside" id="caG-OT-yra"/>
-                                    <segue destination="R7G-V2-Ujg" kind="show" identifier="color12Segue" id="dQg-gc-Qzl"/>
+                                    <segue destination="7V7-0X-xCO" kind="show" id="Hod-Fc-VUP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSa-ZX-Xym">
@@ -332,7 +330,7 @@
                                 </state>
                                 <connections>
                                     <action selector="color8ButtonTapped:" destination="UmC-Aw-aob" eventType="touchUpInside" id="pzi-1e-Sl5"/>
-                                    <segue destination="R7G-V2-Ujg" kind="show" identifier="color8Segue" id="9Rm-ec-2n1"/>
+                                    <segue destination="7V7-0X-xCO" kind="show" id="nIR-cw-XyQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WtV-JU-GCK">
@@ -343,7 +341,7 @@
                                 </state>
                                 <connections>
                                     <action selector="color11ButtonTapped:" destination="UmC-Aw-aob" eventType="touchUpInside" id="0W8-G4-CLQ"/>
-                                    <segue destination="R7G-V2-Ujg" kind="show" identifier="color11Segue" id="zhY-QD-SWV"/>
+                                    <segue destination="7V7-0X-xCO" kind="show" id="m4V-FA-xoo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akB-s4-0N1">
@@ -354,9 +352,17 @@
                                 </state>
                                 <connections>
                                     <action selector="color13ButtonTapped:" destination="UmC-Aw-aob" eventType="touchUpInside" id="H13-YF-NT2"/>
-                                    <segue destination="R7G-V2-Ujg" kind="show" id="siG-Au-ZAP"/>
+                                    <segue destination="7V7-0X-xCO" kind="show" id="QSZ-V2-zzW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mc8-jG-Km3">
+                                <rect key="frame" x="-73" y="33" width="560" height="116"/>
+                                <string key="text">PLAYER ONE
+SELECT YOUR CAR COLOR</string>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="33"/>
+                                <color key="textColor" red="0.99204033613204956" green="0.9924272894859314" blue="0.9956931471824646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.48804634809494019" green="0.1178484782576561" blue="0.088988982141017914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -377,7 +383,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLd-O7-5jT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="1192"/>
+            <point key="canvasLocation" x="627" y="1117"/>
         </scene>
         <!--Tracks-->
         <scene sceneID="P2Q-Uj-95q">
@@ -433,7 +439,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bab-C0-chD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="1124"/>
+            <point key="canvasLocation" x="2263" y="1165"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3dc-od-W56">
@@ -457,11 +463,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="doY-tD-mkr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="2551"/>
+            <point key="canvasLocation" x="2983" y="2467"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gYO-1h-uq5">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zAt-kG-9LS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="buj-gk-2be" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cM6-Zv-P7f"/>
@@ -473,13 +480,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zAt-kG-9LS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2678" y="1878"/>
+            <point key="canvasLocation" x="2798" y="2032"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5RV-Bs-qfG">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CLl-5f-Ccj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="JRQ-DH-QAn" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oVx-fK-GrC"/>
@@ -497,7 +504,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CLl-5f-Ccj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3383" y="1878"/>
         </scene>
@@ -534,7 +540,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PX5-el-K23" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-486" y="1845"/>
+            <point key="canvasLocation" x="-620" y="2107"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="Jow-kp-uNd">
@@ -555,7 +561,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="heN-XK-2HH" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2597" y="1119"/>
+            <point key="canvasLocation" x="2885" y="905"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="uNt-Nl-Add">
@@ -654,7 +660,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rap-8Q-Jlt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="1845"/>
+            <point key="canvasLocation" x="1657" y="2107"/>
         </scene>
         <!--Tracks2-->
         <scene sceneID="KQH-Nh-dDM">
@@ -828,7 +834,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7SP-gw-B5B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="959" y="364"/>
+            <point key="canvasLocation" x="935" y="312"/>
         </scene>
         <!--Color3-->
         <scene sceneID="jIj-sH-T6q">
@@ -944,7 +950,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVE-VM-MkD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="1978"/>
+            <point key="canvasLocation" x="921" y="2107"/>
         </scene>
         <!--Cars2-->
         <scene sceneID="cyM-AO-qtT">
@@ -1104,7 +1110,216 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSv-Lv-kTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="223" y="1845"/>
+            <point key="canvasLocation" x="165" y="2113"/>
+        </scene>
+        <!--Cars Player Two-->
+        <scene sceneID="qgX-fu-1Kx">
+            <objects>
+                <viewController id="7V7-0X-xCO" customClass="CarsPlayerTwo" customModule="Blazing_Racers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hRx-30-A6Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="JLl-sZ-J9g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fpk-Pr-pd4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngk-by-32a">
+                                <rect key="frame" x="20" y="44" width="560" height="116"/>
+                                <string key="text">PLAYER TWO
+SELECT YOUR CAR TYPE</string>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="33"/>
+                                <color key="textColor" red="0.99204033609999998" green="0.99242728950000003" blue="0.99569314720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9T-sT-H39">
+                                <rect key="frame" x="20" y="187" width="166" height="163"/>
+                                <color key="backgroundColor" red="0.99204033609999998" green="0.99242728950000003" blue="0.99569314720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.48804634810000003" green="0.1178484783" blue="0.088988982140000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cartype1:" destination="7V7-0X-xCO" eventType="touchUpInside" id="1Le-IF-FTc"/>
+                                    <segue destination="7p7-vd-gfA" kind="show" identifier="car1Segue" id="LjS-Dc-rhu">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iax-Sq-P5f">
+                                <rect key="frame" x="20" y="370" width="166" height="173"/>
+                                <color key="backgroundColor" red="0.99204033609999998" green="0.99242728950000003" blue="0.99569314720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.48804634810000003" green="0.1178484783" blue="0.088988982140000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cartype3:" destination="7V7-0X-xCO" eventType="touchUpInside" id="lPm-jY-kuS"/>
+                                    <segue destination="7p7-vd-gfA" kind="show" identifier="car3Segue" id="1Lp-j7-RGb">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge1-MR-dTp">
+                                <rect key="frame" x="223" y="370" width="163" height="173"/>
+                                <color key="backgroundColor" red="0.99204033609999998" green="0.99242728950000003" blue="0.99569314720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.48804634810000003" green="0.1178484783" blue="0.088988982140000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cartype4:" destination="7V7-0X-xCO" eventType="touchUpInside" id="eOz-zW-sbS"/>
+                                    <segue destination="7p7-vd-gfA" kind="show" id="Mr5-E6-YIA">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s67-DG-KJr">
+                                <rect key="frame" x="219" y="187" width="163" height="163"/>
+                                <color key="backgroundColor" red="0.99204033609999998" green="0.99242728950000003" blue="0.99569314720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.48804634810000003" green="0.1178484783" blue="0.088988982140000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cartype2:" destination="7V7-0X-xCO" eventType="touchUpInside" id="Nwa-QJ-zGE"/>
+                                    <segue destination="7p7-vd-gfA" kind="show" identifier="car2Segue" id="OQ2-Rx-nbu">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.48804634810000003" green="0.1178484783" blue="0.088988982140000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ngk-by-32a" firstAttribute="centerX" secondItem="Fpk-Pr-pd4" secondAttribute="centerX" id="INK-rk-G8P"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="button_carset1" destination="n9T-sT-H39" id="voe-Fp-hXF"/>
+                        <outlet property="button_carset2" destination="s67-DG-KJr" id="iSo-BF-Rf5"/>
+                        <outlet property="button_carset3" destination="iax-Sq-P5f" id="sJ5-O6-gOS"/>
+                        <outlet property="button_carset4" destination="Ge1-MR-dTp" id="hHj-XG-9GF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i1A-e9-QWm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1151" y="1165"/>
+        </scene>
+        <!--Color Player Two-->
+        <scene sceneID="0tu-Ng-XhB">
+            <objects>
+                <viewController id="7p7-vd-gfA" customClass="ColorPlayerTwo" customModule="Blazing_Racers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WUz-QG-COF"/>
+                        <viewControllerLayoutGuide type="bottom" id="8pm-al-Ds1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jpO-0i-xv9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FC-q7-dzI">
+                                <rect key="frame" x="20" y="282" width="163" height="140"/>
+                                <color key="backgroundColor" red="0.99204033609999998" green="0.99242728950000003" blue="0.99569314720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.48804634810000003" green="0.1178484783" blue="0.088988982140000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="color3buttonpressed:" destination="7p7-vd-gfA" eventType="touchUpInside" id="ivU-Pz-SYA"/>
+                                    <segue destination="R7G-V2-Ujg" kind="show" id="Scg-hq-X1N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aee-Fl-f3H">
+                                <rect key="frame" x="20" y="134" width="163" height="140"/>
+                                <color key="backgroundColor" red="0.99204033609999998" green="0.99242728950000003" blue="0.99569314720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.48804634810000003" green="0.1178484783" blue="0.088988982140000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="color1buttonpressed:" destination="7p7-vd-gfA" eventType="touchUpInside" id="dwe-lc-mjU"/>
+                                    <segue destination="R7G-V2-Ujg" kind="show" id="xYK-a5-CJm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-if-S8g">
+                                <rect key="frame" x="-73" y="33" width="560" height="116"/>
+                                <string key="text">PLAYER TWO
+SELECT YOUR CAR COLOR</string>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="33"/>
+                                <color key="textColor" red="0.99204033609999998" green="0.99242728950000003" blue="0.99569314720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4A-FG-rfD">
+                                <rect key="frame" x="242" y="282" width="163" height="140"/>
+                                <color key="backgroundColor" red="0.99204033609999998" green="0.99242728950000003" blue="0.99569314720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.48804634810000003" green="0.1178484783" blue="0.088988982140000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="color4buttonpressed:" destination="7p7-vd-gfA" eventType="touchUpInside" id="hHD-Yz-R0w"/>
+                                    <segue destination="R7G-V2-Ujg" kind="show" id="AYS-vT-rVc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4W7-k8-x90">
+                                <rect key="frame" x="242" y="430" width="163" height="140"/>
+                                <color key="backgroundColor" red="0.99204033609999998" green="0.99242728950000003" blue="0.99569314720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.48804634810000003" green="0.1178484783" blue="0.088988982140000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="color6buttonpressed:" destination="7p7-vd-gfA" eventType="touchUpInside" id="ArS-an-1hi"/>
+                                    <segue destination="R7G-V2-Ujg" kind="show" id="Jci-VQ-hYA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbT-m8-qDt">
+                                <rect key="frame" x="20" y="430" width="163" height="140"/>
+                                <color key="backgroundColor" red="0.99204033609999998" green="0.99242728950000003" blue="0.99569314720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.48804634810000003" green="0.1178484783" blue="0.088988982140000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="color5buttonpressed:" destination="7p7-vd-gfA" eventType="touchUpInside" id="B7g-1S-Jq1"/>
+                                    <segue destination="R7G-V2-Ujg" kind="show" id="r85-bZ-s5Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eA-yF-2nz">
+                                <rect key="frame" x="126" y="585" width="163" height="143"/>
+                                <color key="backgroundColor" red="0.99204033609999998" green="0.99242728950000003" blue="0.99569314720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.48804634810000003" green="0.1178484783" blue="0.088988982140000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="color7buttonpressed:" destination="7p7-vd-gfA" eventType="touchUpInside" id="zZX-iZ-XOo"/>
+                                    <segue destination="R7G-V2-Ujg" kind="show" id="7Br-yf-9Vk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pr2-0t-epK">
+                                <rect key="frame" x="242" y="134" width="163" height="140"/>
+                                <color key="backgroundColor" red="0.99204033609999998" green="0.99242728950000003" blue="0.99569314720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.48804634810000003" green="0.1178484783" blue="0.088988982140000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="color2buttonpressed:" destination="7p7-vd-gfA" eventType="touchUpInside" id="oPq-O9-x5b"/>
+                                    <segue destination="R7G-V2-Ujg" kind="show" id="BhN-cU-UFH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.48804634810000003" green="0.1178484783" blue="0.088988982140000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jVx-if-S8g" firstAttribute="centerX" secondItem="jpO-0i-xv9" secondAttribute="centerX" id="R3l-Rh-4Nl"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="button_black" destination="aee-Fl-f3H" id="zts-c1-cRm"/>
+                        <outlet property="button_blue" destination="pr2-0t-epK" id="b5k-sr-wG0"/>
+                        <outlet property="button_grey" destination="1FC-q7-dzI" id="9ed-aI-7zI"/>
+                        <outlet property="button_orange" destination="4W7-k8-x90" id="y7K-Fe-wOk"/>
+                        <outlet property="button_pink" destination="fbT-m8-qDt" id="Gb6-LJ-OYd"/>
+                        <outlet property="button_purple" destination="H4A-FG-rfD" id="rfO-aD-42C"/>
+                        <outlet property="button_special" destination="2eA-yF-2nz" id="XPF-4I-eKl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fuV-pA-e1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1691" y="1151"/>
         </scene>
     </scenes>
     <resources>
@@ -1114,14 +1329,16 @@
         <image name="road_2_singleplayer" width="1080" height="1920"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jIo-E8-TVw"/>
-        <segue reference="yVF-9p-foR"/>
+        <segue reference="xYK-a5-CJm"/>
+        <segue reference="OQ2-Rx-nbu"/>
+        <segue reference="nIR-cw-XyQ"/>
         <segue reference="QvM-6s-oE3"/>
-        <segue reference="siG-Au-ZAP"/>
-        <segue reference="IXG-gp-k8o"/>
         <segue reference="nqW-sd-xxC"/>
         <segue reference="iMZ-tR-nf4"/>
+        <segue reference="yVF-9p-foR"/>
+        <segue reference="jIo-E8-TVw"/>
         <segue reference="cCo-Mm-x6X"/>
+        <segue reference="dFg-AW-yTv"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.99204033613204956" green="0.9924272894859314" blue="0.9956931471824646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
