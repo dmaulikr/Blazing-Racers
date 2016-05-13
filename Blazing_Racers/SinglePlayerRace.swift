@@ -13,9 +13,8 @@ class SinglePlayerRace: SKScene
     var taps = 0
     var count = 3
     var distance = 0
-    var milisecond = 0
-    var second = 0
-    var minute = 0
+    var milisecond = 60
+    var second = 10
     
     //Timer Variables
     var timerOne = NSTimer()
@@ -160,14 +159,7 @@ class SinglePlayerRace: SKScene
                             timerOne.invalidate()
                             timerDecrease.invalidate()
                             myCar.runAction(backInPosition)
-                            //                        while taps > 0 {
-                            //                            taps -= 2
-                            //                            mySpeed.text = "\(taps)"
-                            //                            if taps < 0 {
-                            //                                taps = 0
-                            //                                mySpeed.text = "\(taps)"
-                            //                            }
-                            //                        }
+
                         }
                     }
                 }
@@ -203,6 +195,7 @@ class SinglePlayerRace: SKScene
             timerOne.invalidate()
             myTime.text = "00:00.00"
             myTime.fontSize = 70
+            count = 10
             newTimer()
         }
     }
@@ -217,7 +210,7 @@ class SinglePlayerRace: SKScene
     //This is the function for the timer that monitors how long it is taking you
     func timerAction()
     {
-        ++milisecond
+        --milisecond
         rollover()
         time()
         // conditionToWin()
@@ -227,49 +220,43 @@ class SinglePlayerRace: SKScene
     //This allows it to act like a digital clock
     func rollover()
     {
-        if milisecond > 59
+        if milisecond < 0
         {
-            milisecond = 0
-            second++
-        }
-        if second > 59
-        {
-            milisecond = 0
-            second = 0
-            minute++
+            milisecond = 60
+            second--
         }
     }
     
     //this is the label the switches the variables for the timer
     func time()
     {
-        if minute < 10 && second < 10 && milisecond < 10
+        if  second < 10 && milisecond < 10
         {
-            myTime.text = "0\(minute):0\(second).0\(milisecond)"
+            myTime.text = "0\(second).0\(milisecond)"
         }
-        if minute < 10 && second < 10 && milisecond >= 10
+        if  second < 10 && milisecond >= 10
         {
-            myTime.text = "0\(minute):0\(second).\(milisecond)"
+            myTime.text = "0\(second).\(milisecond)"
         }
-        if minute < 10 && second >= 10 && milisecond < 10
+        if  second >= 10 && milisecond < 10
         {
-            myTime.text = "0\(minute):\(second).0\(milisecond)"
+            myTime.text = "\(second).0\(milisecond)"
         }
-        if minute >= 10 && second < 10 && milisecond < 10
+        if second < 10 && milisecond < 10
         {
-            myTime.text = "\(minute):0\(second).0\(milisecond)"
+            myTime.text = "0\(second).0\(milisecond)"
         }
-        if minute < 10 && second >= 10 && milisecond >= 10
+        if second >= 10 && milisecond >= 10
         {
-            myTime.text = "0\(minute):\(second).\(milisecond)"
+            myTime.text = "\(second).\(milisecond)"
         }
-        if minute >= 10 && second < 10 && milisecond >= 10
+        if  second < 10 && milisecond >= 10
         {
-            myTime.text = "\(minute):0\(second).\(milisecond)"
+            myTime.text = "0\(second).\(milisecond)"
         }
-        if minute >= 10 && second >= 10 && milisecond < 10
+        if  second >= 10 && milisecond < 10
         {
-            myTime.text = "\(minute):\(second).0\(milisecond)"
+            myTime.text = "\(second).0\(milisecond)"
         }
     }
     
