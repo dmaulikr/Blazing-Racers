@@ -77,26 +77,26 @@ class GameViewController: UIViewController
         }
             
         }
-        else if variables.Bluetooth == true
-        {
-            if let scene = BluetoothMultiplayer(fileNamed: "GameScene")
-            {
-                // Configure the view.
-                let skView = self.view as! SKView
-                skView.showsFPS = true
-                skView.showsNodeCount = true
-                
-                /* Sprite Kit applies additional optimizations to improve rendering performance */
-                skView.ignoresSiblingOrder = true
-                print(variables.splitScreen.boolValue)
-                /* Set the scale mode to scale to fit the window */
-                scene.scaleMode = .AspectFill
-                scene.gameViewController = self
-                
-                print("D")
-                skView.presentScene(scene)
-            }
-        }
+//        else if variables.Bluetooth == true
+//        {
+//            if let scene = BluetoothMultiplayer(fileNamed: "GameScene")
+//            {
+//                // Configure the view.
+//                let skView = self.view as! SKView
+//                skView.showsFPS = true
+//                skView.showsNodeCount = true
+//                
+//                /* Sprite Kit applies additional optimizations to improve rendering performance */
+//                skView.ignoresSiblingOrder = true
+//                print(variables.splitScreen.boolValue)
+//                /* Set the scale mode to scale to fit the window */
+//                scene.scaleMode = .AspectFill
+//                scene.gameViewController = self
+//                
+//                print("D")
+//                skView.presentScene(scene)
+//            }
+//        }
         }
     
     override func shouldAutorotate() -> Bool

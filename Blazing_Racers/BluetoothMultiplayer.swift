@@ -1,566 +1,566 @@
-
-
-import UIKit
-import SpriteKit
-
-
-//Delegates to start Bluetooth
-protocol KWSBlueToothLEDelegate: class
-{
-    func interfaceDidUpdate(interface interface: KWSBluetoothLEInterface, command: KWSPacketType, data: NSData?)
-}
-
-//Interface for the bluetooth
-class KWSBluetoothLEInterface: NSObject
-{
-    
-    weak var delegate : KWSBlueToothLEDelegate?
-    weak var ownerViewController : UIViewController?
-    
-    var interfaceConnected : Bool = false
-    
-    init(ownerController : UIViewController, delegate: KWSBlueToothLEDelegate)
-    {
-        
-        self.ownerViewController = ownerController
-        self.delegate = delegate
-        super.init()
-    }
-    
-    func sendCommand(command command: KWSPacketType, data: NSData?)
-    {
-        
-        self.doesNotRecognizeSelector(Selector(#function))
-    }
-}
-
-class BluetoothMultiplayer: SKScene, KWSBluetoothLEInterface, CBPeripheralManagerDelegate
-{
-    
-    //Creates a variable of the GameViewController
-    var gameViewController = GameViewController()
-    
-    //Int Variables
-    var taps = 0
-    var count = 3
-    var distance = 0
-    var milisecond = 0
-    var second = 0
-    var minute = 0
-    
-    //Timer Variables
-    var timerOne = NSTimer()
-    var timerTwo = NSTimer()
-    var timerDecrease = NSTimer()
-    
-    //Node Variables
-    let myDistance = SKLabelNode()
-    let myTime = SKLabelNode()
-    let mySpeed = SKLabelNode()
-    var myCar = SKSpriteNode()
-    var road = SKSpriteNode()
-    
-    //Specific Node Variables
-    var myButton = SKSpriteNode(imageNamed: "button_tap")
-    let mySpeedometer = SKSpriteNode(imageNamed: "speedometer")
-    
-    //SKActions
-    var moveUp = SKAction.moveByX(0, y: 35, duration: 1)
-    var moveDown = SKAction.moveByX(0, y: -40, duration: 1)
-    var moveAway = SKAction.moveByX(0, y: 30, duration: 1)
-    var backInBounds = SKAction.moveByX(0, y: -30, duration: 1)
-    var backInPosition = SKAction.moveToY(300, duration: 8)
-    
-    //Packages for Bluetooth
-    enum KWSPacketType : Int8
-    {
-        case Connect
-        case Disconnect
-        case MoveUp
-        case MoveDown
-        case Restart
-        case GameEnd
-    }
-    
-    
-    //Bluetooth client
-    class KWSBluetoothLEClient: KWSBluetoothLEInterface, CBPeripheralManagerDelegate
-    {
-        
-        override func sendCommand(command command: KWSPacketType, data: NSData?)
-        {
-            
-            if !interfaceConnected
-            {
-                
-                return
-            }
-            
-            var header : Int8 = command.rawValue
-            let dataToSend : NSMutableData = NSMutableData(bytes: &header, length: sizeof(Int8))
-            
-            if let data = data
-            {
-                
-                dataToSend.appendData(data)
-            }
-            
-            if dataToSend.length > kKWSMaxPacketSize
-            {
-                
-                print("Error data packet to long!")
-                
-                return
-            }
-            //Setting the data
-            self.peripheralManager.updateValue( dataToSend,
-                                                forCharacteristic: self.readCharacteristic,
-                                                onSubscribedCentrals: nil)
-            
-        }
-        
-        func peripheralManager(peripheral: CBPeripheralManager, didReceiveWriteRequests requests: [CBATTRequest])
-        {
-            
-            if requests.count == 0 {
-                
-                return;
-            }
-            
-            for req in requests as [CBATTRequest] {
-                
-                //Making sure the range is correct (MAX: ~20M)
-                let data : NSData = req.value!
-                let header : NSData = data.subdataWithRange(NSMakeRange(0, sizeof(Int8)))
-                
-                let remainingVal = data.length - sizeof(Int8)
-                
-                var body : NSData? = nil
-                
-                if remainingVal > 0 {
-                    
-                    body = data.subdataWithRange(NSMakeRange(sizeof(Int8), remainingVal))
-                }
-                
-                let actionValue : UnsafePointer<Int8> = UnsafePointer<Int8>(header.bytes)
-                let action : KWSPacketType = KWSPacketType(rawValue: actionValue.memory)!
-                
-                self.delegate?.interfaceDidUpdate(interface: self, command: action, data: body)
-                
-                self.peripheralManager.respondToRequest(req, withResult: CBATTError.Success)
-            }
-        }
-    }
-    
-    class KWSBluetoothLEServer: KWSBluetoothLEInterface, CBCentralManagerDelegate, CBPeripheralDelegate
-    {
-        
-        override func sendCommand(command command: KWSPacketType, data: NSData?){
-            
-            if !interfaceConnected {
-                
-                return
-            }
-            
-            var header : Int8 = command.rawValue
-            let dataToSend : NSMutableData = NSMutableData(bytes: &header, length: sizeof(Int8))
-            //Sends the data to the devices
-            if let data = data {
-                
-                dataToSend.appendData(data)
-            }
-            //If the data is too much, it will display the error and lag
-            if dataToSend.length > kKWSMaxPacketSize {
-                
-                print("Error data packet to long!")
-                
-                return
-            }
-            
-            //If it discovers a device, it will ask it to connect
-            if let discoveredPeripheral = self.discoveredPeripheral {
-                
-                discoveredPeripheral.writeValue( dataToSend,
-                                                 forCharacteristic: self.writeCharacteristic,
-                                                 type: .WithResponse)
-            }
-        }
-        
-        //send some basic data about your player state (life, position)
-        
-        let currentPlayer = self.gameScene.selectedPlayer
-        
-        var packet = syncPacket()
-        
-        
-        //packet.posx = Float16CompressorCompress(Float32(currentPlayer!.position.x))
-        
-        let packetData = NSData(bytes: &packet, length: sizeof(syncPacket))
-        
-        //send some other info
-        
-        let directionData = NSData(bytes: &currentPlayer!.movingLeft, length: sizeof(Bool))
-        
-        
-        func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
-            
-            if let error = error {
-                print("didUpdateValueForCharacteristic error: \(error.localizedDescription)")
-                return
-            }
-            
-            let data : NSData = characteristic.value!
-            let header : NSData = data.subdataWithRange(NSMakeRange(0, sizeof(Int8)))
-            
-            let remainingVal = data.length - sizeof(Int8)
-            var body : NSData? = nil
-            
-            if remainingVal > 0 {
-                
-                body = data.subdataWithRange(NSMakeRange(sizeof(Int8), remainingVal))
-            }
-            
-            let actionValue : UnsafePointer<Int8> = UnsafePointer<Int8>(header.bytes)
-            let action : KWSPacketType = KWSPacketType(rawValue: actionValue.memory)!
-            
-            self.delegate?.interfaceDidUpdate(interface: self, command: action, data: body)
-        }
-        
-    }
-    
-    //Setup for game logic
-    func setupGameLogic(becomeServer:Bool)
-    {
-        
-        self.isServer = becomeServer
-        
-        if self.isServer
-        {
-            
-            self.communicationInterface = KWSBluetoothLEServer(ownerController: self, delegate: self)
-        }
-        else {
-            
-            self.communicationInterface = KWSBluetoothLEClient(ownerController: self, delegate: self)
-        }
-        
-    }
-    
-    
-    
-    //Recieving data
-    func interfaceDidUpdate(interface interface: KWSBluetoothLEInterface, command: KWSPacketType, data: NSData?)
-    {
-        
-        switch( command ) {
-            
-        case .HearBeat:
-            if let data = data {
-                
-                let subData : NSData = data.subdataWithRange(NSMakeRange(0, sizeof(syncPacket)))
-                let packetMemory = UnsafePointer<syncPacket>(subData.bytes)
-                let packet = packetMemory.memory
-                
-                self.gameScene.otherPlayer!.healt = packet.healt
-                self.gameScene.otherPlayer!.applyDamage(0)
-                
-                let decoded = Float16CompressorDecompress(packet.posx)
-                let realPos = self.gameScene.otherPlayer!.position
-                let position = CGPointMake(CGFloat(decoded), CGFloat(realPos.y))
-                
-                self.gameScene.otherPlayer!.position = position
-            }
-            
-        case .Jump:
-            self.gameScene.otherPlayer!.playerJump()
-            
-        case .Restart:
-            self.unlockControls()
-            
-        case .GameEnd:
-            self.lockControls()
-            
-        }
-    }
-    
-    
-    
-    override func viewDidLoad()
-    {
-        devicesLabel.text = "Waiting for devices..."
-        searchForDevices()
-        NSLog("Ran searchForDevices()")
-    }
-    
-    private func searchForDevices()
-    {
-        GKMatchmaker.sharedMatchmaker().startBrowsingForNearbyPlayersWithHandler()
-        {
-            var status = $1 ? "true" : "false"
-            self.devicesLabel.text = "Reachability changed for player \($0) with status: \(status)"
-        }
-    }
-    
-    
-    override func didMoveToView(view: SKView)
-    {
-        
-        //Distance label with features(to be deleted once done)
-        myDistance.text = "\(distance)"
-        //Changes the font to look digital
-        myDistance.fontName = "DBLCDTempBlack"
-        myDistance.fontSize = 120
-        myDistance.fontColor = UIColor.whiteColor()
-        //sets up the postion
-        myDistance.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMaxY(self.frame) - 100)
-        //sends it to the front
-        myDistance.zPosition = 1
-        
-        //This is what keeps track on the time
-        myTime.text = "\(count)"
-        //Changes the font to look digital
-        myTime.fontName = "DBLCDTempBlack"
-        myTime.fontSize = 120
-        myTime.fontColor = UIColor.whiteColor()
-        //sets up the postion
-        myTime.position = CGPoint(x:CGRectGetMinX(self.frame) + 150, y:CGRectGetMidY(self.frame))
-        //sends it to the front
-        myTime.zPosition = 1
-        
-        //This is what keeps track of your speed
-        mySpeed.text = "\(taps)"
-        //Changes the font to look digital
-        mySpeed.fontName = "DBLCDTempBlack"
-        mySpeed.fontSize = 115
-        mySpeed.fontColor = UIColor.whiteColor()
-        //sets up the postion
-        mySpeed.position = CGPoint(x:CGRectGetMaxX(self.frame) - 130, y:CGRectGetMinY(self.frame) + 180)
-        //sends it to the front
-        mySpeed.zPosition = 1
-        
-        //This is the car that is in the scene
-        //This give the SpriteNode an image
-        myCar = SKSpriteNode(imageNamed: gameViewController.variables.colors)
-        //sets up the postion
-        myCar.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMinY(self.frame) + 300)
-        
-        
-        //The image where the speed label goes in
-        //sets up the postion
-        mySpeedometer.position = CGPoint(x: CGRectGetMaxX(self.frame) - 140, y: CGRectGetMinY(self.frame) + 250)
-        //Resizes the Speedometer
-        mySpeedometer.xScale *= 1.5
-        mySpeedometer.yScale *= 1.5
-        
-        //This is the whole background of the game
-        road = SKSpriteNode(imageNamed: gameViewController.variables.track)
-        //sets up the postion
-        road.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
-        //sends it to the very back
-        road.zPosition = -1
-        //sets the size to the whole view
-        road.size = self.frame.size
-        
-        //this is the button that you tap to move the car
-        //sets up the postion
-        myButton.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMinY(self.frame) + 70)
-        //used to identify if the sprite has been tapped
-        myButton.name = "button"
-        //scales the button to fit the screen
-        myButton.xScale *= 5
-        myButton.yScale *= 3
-        //sends it to the very front
-        myButton.zPosition = 2
-        
-        //The timers for the game
-        countdown()
-        
-        
-        
-        //Adds all the sprites above into the game scene
-        self.addChild(myButton)
-        self.addChild(mySpeed)
-        self.addChild(myTime)
-        self.addChild(myDistance)
-        self.addChild(myCar)
-        self.addChild(mySpeedometer)
-        self.addChild(road)
-        
-    }
-    
-    //When you touch it runs this line of code to see if the button was touched
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
-    {
-        //loops the UItouch
-        for touch in touches
-        {
-            //detects where the touch is in the scene
-            let positionInScene = touch.locationInNode(self)
-            //it checks for the node that was touched
-            let touchedNode = self.nodeAtPoint(positionInScene)
-            if count == 0 {
-                //sets the variable to the name of the touched node
-                if let name = touchedNode.name
-                {
-                    //checks to see if it is the same as the button
-                    if name == "button"
-                    {
-                        if distance <= 20000 {
-                            //increases the speed
-                            taps += 2
-                            //sets the speed equal to the label
-                            mySpeed.text = "\(taps)"
-                            //sets the distance that monitors how far you go
-                            distance += taps * 2
-                            //sets distance equal to the label
-                            myDistance.text = "\(distance)"
-                            myCar.runAction(moveUp)
-                            print("\(taps)")
-                            print("\(distance)")
-                        }
-                        else if distance >= 20000 {
-                            timerOne.invalidate()
-                            timerDecrease.invalidate()
-                            myCar.runAction(backInPosition)
-                            //                        while taps > 0 {
-                            //                            taps -= 2
-                            //                            mySpeed.text = "\(taps)"
-                            //                            if taps < 0 {
-                            //                                taps = 0
-                            //                                mySpeed.text = "\(taps)"
-                            //                            }
-                            //                        }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    
-    //this is the timer that starts the game off
-    func countdown()
-    {
-        timerOne = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "countdownAction", userInfo: nil, repeats: true)
-    }
-    
-    //The action the timer tuns
-    func countdownAction()
-    {
-        count -= 1
-        displayCountdown()
-        switchToClock()
-    }
-    
-    //sets the label of the timer
-    func displayCountdown()
-    {
-        myTime.text = "\(count)"
-    }
-    
-    //this is what switches to the new timer after it finishes
-    func switchToClock()
-    {
-        if count == 0 {
-            timerOne.invalidate()
-            myTime.text = "00:00.00"
-            myTime.fontSize = 70
-            newTimer()
-        }
-    }
-    
-    //Activates two timers that time you and decrease your speed
-    func newTimer()
-    {
-        timerOne = NSTimer.scheduledTimerWithTimeInterval(0.0017, target: self, selector: "timerAction", userInfo: nil, repeats: true)
-        timerDecrease = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "speedFormula", userInfo: nil, repeats: true)
-    }
-    
-    //This is the function for the timer that monitors how long it is taking you
-    func timerAction()
-    {
-        ++milisecond
-        rollover()
-        time()
-        // conditionToWin()
-        carCollidesButton()
-    }
-    
-    //This allows it to act like a digital clock
-    func rollover()
-    {
-        if milisecond > 59
-        {
-            milisecond = 0
-            second++
-        }
-        if second > 59
-        {
-            milisecond = 0
-            second = 0
-            minute++
-        }
-    }
-    
-    //this is the label the switches the variables for the timer
-    func time()
-    {
-        if minute < 10 && second < 10 && milisecond < 10
-        {
-            myTime.text = "0\(minute):0\(second).0\(milisecond)"
-        }
-        if minute < 10 && second < 10 && milisecond >= 10
-        {
-            myTime.text = "0\(minute):0\(second).\(milisecond)"
-        }
-        if minute < 10 && second >= 10 && milisecond < 10
-        {
-            myTime.text = "0\(minute):\(second).0\(milisecond)"
-        }
-        if minute >= 10 && second < 10 && milisecond < 10
-        {
-            myTime.text = "\(minute):0\(second).0\(milisecond)"
-        }
-        if minute < 10 && second >= 10 && milisecond >= 10
-        {
-            myTime.text = "0\(minute):\(second).\(milisecond)"
-        }
-        if minute >= 10 && second < 10 && milisecond >= 10
-        {
-            myTime.text = "\(minute):0\(second).\(milisecond)"
-        }
-        if minute >= 10 && second >= 10 && milisecond < 10
-        {
-            myTime.text = "\(minute):\(second).0\(milisecond)"
-        }
-    }
-    
-    
-    
-    // this is the function that decrease your speed
-    func speedFormula()
-    {
-        mySpeed.text = "\(taps)"
-        taps -= 2
-        myCar.runAction(moveDown)
-        
-        if taps < 0
-        {
-            taps = 0
-            mySpeed.text = "\(taps)"
-        }
-        else if taps > 0
-        {
-            mySpeed.text = "\(taps)"
-        }
-    }
-    
-    func carCollidesButton() {
-        if myCar.position.y <= myButton.position.y {
-            myCar.runAction(moveAway)
-        } else if myCar.position.y >= road.position.y * 2 {
-            myCar.runAction(backInBounds)
-        }
-    }
-    
-}
+//
+//
+//import UIKit
+//import SpriteKit
+//
+//
+////Delegates to start Bluetooth
+//protocol KWSBlueToothLEDelegate: class
+//{
+//    func interfaceDidUpdate(interface interface: KWSBluetoothLEInterface, command: KWSPacketType, data: NSData?)
+//}
+//
+////Interface for the bluetooth
+//class KWSBluetoothLEInterface: NSObject
+//{
+//    
+//    weak var delegate : KWSBlueToothLEDelegate?
+//    weak var ownerViewController : UIViewController?
+//    
+//    var interfaceConnected : Bool = false
+//    
+//    init(ownerController : UIViewController, delegate: KWSBlueToothLEDelegate)
+//    {
+//        
+//        self.ownerViewController = ownerController
+//        self.delegate = delegate
+//        super.init()
+//    }
+//    
+//    func sendCommand(command command: KWSPacketType, data: NSData?)
+//    {
+//        
+//        self.doesNotRecognizeSelector(Selector(#function))
+//    }
+//}
+//
+//class BluetoothMultiplayer: SKScene, KWSBluetoothLEInterface, CBPeripheralManagerDelegate
+//{
+//    
+//    //Creates a variable of the GameViewController
+//    var gameViewController = GameViewController()
+//    
+//    //Int Variables
+//    var taps = 0
+//    var count = 3
+//    var distance = 0
+//    var milisecond = 0
+//    var second = 0
+//    var minute = 0
+//    
+//    //Timer Variables
+//    var timerOne = NSTimer()
+//    var timerTwo = NSTimer()
+//    var timerDecrease = NSTimer()
+//    
+//    //Node Variables
+//    let myDistance = SKLabelNode()
+//    let myTime = SKLabelNode()
+//    let mySpeed = SKLabelNode()
+//    var myCar = SKSpriteNode()
+//    var road = SKSpriteNode()
+//    
+//    //Specific Node Variables
+//    var myButton = SKSpriteNode(imageNamed: "button_tap")
+//    let mySpeedometer = SKSpriteNode(imageNamed: "speedometer")
+//    
+//    //SKActions
+//    var moveUp = SKAction.moveByX(0, y: 35, duration: 1)
+//    var moveDown = SKAction.moveByX(0, y: -40, duration: 1)
+//    var moveAway = SKAction.moveByX(0, y: 30, duration: 1)
+//    var backInBounds = SKAction.moveByX(0, y: -30, duration: 1)
+//    var backInPosition = SKAction.moveToY(300, duration: 8)
+//    
+//    //Packages for Bluetooth
+//    enum KWSPacketType : Int8
+//    {
+//        case Connect
+//        case Disconnect
+//        case MoveUp
+//        case MoveDown
+//        case Restart
+//        case GameEnd
+//    }
+//    
+//    
+//    //Bluetooth client
+//    class KWSBluetoothLEClient: KWSBluetoothLEInterface, CBPeripheralManagerDelegate
+//    {
+//        
+//        override func sendCommand(command command: KWSPacketType, data: NSData?)
+//        {
+//            
+//            if !interfaceConnected
+//            {
+//                
+//                return
+//            }
+//            
+//            var header : Int8 = command.rawValue
+//            let dataToSend : NSMutableData = NSMutableData(bytes: &header, length: sizeof(Int8))
+//            
+//            if let data = data
+//            {
+//                
+//                dataToSend.appendData(data)
+//            }
+//            
+//            if dataToSend.length > kKWSMaxPacketSize
+//            {
+//                
+//                print("Error data packet to long!")
+//                
+//                return
+//            }
+//            //Setting the data
+//            self.peripheralManager.updateValue( dataToSend,
+//                                                forCharacteristic: self.readCharacteristic,
+//                                                onSubscribedCentrals: nil)
+//            
+//        }
+//        
+//        func peripheralManager(peripheral: CBPeripheralManager, didReceiveWriteRequests requests: [CBATTRequest])
+//        {
+//            
+//            if requests.count == 0 {
+//                
+//                return;
+//            }
+//            
+//            for req in requests as [CBATTRequest] {
+//                
+//                //Making sure the range is correct (MAX: ~20M)
+//                let data : NSData = req.value!
+//                let header : NSData = data.subdataWithRange(NSMakeRange(0, sizeof(Int8)))
+//                
+//                let remainingVal = data.length - sizeof(Int8)
+//                
+//                var body : NSData? = nil
+//                
+//                if remainingVal > 0 {
+//                    
+//                    body = data.subdataWithRange(NSMakeRange(sizeof(Int8), remainingVal))
+//                }
+//                
+//                let actionValue : UnsafePointer<Int8> = UnsafePointer<Int8>(header.bytes)
+//                let action : KWSPacketType = KWSPacketType(rawValue: actionValue.memory)!
+//                
+//                self.delegate?.interfaceDidUpdate(interface: self, command: action, data: body)
+//                
+//                self.peripheralManager.respondToRequest(req, withResult: CBATTError.Success)
+//            }
+//        }
+//    }
+//    
+//    class KWSBluetoothLEServer: KWSBluetoothLEInterface, CBCentralManagerDelegate, CBPeripheralDelegate
+//    {
+//        
+//        override func sendCommand(command command: KWSPacketType, data: NSData?){
+//            
+//            if !interfaceConnected {
+//                
+//                return
+//            }
+//            
+//            var header : Int8 = command.rawValue
+//            let dataToSend : NSMutableData = NSMutableData(bytes: &header, length: sizeof(Int8))
+//            //Sends the data to the devices
+//            if let data = data {
+//                
+//                dataToSend.appendData(data)
+//            }
+//            //If the data is too much, it will display the error and lag
+//            if dataToSend.length > kKWSMaxPacketSize {
+//                
+//                print("Error data packet to long!")
+//                
+//                return
+//            }
+//            
+//            //If it discovers a device, it will ask it to connect
+//            if let discoveredPeripheral = self.discoveredPeripheral {
+//                
+//                discoveredPeripheral.writeValue( dataToSend,
+//                                                 forCharacteristic: self.writeCharacteristic,
+//                                                 type: .WithResponse)
+//            }
+//        }
+//        
+//        //send some basic data about your player state (life, position)
+//        
+//        let currentPlayer = self.gameScene.selectedPlayer
+//        
+//        var packet = syncPacket()
+//        
+//        
+//        //packet.posx = Float16CompressorCompress(Float32(currentPlayer!.position.x))
+//        
+//        let packetData = NSData(bytes: &packet, length: sizeof(syncPacket))
+//        
+//        //send some other info
+//        
+//        let directionData = NSData(bytes: &currentPlayer!.movingLeft, length: sizeof(Bool))
+//        
+//        
+//        func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
+//            
+//            if let error = error {
+//                print("didUpdateValueForCharacteristic error: \(error.localizedDescription)")
+//                return
+//            }
+//            
+//            let data : NSData = characteristic.value!
+//            let header : NSData = data.subdataWithRange(NSMakeRange(0, sizeof(Int8)))
+//            
+//            let remainingVal = data.length - sizeof(Int8)
+//            var body : NSData? = nil
+//            
+//            if remainingVal > 0 {
+//                
+//                body = data.subdataWithRange(NSMakeRange(sizeof(Int8), remainingVal))
+//            }
+//            
+//            let actionValue : UnsafePointer<Int8> = UnsafePointer<Int8>(header.bytes)
+//            let action : KWSPacketType = KWSPacketType(rawValue: actionValue.memory)!
+//            
+//            self.delegate?.interfaceDidUpdate(interface: self, command: action, data: body)
+//        }
+//        
+//    }
+//    
+//    //Setup for game logic
+//    func setupGameLogic(becomeServer:Bool)
+//    {
+//        
+//        self.isServer = becomeServer
+//        
+//        if self.isServer
+//        {
+//            
+//            self.communicationInterface = KWSBluetoothLEServer(ownerController: self, delegate: self)
+//        }
+//        else {
+//            
+//            self.communicationInterface = KWSBluetoothLEClient(ownerController: self, delegate: self)
+//        }
+//        
+//    }
+//    
+//    
+//    
+//    //Recieving data
+//    func interfaceDidUpdate(interface interface: KWSBluetoothLEInterface, command: KWSPacketType, data: NSData?)
+//    {
+//        
+//        switch( command ) {
+//            
+//        case .HearBeat:
+//            if let data = data {
+//                
+//                let subData : NSData = data.subdataWithRange(NSMakeRange(0, sizeof(syncPacket)))
+//                let packetMemory = UnsafePointer<syncPacket>(subData.bytes)
+//                let packet = packetMemory.memory
+//                
+//                self.gameScene.otherPlayer!.healt = packet.healt
+//                self.gameScene.otherPlayer!.applyDamage(0)
+//                
+//                let decoded = Float16CompressorDecompress(packet.posx)
+//                let realPos = self.gameScene.otherPlayer!.position
+//                let position = CGPointMake(CGFloat(decoded), CGFloat(realPos.y))
+//                
+//                self.gameScene.otherPlayer!.position = position
+//            }
+//            
+//        case .Jump:
+//            self.gameScene.otherPlayer!.playerJump()
+//            
+//        case .Restart:
+//            self.unlockControls()
+//            
+//        case .GameEnd:
+//            self.lockControls()
+//            
+//        }
+//    }
+//    
+//    
+//    
+//    override func viewDidLoad()
+//    {
+//        devicesLabel.text = "Waiting for devices..."
+//        searchForDevices()
+//        NSLog("Ran searchForDevices()")
+//    }
+//    
+//    private func searchForDevices()
+//    {
+//        GKMatchmaker.sharedMatchmaker().startBrowsingForNearbyPlayersWithHandler()
+//        {
+//            var status = $1 ? "true" : "false"
+//            self.devicesLabel.text = "Reachability changed for player \($0) with status: \(status)"
+//        }
+//    }
+//    
+//    
+//    override func didMoveToView(view: SKView)
+//    {
+//        
+//        //Distance label with features(to be deleted once done)
+//        myDistance.text = "\(distance)"
+//        //Changes the font to look digital
+//        myDistance.fontName = "DBLCDTempBlack"
+//        myDistance.fontSize = 120
+//        myDistance.fontColor = UIColor.whiteColor()
+//        //sets up the postion
+//        myDistance.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMaxY(self.frame) - 100)
+//        //sends it to the front
+//        myDistance.zPosition = 1
+//        
+//        //This is what keeps track on the time
+//        myTime.text = "\(count)"
+//        //Changes the font to look digital
+//        myTime.fontName = "DBLCDTempBlack"
+//        myTime.fontSize = 120
+//        myTime.fontColor = UIColor.whiteColor()
+//        //sets up the postion
+//        myTime.position = CGPoint(x:CGRectGetMinX(self.frame) + 150, y:CGRectGetMidY(self.frame))
+//        //sends it to the front
+//        myTime.zPosition = 1
+//        
+//        //This is what keeps track of your speed
+//        mySpeed.text = "\(taps)"
+//        //Changes the font to look digital
+//        mySpeed.fontName = "DBLCDTempBlack"
+//        mySpeed.fontSize = 115
+//        mySpeed.fontColor = UIColor.whiteColor()
+//        //sets up the postion
+//        mySpeed.position = CGPoint(x:CGRectGetMaxX(self.frame) - 130, y:CGRectGetMinY(self.frame) + 180)
+//        //sends it to the front
+//        mySpeed.zPosition = 1
+//        
+//        //This is the car that is in the scene
+//        //This give the SpriteNode an image
+//        myCar = SKSpriteNode(imageNamed: gameViewController.variables.colors)
+//        //sets up the postion
+//        myCar.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMinY(self.frame) + 300)
+//        
+//        
+//        //The image where the speed label goes in
+//        //sets up the postion
+//        mySpeedometer.position = CGPoint(x: CGRectGetMaxX(self.frame) - 140, y: CGRectGetMinY(self.frame) + 250)
+//        //Resizes the Speedometer
+//        mySpeedometer.xScale *= 1.5
+//        mySpeedometer.yScale *= 1.5
+//        
+//        //This is the whole background of the game
+//        road = SKSpriteNode(imageNamed: gameViewController.variables.track)
+//        //sets up the postion
+//        road.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
+//        //sends it to the very back
+//        road.zPosition = -1
+//        //sets the size to the whole view
+//        road.size = self.frame.size
+//        
+//        //this is the button that you tap to move the car
+//        //sets up the postion
+//        myButton.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMinY(self.frame) + 70)
+//        //used to identify if the sprite has been tapped
+//        myButton.name = "button"
+//        //scales the button to fit the screen
+//        myButton.xScale *= 5
+//        myButton.yScale *= 3
+//        //sends it to the very front
+//        myButton.zPosition = 2
+//        
+//        //The timers for the game
+//        countdown()
+//        
+//        
+//        
+//        //Adds all the sprites above into the game scene
+//        self.addChild(myButton)
+//        self.addChild(mySpeed)
+//        self.addChild(myTime)
+//        self.addChild(myDistance)
+//        self.addChild(myCar)
+//        self.addChild(mySpeedometer)
+//        self.addChild(road)
+//        
+//    }
+//    
+//    //When you touch it runs this line of code to see if the button was touched
+//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
+//    {
+//        //loops the UItouch
+//        for touch in touches
+//        {
+//            //detects where the touch is in the scene
+//            let positionInScene = touch.locationInNode(self)
+//            //it checks for the node that was touched
+//            let touchedNode = self.nodeAtPoint(positionInScene)
+//            if count == 0 {
+//                //sets the variable to the name of the touched node
+//                if let name = touchedNode.name
+//                {
+//                    //checks to see if it is the same as the button
+//                    if name == "button"
+//                    {
+//                        if distance <= 20000 {
+//                            //increases the speed
+//                            taps += 2
+//                            //sets the speed equal to the label
+//                            mySpeed.text = "\(taps)"
+//                            //sets the distance that monitors how far you go
+//                            distance += taps * 2
+//                            //sets distance equal to the label
+//                            myDistance.text = "\(distance)"
+//                            myCar.runAction(moveUp)
+//                            print("\(taps)")
+//                            print("\(distance)")
+//                        }
+//                        else if distance >= 20000 {
+//                            timerOne.invalidate()
+//                            timerDecrease.invalidate()
+//                            myCar.runAction(backInPosition)
+//                            //                        while taps > 0 {
+//                            //                            taps -= 2
+//                            //                            mySpeed.text = "\(taps)"
+//                            //                            if taps < 0 {
+//                            //                                taps = 0
+//                            //                                mySpeed.text = "\(taps)"
+//                            //                            }
+//                            //                        }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+//    
+//    
+//    //this is the timer that starts the game off
+//    func countdown()
+//    {
+//        timerOne = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "countdownAction", userInfo: nil, repeats: true)
+//    }
+//    
+//    //The action the timer tuns
+//    func countdownAction()
+//    {
+//        count -= 1
+//        displayCountdown()
+//        switchToClock()
+//    }
+//    
+//    //sets the label of the timer
+//    func displayCountdown()
+//    {
+//        myTime.text = "\(count)"
+//    }
+//    
+//    //this is what switches to the new timer after it finishes
+//    func switchToClock()
+//    {
+//        if count == 0 {
+//            timerOne.invalidate()
+//            myTime.text = "00:00.00"
+//            myTime.fontSize = 70
+//            newTimer()
+//        }
+//    }
+//    
+//    //Activates two timers that time you and decrease your speed
+//    func newTimer()
+//    {
+//        timerOne = NSTimer.scheduledTimerWithTimeInterval(0.0017, target: self, selector: "timerAction", userInfo: nil, repeats: true)
+//        timerDecrease = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "speedFormula", userInfo: nil, repeats: true)
+//    }
+//    
+//    //This is the function for the timer that monitors how long it is taking you
+//    func timerAction()
+//    {
+//        ++milisecond
+//        rollover()
+//        time()
+//        // conditionToWin()
+//        carCollidesButton()
+//    }
+//    
+//    //This allows it to act like a digital clock
+//    func rollover()
+//    {
+//        if milisecond > 59
+//        {
+//            milisecond = 0
+//            second++
+//        }
+//        if second > 59
+//        {
+//            milisecond = 0
+//            second = 0
+//            minute++
+//        }
+//    }
+//    
+//    //this is the label the switches the variables for the timer
+//    func time()
+//    {
+//        if minute < 10 && second < 10 && milisecond < 10
+//        {
+//            myTime.text = "0\(minute):0\(second).0\(milisecond)"
+//        }
+//        if minute < 10 && second < 10 && milisecond >= 10
+//        {
+//            myTime.text = "0\(minute):0\(second).\(milisecond)"
+//        }
+//        if minute < 10 && second >= 10 && milisecond < 10
+//        {
+//            myTime.text = "0\(minute):\(second).0\(milisecond)"
+//        }
+//        if minute >= 10 && second < 10 && milisecond < 10
+//        {
+//            myTime.text = "\(minute):0\(second).0\(milisecond)"
+//        }
+//        if minute < 10 && second >= 10 && milisecond >= 10
+//        {
+//            myTime.text = "0\(minute):\(second).\(milisecond)"
+//        }
+//        if minute >= 10 && second < 10 && milisecond >= 10
+//        {
+//            myTime.text = "\(minute):0\(second).\(milisecond)"
+//        }
+//        if minute >= 10 && second >= 10 && milisecond < 10
+//        {
+//            myTime.text = "\(minute):\(second).0\(milisecond)"
+//        }
+//    }
+//    
+//    
+//    
+//    // this is the function that decrease your speed
+//    func speedFormula()
+//    {
+//        mySpeed.text = "\(taps)"
+//        taps -= 2
+//        myCar.runAction(moveDown)
+//        
+//        if taps < 0
+//        {
+//            taps = 0
+//            mySpeed.text = "\(taps)"
+//        }
+//        else if taps > 0
+//        {
+//            mySpeed.text = "\(taps)"
+//        }
+//    }
+//    
+//    func carCollidesButton() {
+//        if myCar.position.y <= myButton.position.y {
+//            myCar.runAction(moveAway)
+//        } else if myCar.position.y >= road.position.y * 2 {
+//            myCar.runAction(backInBounds)
+//        }
+//    }
+//    
+//}

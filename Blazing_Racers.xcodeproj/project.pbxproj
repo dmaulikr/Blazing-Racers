@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3F31C7DC1CBFFAC10001EBE0 /* BluetoothMultiplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F31C7DB1CBFFAC10001EBE0 /* BluetoothMultiplayer.swift */; };
-		3F537EA81CE242D500BCF80C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F537EA71CE242D500BCF80C /* QuartzCore.framework */; };
-		3F537EAA1CE242DF00BCF80C /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F537EA91CE242DF00BCF80C /* GameKit.framework */; };
-		3F537EAC1CE242EA00BCF80C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F537EAB1CE242EA00BCF80C /* AVFoundation.framework */; };
-		3F537EAE1CE242F600BCF80C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F537EAD1CE242F600BCF80C /* UIKit.framework */; };
-		3F537EB01CE2430300BCF80C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F537EAF1CE2430300BCF80C /* Foundation.framework */; };
-		3F537EB21CE2431100BCF80C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F537EB11CE2431100BCF80C /* CoreGraphics.framework */; };
 		3F5937D31CBEA24A00D46B4D /* SplitScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5937D21CBEA24A00D46B4D /* SplitScreen.swift */; };
 		3F62EC461CCA877600668C4E /* Cars2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62EC451CCA877600668C4E /* Cars2.swift */; };
 		3F62EC4A1CCA87D500668C4E /* Color2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62EC491CCA87D500668C4E /* Color2.swift */; };
@@ -36,7 +30,6 @@
 		3F8D99961CAAE36B001F9934 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F8D99941CAAE36B001F9934 /* LaunchScreen.storyboard */; };
 		3F8D99A11CAAE36B001F9934 /* Blazing_RacersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D99A01CAAE36B001F9934 /* Blazing_RacersTests.swift */; };
 		3F8D99AC1CAAE36B001F9934 /* Blazing_RacersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D99AB1CAAE36B001F9934 /* Blazing_RacersUITests.swift */; };
-		3FB8039D1CE0F52200E6CF8D /* UIView+HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB8039C1CE0F52200E6CF8D /* UIView+HostViewController.m */; };
 		3FC25EBD1CC44EB80019FEFC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC25EBC1CC44EB80019FEFC /* MainView.swift */; };
 		3FC25EBF1CC44EFE0019FEFC /* SinglePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC25EBE1CC44EFE0019FEFC /* SinglePlayerView.swift */; };
 		3FC25EC11CC44F2A0019FEFC /* SplitScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC25EC01CC44F2A0019FEFC /* SplitScreenView.swift */; };
@@ -64,12 +57,6 @@
 
 /* Begin PBXFileReference section */
 		3F31C7DB1CBFFAC10001EBE0 /* BluetoothMultiplayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BluetoothMultiplayer.swift; path = Blazing_Racers/BluetoothMultiplayer.swift; sourceTree = "<group>"; };
-		3F537EA71CE242D500BCF80C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		3F537EA91CE242DF00BCF80C /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		3F537EAB1CE242EA00BCF80C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		3F537EAD1CE242F600BCF80C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		3F537EAF1CE2430300BCF80C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		3F537EB11CE2431100BCF80C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3F5937D21CBEA24A00D46B4D /* SplitScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplitScreen.swift; path = ../SplitScreen.swift; sourceTree = "<group>"; };
 		3F62EC451CCA877600668C4E /* Cars2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cars2.swift; sourceTree = "<group>"; };
 		3F62EC491CCA87D500668C4E /* Color2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color2.swift; sourceTree = "<group>"; };
@@ -98,9 +85,6 @@
 		3F8D99A71CAAE36B001F9934 /* Blazing_RacersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Blazing_RacersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F8D99AB1CAAE36B001F9934 /* Blazing_RacersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blazing_RacersUITests.swift; sourceTree = "<group>"; };
 		3F8D99AD1CAAE36B001F9934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3FB8039A1CE0F52200E6CF8D /* Blazing_Racers-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Blazing_Racers-Bridging-Header.h"; sourceTree = "<group>"; };
-		3FB8039B1CE0F52200E6CF8D /* UIView+HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HostViewController.h"; sourceTree = "<group>"; };
-		3FB8039C1CE0F52200E6CF8D /* UIView+HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HostViewController.m"; sourceTree = "<group>"; };
 		3FC25EBC1CC44EB80019FEFC /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3FC25EBE1CC44EFE0019FEFC /* SinglePlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePlayerView.swift; sourceTree = "<group>"; };
 		3FC25EC01CC44F2A0019FEFC /* SplitScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitScreenView.swift; sourceTree = "<group>"; };
@@ -114,12 +98,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F537EA81CE242D500BCF80C /* QuartzCore.framework in Frameworks */,
-				3F537EAA1CE242DF00BCF80C /* GameKit.framework in Frameworks */,
-				3F537EAC1CE242EA00BCF80C /* AVFoundation.framework in Frameworks */,
-				3F537EAE1CE242F600BCF80C /* UIKit.framework in Frameworks */,
-				3F537EB01CE2430300BCF80C /* Foundation.framework in Frameworks */,
-				3F537EB21CE2431100BCF80C /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,28 +118,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F537EB31CE2433300BCF80C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3F537EA71CE242D500BCF80C /* QuartzCore.framework */,
-				3F537EA91CE242DF00BCF80C /* GameKit.framework */,
-				3F537EAB1CE242EA00BCF80C /* AVFoundation.framework */,
-				3F537EAD1CE242F600BCF80C /* UIKit.framework */,
-				3F537EAF1CE2430300BCF80C /* Foundation.framework */,
-				3F537EB11CE2431100BCF80C /* CoreGraphics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3F537EB41CE2436100BCF80C /* Objective-C/Swift Bridging Files */ = {
+		3F537EB41CE2436100BCF80C /* BTLE files */ = {
 			isa = PBXGroup;
 			children = (
 				3F31C7DB1CBFFAC10001EBE0 /* BluetoothMultiplayer.swift */,
-				3FB8039B1CE0F52200E6CF8D /* UIView+HostViewController.h */,
-				3FB8039C1CE0F52200E6CF8D /* UIView+HostViewController.m */,
-				3FB8039A1CE0F52200E6CF8D /* Blazing_Racers-Bridging-Header.h */,
 			);
-			name = "Objective-C/Swift Bridging Files";
+			name = "BTLE files";
 			sourceTree = "<group>";
 		};
 		3F6F5FC71CC06707008573CC /* SKScenes */ = {
@@ -201,8 +163,7 @@
 		3F8D997B1CAAE36B001F9934 = {
 			isa = PBXGroup;
 			children = (
-				3F537EB41CE2436100BCF80C /* Objective-C/Swift Bridging Files */,
-				3F537EB31CE2433300BCF80C /* Frameworks */,
+				3F537EB41CE2436100BCF80C /* BTLE files */,
 				3F8D99861CAAE36B001F9934 /* Blazing_Racers */,
 				3F8D999F1CAAE36B001F9934 /* Blazing_RacersTests */,
 				3F8D99AA1CAAE36B001F9934 /* Blazing_RacersUITests */,
@@ -394,7 +355,6 @@
 				3F62EC501CCA888A00668C4E /* Tracks2.swift in Sources */,
 				3FC25EBD1CC44EB80019FEFC /* MainView.swift in Sources */,
 				3F62EC461CCA877600668C4E /* Cars2.swift in Sources */,
-				3FB8039D1CE0F52200E6CF8D /* UIView+HostViewController.m in Sources */,
 				3F6F5FC61CC066CF008573CC /* StoredVariables.swift in Sources */,
 				3FC25EC31CC44F610019FEFC /* MultiplayerView.swift in Sources */,
 				3FC25EC11CC44F2A0019FEFC /* SplitScreenView.swift in Sources */,
@@ -563,7 +523,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Malin-Jones.Blazing-Racers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Blazing_Racers-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -582,7 +542,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Malin-Jones.Blazing-Racers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Blazing_Racers-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
