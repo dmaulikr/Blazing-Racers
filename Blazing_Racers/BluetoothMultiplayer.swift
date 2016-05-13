@@ -3,8 +3,40 @@
 import UIKit
 import SpriteKit
 
-class BluetoothMultiplayer: SKScene//, KWSBluetoothLEInterface, CBPeripheralManagerDelegate
+
+//Delegates to start Bluetooth
+protocol KWSBlueToothLEDelegate: class
 {
+    func interfaceDidUpdate(interface interface: KWSBluetoothLEInterface, command: KWSPacketType, data: NSData?)
+}
+
+//Interface for the bluetooth
+class KWSBluetoothLEInterface: NSObject
+{
+    
+    weak var delegate : KWSBlueToothLEDelegate?
+    weak var ownerViewController : UIViewController?
+    
+    var interfaceConnected : Bool = false
+    
+    init(ownerController : UIViewController, delegate: KWSBlueToothLEDelegate)
+    {
+        
+        self.ownerViewController = ownerController
+        self.delegate = delegate
+        super.init()
+    }
+    
+    func sendCommand(command command: KWSPacketType, data: NSData?)
+    {
+        
+        self.doesNotRecognizeSelector(Selector(#function))
+    }
+}
+
+class BluetoothMultiplayer: SKScene, KWSBluetoothLEInterface, CBPeripheralManagerDelegate
+{
+    
     //Creates a variable of the GameViewController
     var gameViewController = GameViewController()
     
@@ -42,7 +74,7 @@ class BluetoothMultiplayer: SKScene//, KWSBluetoothLEInterface, CBPeripheralMana
     //Packages for Bluetooth
     enum KWSPacketType : Int8
     {
-        case onnect
+        case Connect
         case Disconnect
         case MoveUp
         case MoveDown
@@ -50,36 +82,6 @@ class BluetoothMultiplayer: SKScene//, KWSBluetoothLEInterface, CBPeripheralMana
         case GameEnd
     }
     
-    //Delegates to start Bluetooth
-    protocol KWSBlueToothLEDelegate: class
-    {
-        
-        func interfaceDidUpdate(interface interface: KWSBluetoothLEInterface, command: KWSPacketType, data: NSData?)
-    }
-    
-    //Interface for the bluetooth
-    class KWSBluetoothLEInterface: NSObject
-    {
-        
-        weak var delegate : KWSBlueToothLEDelegate?
-        weak var ownerViewController : UIViewController?
-        
-        var interfaceConnected : Bool = false
-        
-        init(ownerController : UIViewController, delegate: KWSBlueToothLEDelegate)
-        {
-            
-            self.ownerViewController = ownerController
-            self.delegate = delegate
-            super.init()
-        }
-        
-        func sendCommand(command command: KWSPacketType, data: NSData?)
-        {
-            
-            self.doesNotRecognizeSelector(Selector(#function))
-        }
-    }
     
     //Bluetooth client
     class KWSBluetoothLEClient: KWSBluetoothLEInterface, CBPeripheralManagerDelegate
@@ -150,7 +152,8 @@ class BluetoothMultiplayer: SKScene//, KWSBluetoothLEInterface, CBPeripheralMana
         }
     }
     
-    class KWSBluetoothLEServer: KWSBluetoothLEInterface, CBCentralManagerDelegate, CBPeripheralDelegate {
+    class KWSBluetoothLEServer: KWSBluetoothLEInterface, CBCentralManagerDelegate, CBPeripheralDelegate
+    {
         
         override func sendCommand(command command: KWSPacketType, data: NSData?){
             
@@ -183,6 +186,22 @@ class BluetoothMultiplayer: SKScene//, KWSBluetoothLEInterface, CBPeripheralMana
             }
         }
         
+        //send some basic data about your player state (life, position)
+        
+        let currentPlayer = self.gameScene.selectedPlayer
+        
+        var packet = syncPacket()
+        
+        
+        //packet.posx = Float16CompressorCompress(Float32(currentPlayer!.position.x))
+        
+        let packetData = NSData(bytes: &packet, length: sizeof(syncPacket))
+        
+        //send some other info
+        
+        let directionData = NSData(bytes: &currentPlayer!.movingLeft, length: sizeof(Bool))
+        
+        
         func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
             
             if let error = error {
@@ -206,7 +225,65 @@ class BluetoothMultiplayer: SKScene//, KWSBluetoothLEInterface, CBPeripheralMana
             
             self.delegate?.interfaceDidUpdate(interface: self, command: action, data: body)
         }
+        
     }
+    
+    //Setup for game logic
+    func setupGameLogic(becomeServer:Bool)
+    {
+        
+        self.isServer = becomeServer
+        
+        if self.isServer
+        {
+            
+            self.communicationInterface = KWSBluetoothLEServer(ownerController: self, delegate: self)
+        }
+        else {
+            
+            self.communicationInterface = KWSBluetoothLEClient(ownerController: self, delegate: self)
+        }
+        
+    }
+    
+    
+    
+    //Recieving data
+    func interfaceDidUpdate(interface interface: KWSBluetoothLEInterface, command: KWSPacketType, data: NSData?)
+    {
+        
+        switch( command ) {
+            
+        case .HearBeat:
+            if let data = data {
+                
+                let subData : NSData = data.subdataWithRange(NSMakeRange(0, sizeof(syncPacket)))
+                let packetMemory = UnsafePointer<syncPacket>(subData.bytes)
+                let packet = packetMemory.memory
+                
+                self.gameScene.otherPlayer!.healt = packet.healt
+                self.gameScene.otherPlayer!.applyDamage(0)
+                
+                let decoded = Float16CompressorDecompress(packet.posx)
+                let realPos = self.gameScene.otherPlayer!.position
+                let position = CGPointMake(CGFloat(decoded), CGFloat(realPos.y))
+                
+                self.gameScene.otherPlayer!.position = position
+            }
+            
+        case .Jump:
+            self.gameScene.otherPlayer!.playerJump()
+            
+        case .Restart:
+            self.unlockControls()
+            
+        case .GameEnd:
+            self.lockControls()
+            
+        }
+    }
+    
+    
     
     override func viewDidLoad()
     {
