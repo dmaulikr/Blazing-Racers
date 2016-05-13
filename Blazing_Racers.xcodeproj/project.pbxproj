@@ -36,7 +36,6 @@
 		3F8D99961CAAE36B001F9934 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F8D99941CAAE36B001F9934 /* LaunchScreen.storyboard */; };
 		3F8D99A11CAAE36B001F9934 /* Blazing_RacersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D99A01CAAE36B001F9934 /* Blazing_RacersTests.swift */; };
 		3F8D99AC1CAAE36B001F9934 /* Blazing_RacersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D99AB1CAAE36B001F9934 /* Blazing_RacersUITests.swift */; };
-		3FB8039D1CE0F52200E6CF8D /* UIView+HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB8039C1CE0F52200E6CF8D /* UIView+HostViewController.m */; };
 		3FC25EBD1CC44EB80019FEFC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC25EBC1CC44EB80019FEFC /* MainView.swift */; };
 		3FC25EBF1CC44EFE0019FEFC /* SinglePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC25EBE1CC44EFE0019FEFC /* SinglePlayerView.swift */; };
 		3FC25EC11CC44F2A0019FEFC /* SplitScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC25EC01CC44F2A0019FEFC /* SplitScreenView.swift */; };
@@ -98,9 +97,6 @@
 		3F8D99A71CAAE36B001F9934 /* Blazing_RacersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Blazing_RacersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F8D99AB1CAAE36B001F9934 /* Blazing_RacersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blazing_RacersUITests.swift; sourceTree = "<group>"; };
 		3F8D99AD1CAAE36B001F9934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3FB8039A1CE0F52200E6CF8D /* Blazing_Racers-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Blazing_Racers-Bridging-Header.h"; sourceTree = "<group>"; };
-		3FB8039B1CE0F52200E6CF8D /* UIView+HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HostViewController.h"; sourceTree = "<group>"; };
-		3FB8039C1CE0F52200E6CF8D /* UIView+HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HostViewController.m"; sourceTree = "<group>"; };
 		3FC25EBC1CC44EB80019FEFC /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3FC25EBE1CC44EFE0019FEFC /* SinglePlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePlayerView.swift; sourceTree = "<group>"; };
 		3FC25EC01CC44F2A0019FEFC /* SplitScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitScreenView.swift; sourceTree = "<group>"; };
@@ -153,15 +149,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3F537EB41CE2436100BCF80C /* Objective-C/Swift Bridging Files */ = {
+		3F537EB41CE2436100BCF80C /* BTLE files */ = {
 			isa = PBXGroup;
 			children = (
 				3F31C7DB1CBFFAC10001EBE0 /* BluetoothMultiplayer.swift */,
-				3FB8039B1CE0F52200E6CF8D /* UIView+HostViewController.h */,
-				3FB8039C1CE0F52200E6CF8D /* UIView+HostViewController.m */,
-				3FB8039A1CE0F52200E6CF8D /* Blazing_Racers-Bridging-Header.h */,
 			);
-			name = "Objective-C/Swift Bridging Files";
+			name = "BTLE files";
 			sourceTree = "<group>";
 		};
 		3F6F5FC71CC06707008573CC /* SKScenes */ = {
@@ -201,7 +194,7 @@
 		3F8D997B1CAAE36B001F9934 = {
 			isa = PBXGroup;
 			children = (
-				3F537EB41CE2436100BCF80C /* Objective-C/Swift Bridging Files */,
+				3F537EB41CE2436100BCF80C /* BTLE files */,
 				3F537EB31CE2433300BCF80C /* Frameworks */,
 				3F8D99861CAAE36B001F9934 /* Blazing_Racers */,
 				3F8D999F1CAAE36B001F9934 /* Blazing_RacersTests */,
@@ -394,7 +387,6 @@
 				3F62EC501CCA888A00668C4E /* Tracks2.swift in Sources */,
 				3FC25EBD1CC44EB80019FEFC /* MainView.swift in Sources */,
 				3F62EC461CCA877600668C4E /* Cars2.swift in Sources */,
-				3FB8039D1CE0F52200E6CF8D /* UIView+HostViewController.m in Sources */,
 				3F6F5FC61CC066CF008573CC /* StoredVariables.swift in Sources */,
 				3FC25EC31CC44F610019FEFC /* MultiplayerView.swift in Sources */,
 				3FC25EC11CC44F2A0019FEFC /* SplitScreenView.swift in Sources */,
