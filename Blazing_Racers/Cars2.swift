@@ -68,7 +68,6 @@ class Cars2: UIViewController
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func car5ButtonTapped(sender: AnyObject)

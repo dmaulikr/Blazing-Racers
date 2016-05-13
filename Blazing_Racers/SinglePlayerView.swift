@@ -18,7 +18,6 @@ class SinglePlayerView: UIViewController
 
     override func viewDidLoad()
     {
-        
         super.viewDidLoad()
         print(variables.singlePlayer.boolValue)
         
@@ -58,7 +57,6 @@ class SinglePlayerView: UIViewController
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        
     }
     
     @IBAction func button_TimeTrial(sender: UIButton)
