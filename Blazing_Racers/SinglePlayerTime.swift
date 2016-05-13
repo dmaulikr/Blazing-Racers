@@ -7,7 +7,8 @@ class SinglePlayerTime: SKScene
     
     //Creates a variable of the GameViewController
     var gameViewController = GameViewController()
-    
+    //Lets StoriedVariables be used in this scene
+    var variables = StoredVariables()
     //Int Variables
     var taps = 0
     var count = 3
@@ -41,17 +42,7 @@ class SinglePlayerTime: SKScene
     
     override func didMoveToView(view: SKView)
     {
-        
-        //Distance label with features(to be deleted once done)
-        myDistance.text = "\(distance)"
-        //Changes the font to look digital
-        myDistance.fontName = "DBLCDTempBlack"
-        myDistance.fontSize = 120
-        myDistance.fontColor = UIColor.whiteColor()
-        //sets up the postion
-        myDistance.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMaxY(self.frame) - 100)
-        //sends it to the front
-        myDistance.zPosition = 1
+    
         
         //This is what keeps track on the time
         myTime.text = "\(count)"
@@ -156,17 +147,8 @@ class SinglePlayerTime: SKScene
                             print("\(distance)")
                         }
                         else if distance >= 20000 {
-                            timerOne.invalidate()
-                            timerDecrease.invalidate()
-                            myCar.runAction(backInPosition)
-                            //                        while taps > 0 {
-                            //                            taps -= 2
-                            //                            mySpeed.text = "\(taps)"
-                            //                            if taps < 0 {
-                            //                                taps = 0
-                            //                                mySpeed.text = "\(taps)"
-                            //                            }
-                            //                        }
+                            conditionToWin()
+                            variables.StoredTime = myTime.text!
                         }
                     }
                 }
@@ -219,7 +201,7 @@ class SinglePlayerTime: SKScene
         ++milisecond
         rollover()
         time()
-        // conditionToWin()
+        conditionToWin()
         carCollidesButton()
     }
     
@@ -300,4 +282,21 @@ class SinglePlayerTime: SKScene
         }
     }
     
+    // way to win
+    func conditionToWin()
+    {
+        if minute <= 2 && second <= 60 && distance >= 20000
+        {
+            timerOne.invalidate()
+            timerDecrease.invalidate()
+            gameViewController.variables.StoredTime = myTime.text!
+            print("yeah")
+        }
+        else if minute >= 2 && second >= 0 && distance <= 20000
+        {
+            myCar.position.y = -30
+            timerDecrease.invalidate()
+            timerOne.invalidate()
+        }
+    }
 }
