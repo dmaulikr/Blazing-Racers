@@ -3,9 +3,8 @@
 import UIKit
 import SpriteKit
 
-class BluetoothMultiplayer: SKScene
+class BluetoothMultiplayer: SKScene//, KWSBluetoothLEInterface, CBPeripheralManagerDelegate
 {
-    
     //Creates a variable of the GameViewController
     var gameViewController = GameViewController()
     
@@ -40,6 +39,174 @@ class BluetoothMultiplayer: SKScene
     var backInBounds = SKAction.moveByX(0, y: -30, duration: 1)
     var backInPosition = SKAction.moveToY(300, duration: 8)
     
+    //Packages for Bluetooth
+    enum KWSPacketType : Int8
+    {
+        case onnect
+        case Disconnect
+        case MoveUp
+        case MoveDown
+        case Restart
+        case GameEnd
+    }
+    
+    //Delegates to start Bluetooth
+    protocol KWSBlueToothLEDelegate: class
+    {
+        
+        func interfaceDidUpdate(interface interface: KWSBluetoothLEInterface, command: KWSPacketType, data: NSData?)
+    }
+    
+    //Interface for the bluetooth
+    class KWSBluetoothLEInterface: NSObject
+    {
+        
+        weak var delegate : KWSBlueToothLEDelegate?
+        weak var ownerViewController : UIViewController?
+        
+        var interfaceConnected : Bool = false
+        
+        init(ownerController : UIViewController, delegate: KWSBlueToothLEDelegate)
+        {
+            
+            self.ownerViewController = ownerController
+            self.delegate = delegate
+            super.init()
+        }
+        
+        func sendCommand(command command: KWSPacketType, data: NSData?)
+        {
+            
+            self.doesNotRecognizeSelector(Selector(#function))
+        }
+    }
+    
+    //Bluetooth client
+    class KWSBluetoothLEClient: KWSBluetoothLEInterface, CBPeripheralManagerDelegate
+    {
+        
+        override func sendCommand(command command: KWSPacketType, data: NSData?)
+        {
+            
+            if !interfaceConnected
+            {
+                
+                return
+            }
+            
+            var header : Int8 = command.rawValue
+            let dataToSend : NSMutableData = NSMutableData(bytes: &header, length: sizeof(Int8))
+            
+            if let data = data
+            {
+                
+                dataToSend.appendData(data)
+            }
+            
+            if dataToSend.length > kKWSMaxPacketSize
+            {
+                
+                print("Error data packet to long!")
+                
+                return
+            }
+            //Setting the data
+            self.peripheralManager.updateValue( dataToSend,
+                                                forCharacteristic: self.readCharacteristic,
+                                                onSubscribedCentrals: nil)
+            
+        }
+        
+        func peripheralManager(peripheral: CBPeripheralManager, didReceiveWriteRequests requests: [CBATTRequest])
+        {
+            
+            if requests.count == 0 {
+                
+                return;
+            }
+            
+            for req in requests as [CBATTRequest] {
+                
+                //Making sure the range is correct (MAX: ~20M)
+                let data : NSData = req.value!
+                let header : NSData = data.subdataWithRange(NSMakeRange(0, sizeof(Int8)))
+                
+                let remainingVal = data.length - sizeof(Int8)
+                
+                var body : NSData? = nil
+                
+                if remainingVal > 0 {
+                    
+                    body = data.subdataWithRange(NSMakeRange(sizeof(Int8), remainingVal))
+                }
+                
+                let actionValue : UnsafePointer<Int8> = UnsafePointer<Int8>(header.bytes)
+                let action : KWSPacketType = KWSPacketType(rawValue: actionValue.memory)!
+                
+                self.delegate?.interfaceDidUpdate(interface: self, command: action, data: body)
+                
+                self.peripheralManager.respondToRequest(req, withResult: CBATTError.Success)
+            }
+        }
+    }
+    
+    class KWSBluetoothLEServer: KWSBluetoothLEInterface, CBCentralManagerDelegate, CBPeripheralDelegate {
+        
+        override func sendCommand(command command: KWSPacketType, data: NSData?){
+            
+            if !interfaceConnected {
+                
+                return
+            }
+            
+            var header : Int8 = command.rawValue
+            let dataToSend : NSMutableData = NSMutableData(bytes: &header, length: sizeof(Int8))
+            //Sends the data to the devices
+            if let data = data {
+                
+                dataToSend.appendData(data)
+            }
+            //If the data is too much, it will display the error and lag
+            if dataToSend.length > kKWSMaxPacketSize {
+                
+                print("Error data packet to long!")
+                
+                return
+            }
+            
+            //If it discovers a device, it will ask it to connect
+            if let discoveredPeripheral = self.discoveredPeripheral {
+                
+                discoveredPeripheral.writeValue( dataToSend,
+                                                 forCharacteristic: self.writeCharacteristic,
+                                                 type: .WithResponse)
+            }
+        }
+        
+        func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
+            
+            if let error = error {
+                print("didUpdateValueForCharacteristic error: \(error.localizedDescription)")
+                return
+            }
+            
+            let data : NSData = characteristic.value!
+            let header : NSData = data.subdataWithRange(NSMakeRange(0, sizeof(Int8)))
+            
+            let remainingVal = data.length - sizeof(Int8)
+            var body : NSData? = nil
+            
+            if remainingVal > 0 {
+                
+                body = data.subdataWithRange(NSMakeRange(sizeof(Int8), remainingVal))
+            }
+            
+            let actionValue : UnsafePointer<Int8> = UnsafePointer<Int8>(header.bytes)
+            let action : KWSPacketType = KWSPacketType(rawValue: actionValue.memory)!
+            
+            self.delegate?.interfaceDidUpdate(interface: self, command: action, data: body)
+        }
+    }
     
     override func viewDidLoad()
     {
