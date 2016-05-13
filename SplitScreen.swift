@@ -118,11 +118,11 @@ class SplitScreen: SKScene
         //sends it to the front
         mySpeedTwo.zPosition = 1
         
-        carWin.text = "Hi"
+        carWin.text = ""
         carWin.fontName = "DBLCDTempBlack"
         carWin.fontSize = 100
         carWin.fontColor = UIColor.redColor()
-        carWin.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMaxY(self.frame))
+        carWin.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         carWin.zPosition = 1
         
         //This is the car that is in the scene
