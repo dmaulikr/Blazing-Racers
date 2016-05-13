@@ -132,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Af9-JD-tqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-486" y="364"/>
+            <point key="canvasLocation" x="-536" y="276"/>
         </scene>
         <!--Split Screen View-->
         <scene sceneID="NmY-o0-pWc">
@@ -147,9 +147,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lif-DU-gm0">
-                                <rect key="frame" x="145" y="658" width="143" height="30"/>
+                                <rect key="frame" x="141" y="658" width="151" height="30"/>
                                 <color key="backgroundColor" red="0.99204033613204956" green="0.9924272894859314" blue="0.9956931471824646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Continue Splitscreen">
+                                <state key="normal" title=" Continue Splitscreen ">
                                     <color key="titleColor" red="0.48804634809494019" green="0.1178484782576561" blue="0.088988982141017914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -182,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CN5-6E-hp8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-708" y="1083"/>
+            <point key="canvasLocation" x="-689" y="1165"/>
         </scene>
         <!--Cars-->
         <scene sceneID="vZh-1t-JqV">
@@ -264,7 +264,7 @@ SELECT YOUR CAR TYPE</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUp-Fm-gWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45" y="1083"/>
+            <point key="canvasLocation" x="-51" y="1117"/>
         </scene>
         <!--Color-->
         <scene sceneID="rx6-Qf-Haq">
@@ -468,7 +468,6 @@ SELECT YOUR CAR COLOR</string>
         <!--View Controller-->
         <scene sceneID="gYO-1h-uq5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zAt-kG-9LS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="buj-gk-2be" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cM6-Zv-P7f"/>
@@ -480,13 +479,13 @@ SELECT YOUR CAR COLOR</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zAt-kG-9LS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2798" y="2032"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5RV-Bs-qfG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CLl-5f-Ccj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="JRQ-DH-QAn" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oVx-fK-GrC"/>
@@ -504,6 +503,7 @@ SELECT YOUR CAR COLOR</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CLl-5f-Ccj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3383" y="1878"/>
         </scene>
@@ -540,7 +540,7 @@ SELECT YOUR CAR COLOR</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PX5-el-K23" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-620" y="2107"/>
+            <point key="canvasLocation" x="-812" y="2119"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="Jow-kp-uNd">
@@ -716,7 +716,7 @@ SELECT YOUR CAR COLOR</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1b-Bu-0yF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="364"/>
+            <point key="canvasLocation" x="1769" y="312"/>
         </scene>
         <!--Color2-->
         <scene sceneID="fcs-EV-yVa">
@@ -1030,7 +1030,7 @@ SELECT YOUR CAR COLOR</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tec-JR-cVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="223" y="364"/>
+            <point key="canvasLocation" x="223" y="286"/>
         </scene>
         <!--Cars3-->
         <scene sceneID="z1i-c3-klC">
@@ -1200,7 +1200,7 @@ SELECT YOUR CAR TYPE</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1A-e9-QWm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1151" y="1165"/>
+            <point key="canvasLocation" x="1181" y="1117"/>
         </scene>
         <!--Color Player Two-->
         <scene sceneID="0tu-Ng-XhB">
@@ -1319,7 +1319,7 @@ SELECT YOUR CAR COLOR</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuV-pA-e1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1691" y="1151"/>
+            <point key="canvasLocation" x="1705" y="1117"/>
         </scene>
     </scenes>
     <resources>
@@ -1329,16 +1329,16 @@ SELECT YOUR CAR COLOR</string>
         <image name="road_2_singleplayer" width="1080" height="1920"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xYK-a5-CJm"/>
-        <segue reference="OQ2-Rx-nbu"/>
-        <segue reference="nIR-cw-XyQ"/>
-        <segue reference="QvM-6s-oE3"/>
+        <segue reference="jIo-E8-TVw"/>
+        <segue reference="yVF-9p-foR"/>
         <segue reference="nqW-sd-xxC"/>
         <segue reference="iMZ-tR-nf4"/>
-        <segue reference="yVF-9p-foR"/>
-        <segue reference="jIo-E8-TVw"/>
+        <segue reference="QvM-6s-oE3"/>
+        <segue reference="nIR-cw-XyQ"/>
+        <segue reference="OQ2-Rx-nbu"/>
+        <segue reference="xYK-a5-CJm"/>
         <segue reference="cCo-Mm-x6X"/>
-        <segue reference="dFg-AW-yTv"/>
+        <segue reference="UEJ-J0-3wE"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.99204033613204956" green="0.9924272894859314" blue="0.9956931471824646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
