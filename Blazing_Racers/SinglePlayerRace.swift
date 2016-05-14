@@ -282,6 +282,17 @@ class SinglePlayerRace: SKScene
     //  way to win
     func conditionToWin()
     {
-        
+        if second == 0 && milisecond == 0 && distance >= 20000
+        {
+            timerDecrease.invalidate()
+            timerOne.invalidate()
+            print("yeah")
+        }
+        else if second == 0 && milisecond == 0 && distance < 20000
+        {
+            timerDecrease.invalidate()
+            timerOne.invalidate()
+            print("nope")
+        }
     }
 }
