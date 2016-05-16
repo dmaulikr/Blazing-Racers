@@ -17,11 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launchscreen1" translatesAutoresizingMaskIntoConstraints="NO" id="dFP-ob-noR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen1" translatesAutoresizingMaskIntoConstraints="NO" id="dFP-ob-noR">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.45549523830413818" green="0.10674529522657394" blue="0.063770905137062073" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="dFP-ob-noR" secondAttribute="bottom" id="YR6-Ix-Dri"/>
+                            <constraint firstItem="dFP-ob-noR" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="ZJf-cc-Bd5"/>
+                            <constraint firstItem="dFP-ob-noR" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="aND-lp-OcB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dFP-ob-noR" secondAttribute="trailing" constant="-20" id="flN-O1-mPq"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
