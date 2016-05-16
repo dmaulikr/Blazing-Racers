@@ -10,6 +10,8 @@ class GameViewController: UIViewController
     
     var variables = StoredVariables()
     
+
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -138,14 +140,5 @@ class GameViewController: UIViewController
     {
         return true
     }
-    func alertview() {
-        let myAlert = UIAlertController(title: "Game Over", message: nil, preferredStyle: .Alert)
-        let myContinue = UIAlertAction(title: "Continue", style: .Default) { (myContinue) in
-            func viewWillDisappear(animated: Bool)
-            {
-                self.navigationController?.setNavigationBarHidden(false, animated: animated);
-                super.viewWillDisappear(animated)
-            }
-        }
-    }
+   
 }
