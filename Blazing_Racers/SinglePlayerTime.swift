@@ -294,7 +294,6 @@ class SinglePlayerTime: SKScene
         }
         else if minute >= 2 && second >= 0 && distance <= 20000
         {
-            myCar.position.y = -30
             timerDecrease.invalidate()
             timerOne.invalidate()
         }

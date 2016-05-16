@@ -9,9 +9,6 @@ class SplitScreen: SKScene
     //Creates a variable of the GameViewController
     var gameViewController = GameViewController()
     
-    //String Variable
-    var winner = ""
-    
     //Bool Values
     var finishOne = Bool()
     var finishTwo = Bool()
@@ -119,8 +116,8 @@ class SplitScreen: SKScene
         mySpeedTwo.zPosition = 1
         
         carWin.text = ""
-        carWin.fontName = "DBLCDTempBlack"
-        carWin.fontSize = 100
+        carWin.fontSize = 125
+        carWin.fontName = "DamascusBold"
         carWin.fontColor = UIColor.redColor()
         carWin.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         carWin.zPosition = 1
@@ -226,7 +223,7 @@ class SplitScreen: SKScene
                     //checks to see if it is the same as the button
                     if name == "button"
                     {
-                        if distance <= 20000 {
+                        if distance <= 10000 {
                             //increases the speed
                             taps += 2
                             //sets the speed equal to the label
@@ -237,7 +234,7 @@ class SplitScreen: SKScene
                             print("\(taps)")
                             print("\(distance)")
                         }
-                        else if distance >= 20000 {
+                        else if distance >= 10000 {
                             timerOne.invalidate()
                             timerDecrease.invalidate()
                             myCar.runAction(backInPosition)
@@ -245,7 +242,7 @@ class SplitScreen: SKScene
                         }
                     }
                     else if name == "buttonTwo" {
-                        if distanceTwo <= 20000 {
+                        if distanceTwo <= 10000 {
                             //increases the speed
                             tapsTwo += 2
                             //sets the speed equal to the label
@@ -256,7 +253,7 @@ class SplitScreen: SKScene
                             print("\(tapsTwo)")
                             print("\(distanceTwo)")
                         }
-                        else if distanceTwo >= 20000 {
+                        else if distanceTwo >= 10000 {
                             timerPartTwo.invalidate()
                             timerDecreaseTwo.invalidate()
                             myCarTwo.runAction(backInPositionTwo)
@@ -307,9 +304,9 @@ class SplitScreen: SKScene
     func newTimer()
     {
         timerOne = NSTimer.scheduledTimerWithTimeInterval(0.0017, target: self, selector: "timerAction", userInfo: nil, repeats: true)
-        timerDecrease = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "speedFormula", userInfo: nil, repeats: true)
+        timerDecrease = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self, selector: "speedFormula", userInfo: nil, repeats: true)
         timerPartTwo = NSTimer.scheduledTimerWithTimeInterval(0.0017, target: self, selector: "timerActionTwo", userInfo: nil, repeats: true)
-        timerDecreaseTwo = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "speedFormulaTwo", userInfo: nil, repeats: true)
+        timerDecreaseTwo = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self, selector: "speedFormulaTwo", userInfo: nil, repeats: true)
         continiousTimer = NSTimer.scheduledTimerWithTimeInterval(0.0017, target: self, selector: "timerActionThree", userInfo: nil, repeats: true)
     }
     
@@ -479,13 +476,15 @@ class SplitScreen: SKScene
     
     func raceWinner() {
         if distance >= distanceTwo && finishOne == true && finishTwo == true {
-            winner = "Player One wins"
-            carWin.text = "\(winner)"
+            carWin.text = "Player One Wins"
+            gameViewController.variables.navPopUp = true
             print("Yes")
+            gameViewController.alertview()
         } else if distanceTwo >= distance && finishOne == true && finishTwo == true {
-            winner = "Player Two wins"
-            carWin.text = "\(winner)"
+            carWin.text = "Player Two Wins"
+            gameViewController.variables.navPopUp = true
             print("No")
+            gameViewController.alertview()
         }
     }
     
