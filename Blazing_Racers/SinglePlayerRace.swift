@@ -244,6 +244,7 @@ let mySpeedometer = SKSpriteNode(imageNamed: "speedometer")
     if second <= 0 && milisecond <= 0
     {
        timerOne.invalidate()
+    gameViewController.makeNavBarCome()
     }
   }
 }

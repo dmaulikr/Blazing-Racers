@@ -291,11 +291,15 @@ class SinglePlayerTime: SKScene
             timerDecrease.invalidate()
             gameViewController.variables.StoredTime = myTime.text!
             print("yeah")
+            gameViewController.makeNavBarCome()
+
         }
         else if minute >= 2 && second >= 0 && distance <= 20000
         {
             timerDecrease.invalidate()
             timerOne.invalidate()
+            gameViewController.makeNavBarCome()
+
         }
     }
 }

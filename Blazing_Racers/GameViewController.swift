@@ -14,8 +14,10 @@ class GameViewController: UIViewController
     
     override func viewDidLoad()
     {
-        super.viewDidLoad()
+        self.navigationController?.navigationBarHidden = true
 
+
+        super.viewDidLoad()
          if variables.timeTrial == true
         {
             if let scene = SinglePlayerTime(fileNamed: "GameScene")
@@ -107,16 +109,18 @@ class GameViewController: UIViewController
         return true
     }
     
-    override func viewWillDisappear(animated: Bool)
-    {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated);
-        super.viewWillDisappear(animated)
-    }
-    override func viewWillAppear(animated: Bool)
-    {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
+
+//    override func viewWillDisappear(animated: Bool)
+//    {
+//        self.navigationController?.setNavigationBarHidden(false, animated: animated);
+//        super.viewWillDisappear(animated)
+//    }
+//    override func viewWillAppear(animated: Bool)
+//    {
+//        super.viewWillAppear(animated)
+//        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+//    }
+
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask
     {
