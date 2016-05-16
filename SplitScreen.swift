@@ -479,12 +479,12 @@ class SplitScreen: SKScene
             carWin.text = "Player One Wins"
             gameViewController.variables.navPopUp = true
             print("Yes")
-            gameViewController.alertview()
+            //gameViewController.alertview()
         } else if distanceTwo >= distance && finishOne == true && finishTwo == true {
             carWin.text = "Player Two Wins"
             gameViewController.variables.navPopUp = true
             print("No")
-            gameViewController.alertview()
+            //gameViewController.alertview()
         }
     }
     
