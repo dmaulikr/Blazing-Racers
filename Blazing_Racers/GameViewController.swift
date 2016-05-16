@@ -13,6 +13,7 @@ class GameViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+
          if variables.timeTrial == true
         {
             if let scene = SinglePlayerTime(fileNamed: "GameScene")
@@ -73,7 +74,7 @@ class GameViewController: UIViewController
             
             print("C")
             skView.presentScene(scene)
-            
+
         }
             
         }
@@ -137,5 +138,14 @@ class GameViewController: UIViewController
     {
         return true
     }
-    
+    func alertview() {
+        let myAlert = UIAlertController(title: "Game Over", message: nil, preferredStyle: .Alert)
+        let myContinue = UIAlertAction(title: "Continue", style: .Default) { (myContinue) in
+            func viewWillDisappear(animated: Bool)
+            {
+                self.navigationController?.setNavigationBarHidden(false, animated: animated);
+                super.viewWillDisappear(animated)
+            }
+        }
+    }
 }

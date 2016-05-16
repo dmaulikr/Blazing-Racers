@@ -9,6 +9,7 @@ class StoredVariables: NSObject
     var speedTest = false
     var splitScreen = false
     var Bluetooth = false
+    var navPopUp = false 
     var StoredTime = "00:00.00"
     var car = "car1_grey"
     var carTwo = "car1_grey"
