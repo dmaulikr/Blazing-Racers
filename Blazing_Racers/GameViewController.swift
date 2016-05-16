@@ -108,6 +108,11 @@ class GameViewController: UIViewController
     {
         return true
     }
+    func makeNavBarCome()
+    {
+        self.navigationController?.navigationBarHidden = false
+            
+    }
     
 
 //    override func viewWillDisappear(animated: Bool)

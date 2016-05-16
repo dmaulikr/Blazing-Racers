@@ -477,14 +477,12 @@ class SplitScreen: SKScene
     func raceWinner() {
         if distance >= distanceTwo && finishOne == true && finishTwo == true {
             carWin.text = "Player One Wins"
-            gameViewController.variables.navPopUp = true
+            gameViewController.makeNavBarCome()
             print("Yes")
-            //gameViewController.alertview()
         } else if distanceTwo >= distance && finishOne == true && finishTwo == true {
             carWin.text = "Player Two Wins"
-            gameViewController.variables.navPopUp = true
             print("No")
-            //gameViewController.alertview()
+            gameViewController.makeNavBarCome()
         }
     }
     
