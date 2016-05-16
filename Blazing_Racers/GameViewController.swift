@@ -12,8 +12,10 @@ class GameViewController: UIViewController
     
     override func viewDidLoad()
     {
-        super.viewDidLoad()
+        self.navigationController?.navigationBarHidden = true
 
+
+        super.viewDidLoad()
          if variables.timeTrial == true
         {
             if let scene = SinglePlayerTime(fileNamed: "GameScene")
@@ -105,16 +107,18 @@ class GameViewController: UIViewController
         return true
     }
     
-    override func viewWillDisappear(animated: Bool)
-    {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated);
-        super.viewWillDisappear(animated)
-    }
-    override func viewWillAppear(animated: Bool)
-    {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
+
+//    override func viewWillDisappear(animated: Bool)
+//    {
+//        self.navigationController?.setNavigationBarHidden(false, animated: animated);
+//        super.viewWillDisappear(animated)
+//    }
+//    override func viewWillAppear(animated: Bool)
+//    {
+//        super.viewWillAppear(animated)
+//        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+//    }
+
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask
     {
@@ -138,14 +142,24 @@ class GameViewController: UIViewController
     {
         return true
     }
-    func alertview() {
-        let myAlert = UIAlertController(title: "Game Over", message: nil, preferredStyle: .Alert)
-        let myContinue = UIAlertAction(title: "Continue", style: .Default) { (myContinue) in
-            func viewWillDisappear(animated: Bool)
-            {
-                self.navigationController?.setNavigationBarHidden(false, animated: animated);
-                super.viewWillDisappear(animated)
-            }
-        }
+    
+    func makeNavBarCome()
+    {
+        self.navigationController?.navigationBarHidden = false
+
     }
+    
+    
+    
+    
+//    func alertview() {
+//        let myAlert = UIAlertController(title: "Game Over", message: nil, preferredStyle: .Alert)
+//        let myContinue = UIAlertAction(title: "Continue", style: .Default) { (myContinue) in
+//            func viewWillDisappear(animated: Bool)
+//            {
+//                self.navigationController?.setNavigationBarHidden(false, animated: animated);
+//                super.viewWillDisappear(animated)
+//            }
+//        }
+//    }
 }
