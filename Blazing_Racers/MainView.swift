@@ -59,17 +59,17 @@ class MainViewViewController: UIViewController
 print("Blaze")
     }
     
-    //make the nav bar dissappear
-    override func viewWillDisappear(animated: Bool)
-    {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated);
-        super.viewWillDisappear(animated)
-    }
-    override func viewWillAppear(animated: Bool)
-    {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
+//    make the nav bar dissappear
+//    override func viewWillDisappear(animated: Bool)
+//    {
+//        self.navigationController?.setNavigationBarHidden(false, animated: animated);
+//        super.viewWillDisappear(animated)
+//    }
+//    override func viewWillAppear(animated: Bool)
+//    {
+//        super.viewWillAppear(animated)
+//        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+//    }
 
     
     override func didReceiveMemoryWarning()

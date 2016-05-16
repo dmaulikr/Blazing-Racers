@@ -42,8 +42,6 @@ class Tracks3: UIViewController {
                 self.button_track2.alpha = 1
         })
 
-//            button_track1.backgroundColor = UIColor(patternImage: UIImage(named: "road_1_singleplayer")!)
-//            button_track2.backgroundColor = UIColor(patternImage: UIImage(named: "road_2_singleplayer")!)
         
     }
     override func didReceiveMemoryWarning()
