@@ -1,9 +1,9 @@
 //
-//  TheTWoCarsarePlayers
-//  BLAZED_RACED
+//  MainView
+//  Blazing_Racers.swift
 //
 //  Created by MBalsamo on 5/12/66.
-//  Copyright © 666 Weaboo. All righted reserves.
+//  Copyright © MBalsamo. All righted reserves.
 //
 
 import UIKit
@@ -20,15 +20,19 @@ class MainViewViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+            let backgroundImage = UIImageView(frame: UIScreen.mainScreen().bounds)
+            backgroundImage.image = UIImage(named: "main_title1.png")
+            self.view.insertSubview(backgroundImage, atIndex: 0)
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.translucent = true
 
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "main_title1.png")?.drawInRect(self.view.bounds)
-        var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        self.view.backgroundColor = UIColor(patternImage: image)
+//        UIGraphicsBeginImageContext(self.view.frame.size)
+//        UIImage(named: "main_title1.png")?.drawInRect(self.view.bounds)
+//        var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        self.view.backgroundColor = UIColor(patternImage: image)
 
         button_bluetoothmultiplayer.layer.cornerRadius = 10;
         button_splitscreenracing.layer.cornerRadius = 10;
