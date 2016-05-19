@@ -26,17 +26,17 @@ class Tracks2: UIViewController
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
         button_track2.layer.cornerRadius = 10;
-        button_track1.layer.cornerRadius = 10;
+        button_track1.layer.cornerRadius = 10;          //button corner
         
         button_track2.alpha = 0
-        button_track1.alpha = 0
+        button_track1.alpha = 0             //animation
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         view.addSubview(button_track2)
         view.addSubview(button_track1)
-        UIView.animateWithDuration(0.6, animations:
+        UIView.animateWithDuration(0.6, animations:         //animation
             {
                 self.button_track1.alpha = 1
         })

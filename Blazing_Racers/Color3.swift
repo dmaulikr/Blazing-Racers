@@ -25,12 +25,12 @@ class Color3: UIViewController
         super.viewDidLoad()
         
         UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)
+        UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)         //view background
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
         button_black.layer.cornerRadius = 10;
-        button_blue.layer.cornerRadius = 10;
+        button_blue.layer.cornerRadius = 10;                //button corner
         button_grey.layer.cornerRadius = 10;
         button_purple.layer.cornerRadius = 10;
         button_pink.layer.cornerRadius = 10;
@@ -38,7 +38,7 @@ class Color3: UIViewController
         button_special.layer.cornerRadius = 10;
         button_black.alpha = 0
         button_blue.alpha = 0
-        button_grey.alpha = 0
+        button_grey.alpha = 0               //button animation
         button_orange.alpha = 0
         button_pink.alpha = 0
         button_purple.alpha = 0
@@ -49,7 +49,7 @@ class Color3: UIViewController
         super.viewDidAppear(animated)
         view.addSubview(button_black)
         view.addSubview(button_blue)
-        view.addSubview(button_grey)
+        view.addSubview(button_grey)                //button animation
         view.addSubview(button_orange)
         view.addSubview(button_pink)
         view.addSubview(button_purple)
