@@ -117,6 +117,7 @@ class ColorPlayerTwo: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    // sets the color for the second car in splitscreen
     @IBAction func color1buttonpressed(sender: UIButton) {
         if variables.carTwo == "car1_grey"
         {

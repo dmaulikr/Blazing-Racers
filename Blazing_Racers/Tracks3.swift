@@ -49,7 +49,7 @@ class Tracks3: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    // sets the track equal to what button you tapped
     @IBAction func tracks5ButtonTapped(sender: AnyObject)
     {
         variables.track =  "road_1_singleplayer"

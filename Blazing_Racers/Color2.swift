@@ -121,7 +121,7 @@ class Color2: UIViewController
         super.didReceiveMemoryWarning()
 
     }
-    
+    // sets the car color to what you what button you chose
     @IBAction func color1ButtonTapped(sender: AnyObject)
     {
         if variables.car == "car1_grey"

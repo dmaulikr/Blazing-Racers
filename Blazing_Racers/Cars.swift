@@ -17,6 +17,7 @@ class Cars: UIViewController
     
     var variables = StoredVariables()
     //michael edit
+    // sets the view before it loads
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -40,7 +41,7 @@ class Cars: UIViewController
         button_carset4.alpha = 0
         
     }
-    
+    // what occurs when the view loads
     override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated)

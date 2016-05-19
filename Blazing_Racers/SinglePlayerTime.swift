@@ -273,7 +273,7 @@ class SinglePlayerTime: SKScene
             mySpeed.text = "\(taps)"
         }
     }
-    
+
     func carCollidesButton() {
         if myCar.position.y <= myButton.position.y {
             myCar.runAction(moveAway)

@@ -69,7 +69,7 @@ class Cars2: UIViewController
     {
         super.didReceiveMemoryWarning()
     }
-    
+    // sets the car type equal to what button you tap
     @IBAction func car5ButtonTapped(sender: AnyObject)
     {
         variables.car = "car1_grey"

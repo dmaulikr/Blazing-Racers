@@ -15,7 +15,7 @@ class CarsPlayerTwo: UIViewController {
     @IBOutlet weak var button_carset4: UIButton!
 
     var variables = StoredVariables()
-
+// sets the view up for when it loads
     override func viewDidLoad() {
         super.viewDidLoad()
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -37,6 +37,7 @@ class CarsPlayerTwo: UIViewController {
         button_carset3.alpha = 0
         button_carset4.alpha = 0
     }
+    // what occurs when the view loads
     override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
@@ -69,7 +70,7 @@ class CarsPlayerTwo: UIViewController {
 }
 
     @IBAction func cartype1(sender: UIButton) {
-        // this sets the variable car = to the car set you chose based on the button, which then transfers it to the next view
+        // this sets the variable car = to the car set you chose based on the button, which then transfers it to the next view for the second car in splitscreen
         variables.carTwo = "car1_grey"
     }
     

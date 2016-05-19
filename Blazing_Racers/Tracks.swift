@@ -50,6 +50,7 @@ class Tracks: UIViewController
     {
         super.didReceiveMemoryWarning()
     }
+    // sets the track equal to what button you click
     @IBAction func tracks3ButtonTapped(sender: AnyObject)
     {
       variables.track = "road_1_multiplayer"

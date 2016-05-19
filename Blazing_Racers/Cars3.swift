@@ -70,6 +70,7 @@ class Cars3: UIViewController
     {
         super.didReceiveMemoryWarning()
     }
+    // sets up the type of car based on what button you tapp
     @IBAction func car9ButtonTapped(sender: AnyObject)
     {
         variables.car = "car1_grey"

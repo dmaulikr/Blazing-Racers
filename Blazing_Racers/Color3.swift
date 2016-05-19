@@ -117,7 +117,7 @@ class Color3: UIViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    // sets the color of the car in bluetooth equal to which button you click
     @IBAction func color13ButtonTapped(sender: AnyObject)
     {
         if variables.car == "car1_grey"

@@ -15,7 +15,7 @@ class SinglePlayerView: UIViewController
     @IBOutlet weak var button_speedrace: UIButton!
     // sets variables = the storied variables class
     var variables = StoredVariables()
-
+// sets everything for when the view loads
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -36,6 +36,7 @@ class SinglePlayerView: UIViewController
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.translucent = true
     }
+    // what happens when view shows up
     override func viewDidAppear(animated: Bool)
     {
         
@@ -58,19 +59,21 @@ class SinglePlayerView: UIViewController
     {
         super.didReceiveMemoryWarning()
     }
-    
+    // what happens when you click the time trial button
     @IBAction func button_TimeTrial(sender: UIButton)
     {
         // sets the vars time trial and speed test based on which button you click.
         variables.timeTrial = true
         variables.speedTest = false
     }
+    // what happens when you click the speedRace Button
     @IBAction func button_SpeedRace(sender: UIButton)
     {
+        // sets the vars based on which button you click
         variables.timeTrial = false
         variables.speedTest = true
     }
-    
+    // prepares for segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
         let carsTwoVC = segue.destinationViewController as! Cars2
