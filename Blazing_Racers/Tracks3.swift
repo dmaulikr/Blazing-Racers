@@ -19,15 +19,15 @@ class Tracks3: UIViewController {
         super.viewDidLoad()
         
         UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)
+        UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)         //view background
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
-        button_track2.layer.cornerRadius = 10;
+        button_track2.layer.cornerRadius = 10;          //corner roundedness on buttons
         button_track1.layer.cornerRadius = 10;
         
         button_track2.alpha = 0
-        button_track1.alpha = 0
+        button_track1.alpha = 0                 //animation
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
@@ -37,7 +37,7 @@ class Tracks3: UIViewController {
             {
                 self.button_track1.alpha = 1
         })
-        UIView.animateWithDuration(0.9, animations:
+        UIView.animateWithDuration(0.9, animations:             //animation
             {
                 self.button_track2.alpha = 1
         })

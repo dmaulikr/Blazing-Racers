@@ -24,10 +24,10 @@ class Tracks: UIViewController
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
-        button_track2.layer.cornerRadius = 10;
+        button_track2.layer.cornerRadius = 10;                  //button corner
         button_track1.layer.cornerRadius = 10;
         
-        button_track2.alpha = 0
+        button_track2.alpha = 0             //animation
         button_track1.alpha = 0
         
 }

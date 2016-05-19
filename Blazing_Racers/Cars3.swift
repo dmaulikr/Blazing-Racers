@@ -27,16 +27,16 @@ class Cars3: UIViewController
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
-        button_carset1.layer.cornerRadius = 10;
+        button_carset1.layer.cornerRadius = 10;                 //button corner radius
         button_carset2.layer.cornerRadius = 10;
         button_carset3.layer.cornerRadius = 10;
         button_carset4.layer.cornerRadius = 10;
         button_carset1.backgroundColor = UIColor(patternImage:UIImage(named:"car1_grey")!)
         button_carset2.backgroundColor = UIColor(patternImage:UIImage(named:"car2_grey")!)
-        button_carset3.backgroundColor = UIColor(patternImage:UIImage(named:"car3_grey")!)
+        button_carset3.backgroundColor = UIColor(patternImage:UIImage(named:"car3_grey")!)      //car button to display image
         button_carset4.backgroundColor = UIColor(patternImage:UIImage(named:"car4_grey")!)
         button_carset1.alpha = 0
-        button_carset2.alpha = 0
+        button_carset2.alpha = 0        //animation
         button_carset3.alpha = 0
         button_carset4.alpha = 0
     }

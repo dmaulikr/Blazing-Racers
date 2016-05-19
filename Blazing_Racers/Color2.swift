@@ -25,7 +25,7 @@ class Color2: UIViewController
     {
         super.viewDidLoad()
         
-        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIGraphicsBeginImageContext(self.view.frame.size)                           //view background
         UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -33,14 +33,14 @@ class Color2: UIViewController
         button_black.layer.cornerRadius = 10;
         button_blue.layer.cornerRadius = 10;
         button_grey.layer.cornerRadius = 10;
-        button_purple.layer.cornerRadius = 10;
+        button_purple.layer.cornerRadius = 10;              //button corner
         button_pink.layer.cornerRadius = 10;
         button_orange.layer.cornerRadius = 10;
         button_special.layer.cornerRadius = 10;
         button_black.alpha = 0
         button_blue.alpha = 0
         button_grey.alpha = 0
-        button_orange.alpha = 0
+        button_orange.alpha = 0                 //animation
         button_pink.alpha = 0
         button_purple.alpha = 0
         button_special.alpha = 0
@@ -95,7 +95,7 @@ class Color2: UIViewController
         view.addSubview(button_purple)
         view.addSubview(button_special)
         UIView.animateWithDuration(0.6, animations:
-            {
+            {                                                   //animation
                 self.button_black.alpha = 1
                 self.button_special.alpha = 1
         })

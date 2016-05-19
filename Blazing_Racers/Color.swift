@@ -33,14 +33,14 @@ class Color: UIViewController
         self.view.backgroundColor = UIColor(patternImage: image)
         button_black.layer.cornerRadius = 10;
         button_blue.layer.cornerRadius = 10;
-        button_grey.layer.cornerRadius = 10;
+        button_grey.layer.cornerRadius = 10;            //button roundedness
         button_purple.layer.cornerRadius = 10;
         button_pink.layer.cornerRadius = 10;
         button_orange.layer.cornerRadius = 10;
         button_special.layer.cornerRadius = 10;
         button_black.alpha = 0
         button_blue.alpha = 0
-        button_grey.alpha = 0
+        button_grey.alpha = 0       //animation
         button_orange.alpha = 0
         button_pink.alpha = 0
         button_purple.alpha = 0
@@ -91,7 +91,7 @@ class Color: UIViewController
         super.viewDidAppear(animated)
         view.addSubview(button_black)
         view.addSubview(button_blue)
-        view.addSubview(button_grey)
+        view.addSubview(button_grey)        //animation
         view.addSubview(button_orange)
         view.addSubview(button_pink)
         view.addSubview(button_purple)

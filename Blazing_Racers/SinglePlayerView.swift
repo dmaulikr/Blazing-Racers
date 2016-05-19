@@ -20,27 +20,27 @@ class SinglePlayerView: UIViewController
     {
         super.viewDidLoad()
         print(variables.singlePlayer.boolValue)
-        
+        //sets  image to background
         UIGraphicsBeginImageContext(self.view.frame.size)
         UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
+        //rounds out button
         button_timetrial.layer.cornerRadius = 10;
         button_speedrace.layer.cornerRadius = 10;
-
+//set it invisible
         button_speedrace.alpha = 0
         button_timetrial.alpha = 0
         
+        //makes nav bar invisible
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.translucent = true
     }
     override func viewDidAppear(animated: Bool)
-    {
-        
+    {//animation for button
         super.viewDidAppear(animated)
-        
         view.addSubview(button_speedrace)
         view.addSubview(button_timetrial)
 

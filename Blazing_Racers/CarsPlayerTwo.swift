@@ -18,12 +18,13 @@ class CarsPlayerTwo: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //background
         UIGraphicsBeginImageContext(self.view.frame.size)
         UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
-        button_carset1.layer.cornerRadius = 10;
+        button_carset1.layer.cornerRadius = 10;   //corner radius
         button_carset2.layer.cornerRadius = 10;
         button_carset3.layer.cornerRadius = 10;
         button_carset4.layer.cornerRadius = 10;
@@ -48,7 +49,7 @@ class CarsPlayerTwo: UIViewController {
             {
                 self.button_carset1.alpha = 1
         })
-        UIView.animateWithDuration(0.7, animations:
+        UIView.animateWithDuration(0.7, animations:     //animation for button
             {
                 self.button_carset2.alpha = 1
         })

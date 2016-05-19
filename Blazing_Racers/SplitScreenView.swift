@@ -12,18 +12,16 @@ class SplitScreenView: UIViewController
 {
 var variables = StoredVariables()
     @IBOutlet weak var button_splitscreen: UIButton!
-    
     @IBOutlet weak var image_screenshot: UIImageView!
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)
+        UIImage(named: "main_background.png")?.drawInRect(self.view.bounds) //background
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
-        button_splitscreen.layer.cornerRadius = 10;
+        button_splitscreen.layer.cornerRadius = 10;    //button corners
         self.button_splitscreen.alpha = 0.0
         image_screenshot.image = UIImage(named: "splitscreen_preview")
     }

@@ -11,15 +11,13 @@ import UIKit
 class MultiplayerView: UIViewController
 {
     @IBOutlet var button_bluetooth: UIView!
-    
-var variables = StoredVariables()
+    var variables = StoredVariables()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
         UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)
+        UIImage(named: "main_background.png")?.drawInRect(self.view.bounds)  //background
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
